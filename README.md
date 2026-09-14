@@ -1,5 +1,7 @@
 # PSCM / PSMC — Power Steering Control Module (EPS), Ford Focus Mk3.5
 
+> **Start here for the full picture:** [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md) is the consolidated end-to-end functional decode (boot, memory map, control style, CAN/signal-config engine, the LCA authority limits, and both open questions), integrating every doc below.
+
 The PSCM is the electric power steering control unit (EPS). Beyond ordinary steering assist, it is
 the **actuator end of two completely separate ADAS steering interfaces**, which is what makes it the
 central module for any lane-centering (LCA) work on this platform:
@@ -34,7 +36,13 @@ DSP56800E → SH-2A → V850 → **RH850 (final)**. The repeated confusion came 
 byte pattern decoding plausibly under several instruction sets, and from V850 being dense enough that
 even pure data decodes into valid-looking instructions.
 
-**Current verdict: Renesas RH850** (the V850 successor, standard in modern EPS units). Ghidra has no
+> ⚠️ **Contested:** the newest data-level analysis (`FF3.5_ANALYSIS_root/27_pscm_autopark_datalevel.md`)
+> re-reads the reset-vector table as **DSP56800E** (`JSR P:0x12BC9`) and argues the RH850 decode is an
+> artifact. This is unresolved — see the "central unresolved question" section of
+> [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md); the load-bearing conclusions below are
+> stated so they do not depend on which ISA is correct.
+
+**Current verdict (per the RH850 line of work): Renesas RH850** (the V850 successor, standard in modern EPS units). Ghidra has no
 out-of-the-box RH850 support; two community SLEIGH modules were tested and the
 **esaulenka `ghidra_v850` (`v850e3:LE:32:default`)** module gives substantially cleaner output than the
 ZEEKRZERO one (no `__saturate` spam). With jarl-based seeding, 336 clean function boundaries were
