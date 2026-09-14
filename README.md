@@ -63,7 +63,14 @@ Findings from the static IPMA↔PSCM comparison (`analysis/OSSZEFOGLALO_LCA.md`,
   boundaries verified arithmetically, not estimated). Their most likely meaning is the expanded
   automatic-parking mode request/status (`ApaMdeStat_D_RqDrv` / `ApaMde_D_Stat`) — an inference, not
   CAN-ID-level proof. Most of the rest of the signal-config engine is shared structure with only
-  pointer relocations.
+  pointer relocations. **Refinement (`analysis/SIGCFG_HANDLE_MAP.md`):** a version-invariant
+  alignment shows the change is actually **+3 / −1**, not a plain "two new fields" — bank `7F75` was
+  re-laid-out (a 5-bit field on `7ED8` retired; a 2-bit `7ECC` and a 3-bit `7EEB` added; all handles
+  renumbered −0x08 and every selector stepped down one one-hot), while bank `7F74` gained a second
+  3-bit field packed onto the already-used handle `7EB9`. Bank `7F8A` (the `0x86xx` output side)
+  relocated by a uniform **+0x14 = +20 bytes = the two added 10-byte descriptors**, confirming the
+  "engine unchanged, content relocated" thesis arithmetically. The note also emits a Pre→FL handle
+  remap so the *same* signal can be lined up across the `AF`/`AR` applications despite the renumbering.
 - A **speed-gate-like comparison** (`25000 >= in_r18`) exists in the main control function at
   `0x1d160` and is confirmed present by both RH850 modules — but **its semantics cannot be verified**
   at current tooling quality (speed vs. torque vs. angle, and its unit, are unknown).
