@@ -1,0 +1,208 @@
+0x00047B80  fe 00 01 e4  bl.l 0x00048310
+0x00047B84  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047B88  2e 7f f0 00  st lr,@-sp || nop
+0x00047B8C  fe ff ff 12  bl.l 0x000477D4
+0x00047B90  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047B94  2e 7f 65 01  st lr,@-sp -> ldi8 r5,#1
+0x00047B98  fe 00 01 dd  bl.l 0x0004830C
+0x00047B9C  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047BA0  2e 7f 65 02  st lr,@-sp -> ldi8 r5,#2
+0x00047BA4  fe 00 01 da  bl.l 0x0004830C
+0x00047BA8  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047BAC  2e 7f 65 04  st lr,@-sp -> ldi8 r5,#4
+0x00047BB0  fe 00 01 d7  bl.l 0x0004830C
+0x00047BB4  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047BB8  1f ce f0 00  jmp lr || nop
+0x00047BBC  e0 80 8d c6  ld24 r0,#0x808DC6
+0x00047BC0  20 90 04 f0  ldub r0,@r0 -> btst #0x4,r0
+0x00047BC4  7d 02 60 01  bnc.s 0x00047BCC -> ldi8 r0,#1
+0x00047BC8  7f 02 f0 00  bra.s 0x00047BD0 || nop
+0x00047BCC  60 00 f0 00  ldi8 r0,#0 || nop
+0x00047BD0  1f ce f0 00  jmp lr || nop
+0x00047BD4  60 00 54 02  ldi8 r0,#0 -> srli r4,#0x2
+0x00047BD8  7f 02 f0 00  bra.s 0x00047BE0 || nop
+0x00047BDC  40 01 54 01  addi r0,#1 -> srli r4,#0x1
+0x00047BE0  b0 94 ff ff  bnez r4,0x00047BDC
+0x00047BE4  1f ce f0 00  jmp lr || nop
+0x00047BE8  2e 7f f0 00  st lr,@-sp || nop
+0x00047BEC  e0 80 8d e0  ld24 r0,#0x808DE0
+0x00047BF0  20 c0 f0 00  ld r0,@r0 || nop
+0x00047BF4  b0 80 00 03  beqz r0,0x00047C00
+0x00047BF8  e1 80 8e bc  ld24 r1,#0x808EBC
+0x00047BFC  60 35 20 01  ldi8 r0,#53 -> stb r0,@r1
+0x00047C00  fe ff fe f5  bl.l 0x000477D4
+0x00047C04  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047C08  28 7f 18 85  st r8,@-sp -> mv r8,r5
+0x00047C0C  2e 7f 7e f2  st lr,@-sp -> bl.s 0x00047BD4
+0x00047C10  61 05 10 61  ldi8 r1,#5 -> mul r0,r1
+0x00047C14  15 80 66 05  mv r5,r0 -> ldi8 r6,#5
+0x00047C18  e1 0e 4c e3  ld24 r1,#0xE4CE3
+0x00047C1C  14 88 05 a1  mv r4,r8 -> add r5,r1
+0x00047C20  fe 00 09 85  bl.l 0x0004A234
+0x00047C24  2e ef 28 ef  ld lr,@sp+ -> ld r8,@sp+
+0x00047C28  1f ce f0 00  jmp lr || nop
+0x00047C2C  e0 80 8d d8  ld24 r0,#0x808DD8
+0x00047C30  61 01 20 c0  ldi8 r1,#1 -> ld r0,@r0
+0x00047C34  b0 11 00 02  bne r0,r1,0x00047C3C
+0x00047C38  60 01 7f 02  ldi8 r0,#1 -> bra.s 0x00047C40
+0x00047C3C  60 00 f0 00  ldi8 r0,#0 || nop
+0x00047C40  1f ce f0 00  jmp lr || nop
+0x00047C44  28 7f 29 7f  st r8,@-sp -> st r9,@-sp
+0x00047C48  2e 7f 18 84  st lr,@-sp -> mv r8,r4
+0x00047C4C  a9 c8 00 08  ld r9,@(0x8,r8)
+0x00047C50  fe ff f7 53  bl.l 0x0004599C
+0x00047C54  20 09 60 01  stb r0,@r9 -> ldi8 r0,#1
+0x00047C58  a0 28 00 0c  sth r0,@(0xC,r8)
+0x00047C5C  fe ff fe de  bl.l 0x000477D4
+0x00047C60  2e ef 29 ef  ld lr,@sp+ -> ld r9,@sp+
+0x00047C64  28 ef 1f ce  ld r8,@sp+ -> jmp lr
+0x00047C68  28 7f 2e 7f  st r8,@-sp -> st lr,@-sp
+0x00047C6C  18 84 66 0a  mv r8,r4 -> ldi8 r6,#10
+0x00047C70  e5 0e 05 30  ld24 r5,#0xE0530
+0x00047C74  a4 c8 00 08  ld r4,@(0x8,r8)
+0x00047C78  fe 00 09 6f  bl.l 0x0004A234
+0x00047C7C  60 0a f0 00  ldi8 r0,#10 || nop
+0x00047C80  a0 28 00 0c  sth r0,@(0xC,r8)
+0x00047C84  fe ff fe d4  bl.l 0x000477D4
+0x00047C88  2e ef 28 ef  ld lr,@sp+ -> ld r8,@sp+
+0x00047C8C  1f ce f0 00  jmp lr || nop
+0x00047C90  2e 7f 60 04  st lr,@-sp -> ldi8 r0,#4
+0x00047C94  a1 c4 00 08  ld r1,@(0x8,r4)
+0x00047C98  20 01 60 01  stb r0,@r1 -> ldi8 r0,#1
+0x00047C9C  a0 24 00 0c  sth r0,@(0xC,r4)
+0x00047CA0  fe ff fe cd  bl.l 0x000477D4
+0x00047CA4  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047CA8  2e 7f 60 03  st lr,@-sp -> ldi8 r0,#3
+0x00047CAC  a1 c4 00 08  ld r1,@(0x8,r4)
+0x00047CB0  20 01 60 01  stb r0,@r1 -> ldi8 r0,#1
+0x00047CB4  a0 24 00 0c  sth r0,@(0xC,r4)
+0x00047CB8  fe ff fe c7  bl.l 0x000477D4
+0x00047CBC  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047CC0  28 7f 2e 7f  st r8,@-sp -> st lr,@-sp
+0x00047CC4  18 84 f0 00  mv r8,r4 || nop
+0x00047CC8  a4 c8 00 08  ld r4,@(0x8,r8)
+0x00047CCC  fe ff f7 39  bl.l 0x000459B0
+0x00047CD0  60 04 f0 00  ldi8 r0,#4 || nop
+0x00047CD4  a0 28 00 0c  sth r0,@(0xC,r8)
+0x00047CD8  fe ff fe bf  bl.l 0x000477D4
+0x00047CDC  2e ef 28 ef  ld lr,@sp+ -> ld r8,@sp+
+0x00047CE0  1f ce f0 00  jmp lr || nop
+0x00047CE4  e1 0e 46 d0  ld24 r1,#0xE46D0
+0x00047CE8  54 44 04 a1  slli r4,#0x4 -> add r4,r1
+0x00047CEC  a0 b4 00 02  lduh r0,@(0x2,r4)
+0x00047CF0  1f ce f0 00  jmp lr || nop
+0x00047CF4  28 7f 2e 7f  st r8,@-sp -> st lr,@-sp
+0x00047CF8  e1 80 8d c6  ld24 r1,#0x808DC6
+0x00047CFC  a0 94 00 04  ldub r0,@(0x4,r4)
+0x00047D00  50 06 21 91  srli r0,#0x6 -> ldub r1,@r1
+0x00047D04  51 06 00 c1  srli r1,#0x6 -> and r0,r1
+0x00047D08  e8 80 8e bc  ld24 r8,#0x808EBC
+0x00047D0C  b0 80 00 07  beqz r0,0x00047D28
+0x00047D10  fe ff fd 4d  bl.l 0x00047244
+0x00047D14  20 08 f0 00  stb r0,@r8 || nop
+0x00047D18  b0 80 00 06  beqz r0,0x00047D30
+0x00047D1C  60 7e 21 98  ldi8 r0,#126 -> ldub r1,@r8
+0x00047D20  b1 10 00 04  bne r1,r0,0x00047D30
+0x00047D24  60 31 7f 02  ldi8 r0,#49 -> bra.s 0x00047D2C
+0x00047D28  60 22 f0 00  ldi8 r0,#34 || nop
+0x00047D2C  20 08 f0 00  stb r0,@r8 || nop
+0x00047D30  2e ef 28 ef  ld lr,@sp+ -> ld r8,@sp+
+0x00047D34  1f ce f0 00  jmp lr || nop
+0x00047D38  2e 7f 7e 02  st lr,@-sp -> bl.s 0x00047D40
+0x00047D3C  2e ef 1f ce  ld lr,@sp+ -> jmp lr
+0x00047D40  63 36 65 00  ldi8 r3,#54 -> ldi8 r5,#0
+0x00047D44  80 c3 ff ff  and3 r0,r3,#0xFFFF
+0x00047D48  81 c5 ff ff  and3 r1,r5,#0xFFFF
+0x00047D4C  00 a1 50 50  add r0,r1 -> slli r0,#0x10
+0x00047D50  50 10 50 21  srli r0,#0x10 -> srai r0,#0x1
+0x00047D54  e1 0e 46 d0  ld24 r1,#0xE46D0
+0x00047D58  92 c0 00 04  sll3 r2,r0,#4
+0x00047D5C  02 a1 22 b2  add r2,r1 -> lduh r2,@r2
+0x00047D60  b2 14 00 02  bne r2,r4,0x00047D68
+0x00047D64  1f ce f0 00  jmp lr || nop
+0x00047D68  52 50 52 10  slli r2,#0x10 -> srli r2,#0x10
+0x00047D6C  04 42 7d 04  cmp r4,r2 -> bnc.s 0x00047D7C
+0x00047D70  b0 80 00 05  beqz r0,0x00047D84
+0x00047D74  83 a0 ff ff  add3 r3,r0,#0xFFFF
+0x00047D78  7f 02 f0 00  bra.s 0x00047D80 || nop
+0x00047D7C  85 a0 00 01  add3 r5,r0,#0x1
+0x00047D80  03 55 7d f1  cmpu r3,r5 -> bnc.s 0x00047D44
+0x00047D84  60 37 1f ce  ldi8 r0,#55 -> jmp lr
+0x00047D88  28 7f 18 85  st r8,@-sp -> mv r8,r5
+0x00047D8C  29 7f 2e 7f  st r9,@-sp -> st lr,@-sp
+0x00047D90  e1 80 8d c6  ld24 r1,#0x808DC6
+0x00047D94  a0 94 00 04  ldub r0,@(0x4,r4)
+0x00047D98  50 06 21 91  srli r0,#0x6 -> ldub r1,@r1
+0x00047D9C  51 06 00 c1  srli r1,#0x6 -> and r0,r1
+0x00047DA0  e9 80 8e bc  ld24 r9,#0x808EBC
+0x00047DA4  b0 80 00 09  beqz r0,0x00047DC8
+0x00047DA8  fe ff fd 27  bl.l 0x00047244
+0x00047DAC  20 09 f0 00  stb r0,@r9 || nop
+0x00047DB0  b0 80 00 08  beqz r0,0x00047DD0
+0x00047DB4  60 7e 21 99  ldi8 r0,#126 -> ldub r1,@r9
+0x00047DB8  b1 10 00 06  bne r1,r0,0x00047DD0
+0x00047DBC  60 01 f0 00  ldi8 r0,#1 || nop
+0x00047DC0  b8 10 00 04  bne r8,r0,0x00047DD0
+0x00047DC4  60 31 7f 02  ldi8 r0,#49 -> bra.s 0x00047DCC
+0x00047DC8  60 22 f0 00  ldi8 r0,#34 || nop
+0x00047DCC  20 09 f0 00  stb r0,@r9 || nop
+0x00047DD0  2e ef 29 ef  ld lr,@sp+ -> ld r9,@sp+
+0x00047DD4  28 ef 1f ce  ld r8,@sp+ -> jmp lr
+0x00047DD8  80 54 00 04  cmpui r4,#4
+0x00047DDC  60 16 7d 09  ldi8 r0,#22 -> bnc.s 0x00047E00
+0x00047DE0  e0 0e 4c ed  ld24 r0,#0xE4CED
+0x00047DE4  04 a0 20 94  add r4,r0 -> ldub r0,@r4
+0x00047DE8  80 50 00 16  cmpui r0,#22
+0x00047DEC  7d 05 64 03  bnc.s 0x00047E00 -> ldi8 r4,#3
+0x00047DF0  15 64 f0 00  mul r5,r4 || nop
+0x00047DF4  e4 0e 4c f1  ld24 r4,#0xE4CF1
+0x00047DF8  05 a4 05 a0  add r5,r4 -> add r5,r0
+0x00047DFC  20 95 f0 00  ldub r0,@r5 || nop
+0x00047E00  1f ce f0 00  jmp lr || nop
+0x00047E04  28 7f 18 84  st r8,@-sp -> mv r8,r4
+0x00047E08  29 7f 2a 7f  st r9,@-sp -> st r10,@-sp
+0x00047E0C  2b 7f 2e 7f  st r11,@-sp -> st lr,@-sp
+0x00047E10  ea 0e 4a d0  ld24 r10,#0xE4AD0
+0x00047E14  eb 80 8e bc  ld24 r11,#0x808EBC
+0x00047E18  a0 b8 00 04  lduh r0,@(0x4,r8)
+0x00047E1C  80 50 00 03  cmpui r0,#3
+0x00047E20  7c 2f 20 c8  bc.s 0x00047EDC -> ld r0,@r8
+0x00047E24  a4 90 00 01  ldub r4,@(0x1,r0)
+0x00047E28  54 48 f0 00  slli r4,#0x8 || nop
+0x00047E2C  a0 90 00 02  ldub r0,@(0x2,r0)
+0x00047E30  04 e0 54 50  or r4,r0 -> slli r4,#0x10
+0x00047E34  54 10 7e 30  srli r4,#0x10 -> bl.s 0x00047EF4
+0x00047E38  80 50 00 12  cmpui r0,#18
+0x00047E3C  19 80 7d 27  mv r9,r0 -> bnc.s 0x00047ED8
+0x00047E40  65 01 f0 00  ldi8 r5,#1 || nop
+0x00047E44  94 c9 00 03  sll3 r4,r9,#3
+0x00047E48  e0 0e 4a 40  ld24 r0,#0xE4A40
+0x00047E4C  04 a0 7e cf  add r4,r0 -> bl.s 0x00047D88
+0x00047E50  20 9b f0 00  ldub r0,@r11 || nop
+0x00047E54  b0 90 00 24  bnez r0,0x00047EE4
+0x00047E58  15 89 24 c8  mv r5,r9 -> ld r4,@r8
+0x00047E5C  24 94 7e df  ldub r4,@r4 -> bl.s 0x00047DD8
+0x00047E60  80 50 00 16  cmpui r0,#22
+0x00047E64  19 80 7d 1c  mv r9,r0 -> bnc.s 0x00047ED4
+0x00047E68  94 c9 00 04  sll3 r4,r9,#4
+0x00047E6C  11 84 01 aa  mv r1,r4 -> add r1,r10
+0x00047E70  21 b1 f0 00  lduh r1,@r1 || nop
+0x00047E74  b0 81 00 04  beqz r1,0x00047E84
+0x00047E78  51 50 51 10  slli r1,#0x10 -> srli r1,#0x10
+0x00047E7C  a0 b8 00 04  lduh r0,@(0x4,r8)
+0x00047E80  b0 11 00 17  bne r0,r1,0x00047EDC
+0x00047E84  04 aa 65 00  add r4,r10 -> ldi8 r5,#0
+0x00047E88  44 04 7e c0  addi r4,#4 -> bl.s 0x00047D88
+0x00047E8C  20 9b f0 00  ldub r0,@r11 || nop
+0x00047E90  b0 90 00 15  bnez r0,0x00047EE4
+0x00047E94  20 c8 40 03  ld r0,@r8 -> addi r0,#3
+0x00047E98  20 48 f0 00  st r0,@r8 || nop
+0x00047E9C  80 a8 00 08  add3 r0,r8,#0x8
+0x00047EA0  21 c0 41 03  ld r1,@r0 -> addi r1,#3
+0x00047EA4  21 40 f0 00  st r1,@r0 || nop
+0x00047EA8  81 a8 00 04  add3 r1,r8,#0x4
+0x00047EAC  20 b1 40 fd  lduh r0,@r1 -> addi r0,#-3
+0x00047EB0  20 21 f0 00  sth r0,@r1 || nop
+0x00047EB4  e0 80 8d a4  ld24 r0,#0x808DA4
+0x00047EB8  59 44 21 90  slli r9,#0x4 -> ldub r1,@r0
+0x00047EBC  51 5b 51 1b  slli r1,#0x1B -> srli r1,#0x1B

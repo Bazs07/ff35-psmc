@@ -1,0 +1,868 @@
+FILE analysis\extracted\F1FT-14F397-AG.block00.0x00010000.bin
+0x00000004	utf16le	pppppp
+0x00000005	utf16be	ppppp
+0x00000014	utf16le	pppppp
+0x00000015	utf16be	ppppp
+0x00000024	utf16le	pppppp
+0x00000025	utf16be	ppppp
+0x00000034	utf16le	pppppp
+0x00000035	utf16be	ppppp
+0x00000200	ascii	BootNfo
+0x0000020F	ascii	UA.D.C._CRCst
+0x00000228	ascii	CSF2F0
+0x00000230	ascii	APP_release
+0x0000024A	ascii	#@M32192
+0x0000025B	ascii	F1FT14F397AG
+0x000005E0	ascii	?333=L
+0x000005EC	ascii	@fff?
+0x000006FE	ascii	\)?333=
+0x00000758	ascii	?fff?Y
+0x00000760	ascii	?O\)?8Q
+0x000007AC	ascii	?&ff?&ff
+0x000007F4	ascii	?333?333?Y
+0x00000878	ascii	?fff?
+0x000008B0	ascii	@333Ap
+0x00000C89	utf16le	,dd(P
+0x00001148	ascii	C=T{C5&fC:
+0x00002766	ascii	jUdOf
+0x00002F62	ascii	DVTPT
+0x000041FB	ascii	/R_PYR
+0x00004313	ascii	!a2`1#
+0x00004882	ascii	@8 J 
+0x00007322	ascii	iP"Ab
+0x000074B2	ascii	o$"Aa
+0x000075A6	ascii	o4#E$B
+0x000075B7	ascii	$"@!E
+0x0000761A	ascii	o<"@b
+0x00007880	ascii	%C%@f
+0x00007A95	ascii	)SPS0
+0x00007B03	ascii	)SPS0e
+0x00008295	ascii	 QPQ0
+0x00008738	ascii	[Q[0+-
+0x00008774	ascii	WQW0&-
+0x000087EA	ascii	S0#$%
+0x00008C58	ascii	RPR0"/B 
+0x00008F5B	ascii	<!@"`#`-
+0x000091EF	ascii	l!@"`#`-
+0x00009307	ascii	\!@"`#`-
+0x000094DF	ascii	l!@"`#`-
+0x000096C7	ascii	p!@"`#`-
+0x00009C41	ascii	 RPSPR0S0*
+0x0000A09A	ascii	y )@`
+0x0000A30A	ascii	KPO0`
+0x0000A74E	ascii	pP A-
+0x0000AAB2	ascii	pD I!
+0x0000AEE3	ascii	#QP\PQ0\0
+0x0000B203	ascii	+QP\PQ0\0
+0x0000BF20	ascii	]!]X]
+0x0000D40E	ascii	 A H`
+0x0000DF79	ascii	 RPQPR0
+0x0000DFFC	ascii	QPTPQ0T0
+0x0000E16E	ascii	PPP0 /@ 
+0x0000E3EA	ascii	y4 AP_P
+0x0000E3F6	ascii	y@ !`
+0x0000E563	ascii	&UPZPU0Z0
+0x0000E705	ascii	0TPT0
+0x0000E719	ascii	1TPT0
+0x0000EAAE	ascii	PPP0^0
+0x0000EE43	ascii	,^P^0
+0x0000EE6D	ascii	!W0UPU0
+0x0000EE99	ascii	!T0SPS0
+0x0000EEB7	ascii	#\P\0
+0x0000F3F4	ascii	P!PXP
+0x00012220	ascii	 H I`
+0x0001261C	ascii	 H I`
+0x00012814	ascii	)HYXY
+0x00012A00	ascii	$HTXT
+0x00013410	ascii	 HPXP
+0x0001347A	ascii	)@YXY
+0x000134C2	ascii	-@]X]
+0x000134DE	ascii	+@[X[
+0x00013524	ascii	P(RXR
+0x000151CF	ascii	<QX!@
+0x000152EC	ascii	TX$AdO
+0x0001535F	ascii	HQX!B
+0x00015F3A	ascii	XXX8 
+0x00016644	ascii	XBTZ"
+0x0001667D	ascii	"YXTPY
+0x000167D0	ascii	YBSZ"
+0x0001869A	ascii	YPY0}
+0x000186AE	ascii	YPY0*
+0x000186E0	ascii	QPQ0'
+0x00018769	ascii	#R0YXY
+0x000187E5	ascii	)XXRXX
+0x0001883C	ascii	YPY0RXR
+0x00018892	ascii	WXPXW
+0x000188DD	ascii	@QXRXQ
+0x00018944	ascii	SPS0 
+0x00018EE6	ascii	~tRB#
+0x0001929A	ascii	ZPZ0 
+0x000192C6	ascii	ZPZ0 
+0x00019305	ascii	@UPU0
+0x00019459	ascii	DZPZ0
+0x000195C1	ascii	DYPY0
+0x00019789	ascii	DSPS0
+0x0001A3FC	ascii	PXQXP
+0x0001A42A	ascii	RPR0}
+0x0001A440	ascii	RPR0!
+0x0001A470	ascii	RPR0!
+0x0001A501	ascii	"^XZXQX^
+0x0001A62A	ascii	~tRB!
+0x0001BBBA	ascii	~| (.
+0x0001E6EB	ascii	1QPQ0
+0x0001E977	ascii	LRPR0
+0x0001F43E	ascii	A\*+!
+0x0001FC42	ascii	osf`j
+0x00020078	ascii	ZX\XZ
+0x000201A4	ascii	ZX\XZ
+0x00020614	ascii	PXQ(P
+0x00020630	ascii	Q(PXP
+0x00020816	ascii	Al!@`
+0x000220CC	ascii	XPYPX
+0x00024302	ascii	ytPPP
+0x00024732	ascii	xhPPP
+0x00024762	ascii	x\PPP
+0x00024792	ascii	xPPPP
+0x000247C2	ascii	xDPPP
+0x00025328	ascii	` QX 
+0x00025344	ascii	VBVPV
+0x0002537A	ascii	WXQXW
+0x00025392	ascii	WXQXW
+0x00025A44	ascii	PHPPP
+0x00025D1C	ascii	RHRPR
+0x00027B4A	ascii	[DPPP
+0x0002829C	ascii	\\P\\
+0x00028A0C	ascii	S0RIR
+0x00028A4E	ascii	PPQDP
+0x00028A66	ascii	PXTHP
+0x00028A9E	ascii	09UX!D
+0x00028AEA	ascii	09UX!D
+0x00028F4C	ascii	THTPT
+0x00029F6E	ascii	C@#D"
+0x00029FCE	ascii	B@"F#
+0x0002AA7B	utf16be	`defg
+0x0002AA7C	utf16le	`defg
+0x0002AE9F	ascii	h A`$
+0x0002AECB	ascii	\ A`(
+0x0002C43E	ascii	Y%PXP
+0x0002DBD6	ascii	S?PXP
+0x000302AC	ascii	SBXBC
+0x00030420	ascii	QB\BA
+0x000328AA	ascii	Gr)&)
+0x00032E3E	ascii	H^ #c
+0x000330F6	ascii	H`$!a
+0x0003321A	ascii	G$ C`
+0x0003390E	ascii	IF-)i
+0x000341C3	ascii	'DHPB
+0x00035187	ascii	4PPP0
+0x00035BBB	ascii	<S^PZS
+0x00035BE5	ascii	 RPR0
+0x00037124	ascii	RZS^R
+0x00037669	ascii	!RPR0
+0x00037699	ascii	2RPR0
+0x000376E5	ascii	!RPR0
+0x00037719	ascii	 UPU0
+0x0003895D	ascii	5UXU8
+0x0003997D	ascii	!SPTPS0T0
+0x0003A0B8	ascii	QDTEPXP
+0x0003A307	ascii	}R\Q\
+0x0003A647	ascii	`P%P^P
+0x0003A698	ascii	RYSYR
+0x0003A875	ascii	!SPTPS0T0
+0x0003B53E	ascii	edbdad
+0x0003B582	ascii	`dPXP
+0x0003B759	ascii	 SXQXS
+0x0003BC02	ascii	J4WA 
+0x0003BDFE	ascii	J4RA 
+0x0003D72B	ascii	=]P` ]
+0x0003D732	ascii	-)][]
+0x0003D79B	ascii	 `  +
+0x0003D7C8	ascii	@  ) 
+0x0003D887	ascii	@[P` [
+0x0003D88E	ascii	+)[[[
+0x0003D903	ascii	 `  *
+0x0003E520	ascii	``dce
+0x0003EC24	ascii	\XXX\
+0x0003EC6C	ascii	QXRXQ
+0x0003EE6C	ascii	QXPXQ
+0x0003EF0C	ascii	]XXX]
+0x0003F7A0	ascii	XXZXX
+0x00040450	ascii	 I H.
+0x00040ADC	ascii	TXSXT
+0x00040D70	ascii	TXSXT
+0x00041F2A	ascii	1-PI$
+0x00041F36	ascii	1-PI A
+0x00041F4C	ascii	PK A`
+0x00042072	ascii	1-PI A
+0x00042088	ascii	PK A`
+0x00042CC0	ascii	SPRPZPS0R0Z0
+0x00042EAF	ascii	(PPP0
+0x0004417B	ascii	DWPW6
+0x000445EF	ascii	X`Pa(
+0x00045A5E	ascii	+x M-
+0x000470F6	ascii	UPVPQPZPU
+0x00047356	ascii	PPTPRPP
+0x000489D4	ascii	WPXPT0V0W0X0
+0x000493B2	ascii	RPSPT
+0x0004943C	ascii	SPZPR0S0
+0x0004AE1C	ascii	R^TYR
+0x0004B34A	ascii	UPPPU0
+0x0004B3DE	ascii	V0WPW0
+0x0004B40A	ascii	TPUPVPWPT
+0x0004B4A4	ascii	Q[TY#
+0x0004B4B0	ascii	SFQDTE
+0x0004BCD2	ascii	PPSPP0
+0x0004BF0A	ascii	PGTHZI
+0x0004BF2C	ascii	UJTKPL
+0x0004CAB4	ascii	V0W0"(,
+0x0004CACE	ascii	TPUPVPWPT
+0x0004CBD4	ascii	UZS[T
+0x0004CBDE	ascii	TQURSS
+0x0004CF90	ascii	UPPBU
+0x0004CFE6	ascii	UPVBPB
+0x0004D21E	ascii	UPPPU0P0
+0x0004D250	ascii	TPSPT0S0
+0x0004D512	ascii	TP]PT0]0
+0x0004D760	ascii	]PXP]0X0
+0x0004D7F8	ascii	]PZP]0Z0
+0x0004D964	ascii	]PRP]0R0
+0x0004DD98	ascii	|Z[X[8K
+0x0004DDA8	ascii	YX[XY8[
+0x0004DDC4	ascii	^X^8N
+0x0004DDDC	ascii	PXP8@
+0x0004FE24	utf16le	hijkl
+0x000503E4	ascii	QPQ0! `o
+0x00051E2A	ascii	N\l  
+0x00051EB3	ascii	f[X\X[
+0x00052114	ascii	VYWZT
+0x00052124	ascii	R8UXVXWX
+0x00052130	ascii	U8TXV8W8E
+0x0005213A	ascii	T8UXU8
+0x000521D8	ascii	PVVVQXP
+0x000521E2	ascii	Q8PXVX
+0x000521F4	ascii	TXUXT8U8
+0x000522A8	ascii	Q8S8VXW8
+0x00054320	ascii	TPT0$ 
+0x0005433C	ascii	TPT0$ 
+0x000551C6	ascii	R0S0|
+0x0005574E	ascii	RPXPR0X0|
+0x0005631C	ascii	!@"`O
+0x000565E0	ascii	!@"`.
+0x00056DF8	ascii	!@"`(
+0x00057AAF	ascii	+RPTPR0
+0x0005946A	ascii	$%$@$F
+0x000598FE	ascii	"I"J"@
+0x00059D93	ascii	DTPT6
+0x00059E6B	ascii	DTPT6
+0x0005A011	ascii	 RPR0
+0x0005A067	ascii	DSPS6
+0x0005AAB4	utf16le	bcghi
+0x0005AD3F	ascii	(!@"`#`$`.
+0x0005B86A	ascii	Nl H)
+0x0005BC06	ascii	ZP]PZ
+0x0005BCE6	ascii	Nt !.
+0x0005BFE3	ascii	=O@ J
+0x0005C053	ascii	!O@ J
+0x0005C5B2	ascii	N\ A.
+0x0005DB1C	utf16le	hijklm
+0x0005DB1D	utf16be	ijklm
+0x0005DBAF	ascii	|(A-@
+0x0005E09C	ascii	"C A-
+0x0005E2FE	ascii	N`T6!
+0x0005E3EB	ascii	DQPQ6
+0x0005E6DB	ascii	0"E D
+0x0005EFD6	ascii	.'^V^6
+0x0005F468	ascii	XP]PX0]0
+0x0005F807	ascii	DTPT6
+0x0005FFDB	ascii	DVPV6
+0x0005FFF3	ascii	DBDTPT6&
+0x000603BC	ascii	^P^6"
+0x000603F8	ascii	PVP6PVP
+0x00060764	ascii	PPXPP0X0
+0x000607AC	ascii	[PUP[0U0
+0x00060A4C	ascii	PPXPP0X0
+0x00060AF5	ascii	3SPS0
+0x00060FF4	ascii	PP[PP0[0
+0x00061021	ascii	!YP[PY0[0
+0x00061199	ascii	 [PYP[0Y0
+0x00061A8A	ascii	XXX8XC
+0x00061B0C	ascii	!B IL
+0x00061FA0	ascii	)H*B~
+0x00062A35	ascii	aadPPP
+0x00062BC6	ascii	NP!@~
+0x00063857	ascii	N#!#$
+0x00063863	ascii	J#!#"
+0x00063FF3	ascii	-TBPB
+0x0006402C	ascii	SPS0"
+0x000652BF	ascii	"]PYPZP]
+0x000653EE	ascii	u9PPP
+0x000656C6	ascii	PZQ6P
+0x00065D36	ascii	V0TPUPT
+0x00066104	ascii	UPVPU0V0
+0x00066249	ascii	#]PPP]0P0
+0x000663EC	ascii	TP[0Q0R0T0%
+0x000668BF	ascii	!SPPPS0P0
+0x00066A9E	ascii	QPQ0%M
+0x00066B7D	ascii	-^P^0R0
+0x00066E0B	ascii	.VB]B
+0x00066E35	ascii	&UPU0
+0x0006710F	ascii	8WB[B
+0x00067209	ascii	%]P]0
+0x00067551	ascii	iQXQ8
+0x000675E3	ascii	aSXS8
+0x000677A1	ascii	aSXS8
+0x000677D6	ascii	P0Q0S0
+0x00067807	ascii	0QPQ0
+0x000679D3	ascii	1TPT0
+0x00067A5B	ascii	ZUQU0
+0x00067A6B	ascii	VYQY0
+0x00067C41	ascii	1QPQ0
+0x00067C93	ascii	#XPX0
+0x00067CB5	ascii	#TPT0
+0x00067EDE	ascii	RPWPUPR0U0
+0x000682EA	ascii	izPPP
+0x000689C7	ascii	JS0"A
+0x00068A66	ascii	SPS0 !
+0x00069187	ascii	,[X[8
+0x000691A1	ascii	-QXQ8
+0x000691EE	ascii	UPU0!
+0x0006A633	ascii	DTPT6
+0x0006A67B	ascii	D[P[6
+0x0006A9D6	ascii	BX(!!
+0x0006AF3B	ascii	4!@a8
+0x0006B7EE	ascii	R#RXR
+0x0006B92F	ascii	$!B!E
+0x0006B98F	ascii	$ B A
+0x0006BDAF	ascii	$ F%B`
+0x0006C813	ascii	< ! "
+0x0006D471	ascii	A|!`$!
+0x0006D73E	ascii	$@`$#
+0x0006D7D2	ascii	   A`$
+0x0006DF56	ascii	  !@ 
+0x0006E01A	ascii	 4! !
+0x0006E036	ascii	 : !`$
+0x0006E10A	ascii	 0 !`
+0x0006E17A	ascii	  #A!
+0x0006E362	ascii	  !@ 
+0x0006E45A	ascii	 4"!!
+0x0006E654	ascii	TX`$T
+0x0006E8E0	ascii	PDPPP
+0x0006E95B	ascii	"PDPPP
+0x0006EA18	ascii	SDSPS
+0x0006EAA6	ascii	SDSPS
+0x0006F322	ascii	MlPXP
+0x0006F7AE	ascii	LIPPP
+0x0006F7D6	ascii	L?PPP
+0x0006F7EA	ascii	L:PPP
+0x0006F81E	ascii	L-PPP
+0x0006F842	ascii	L$PPP
+0x0006F852	ascii	L PPP
+0x0006F90B	ascii	'QPQ0
+0x0007004E	ascii	C"d8e
+0x00070056	ascii	C d9e
+0x000702F8	ascii	QPPPQ
+0x000704FC	ascii	RPYPR
+0x00070564	ascii	RPYPR
+0x00070EFA	ascii	 U I`
+0x000714FB	ascii	z%(eh
+0x00071F8E	ascii	cJ! `
+0x00072856	ascii	Q$RY!
+0x0007306E	ascii	Q,& `
+0x000730BE	ascii	=kd6e
+0x000731D0	ascii	PPP0.
+0x00075B42	ascii	+)PPP
+0x00075E46	ascii	"J'I#
+0x00075E5C	ascii	"I'J#
+0x000763C4	ascii	!D CI
+0x000767A0	ascii	!E DH
+0x00077594	ascii	[PUH[
+0x00077680	ascii	PPTPP
+0x00077692	ascii	PHPPP
+0x00077770	ascii	[PYP[
+0x000778D4	ascii	QPPPb
+0x000783BA	ascii	C2SXS
+0x00078480	ascii	 ! &f
+0x00078664	ascii	XPUPX
+0x0007AF9C	ascii	]PYP]
+0x0007B040	ascii	`  H`
+0x0007BC02	ascii	c^ * 
+0x0007BD32	ascii	cZ`C 
+0x0007BD7E	ascii	cJ! `
+0x0007BDEE	ascii	cZ`; 
+0x0007C576	ascii	cH$ d
+0x0007C626	ascii	cH !~
+0x0007C646	ascii	cZ`< 
+0x0007C852	ascii	cJ! `
+0x0007CA16	ascii	cJ! `
+0x0007CA82	ascii	cZ`' 
+0x0007CBA2	ascii	-(,I *
+0x0007CBD2	ascii	-(,I *
+0x0007CBFE	ascii	-(,I *
+0x0007CC4A	ascii	cZ`+ 
+0x0007CDBE	ascii	cJ! `
+0x0007D09A	ascii	c`+"!
+0x0007D312	ascii	cJ! `
+0x0007D536	ascii	cJ! `
+0x0007D6CA	ascii	cJ! `
+0x0007D85E	ascii	cJ! `
+0x0007DB0A	ascii	cJ! `
+0x0007DC9E	ascii	cJ! `
+0x0007DE1A	ascii	cZ`? 
+0x0007DE22	ascii	xt`> 
+0x0007DE36	ascii	cZ`A 
+0x0007E548	ascii	XAXPX
+0x0007E808	ascii	PPSXP
+0x0007E9DC	ascii	QPWXQ
+0x0007EAC8	ascii	ZP]XZ
+0x0007EAEE	ascii	YARXYPR
+0x0007FA2E	ascii	!@"E!
+0x0007FA8E	ascii	!@"E!
+0x00080140	ascii	RBSBVB
+0x0008061E	ascii	UT B`
+0x00080768	ascii	PB A`
+0x0008131A	ascii	 B`!PW
+0x000813B6	ascii	#EQIPL
+0x0008189A	ascii	$A O"
+0x000818C2	ascii	$A O"
+0x00081B98	ascii	]HPAH
+0x000821C8	ascii	QL!@`
+0x0008378A	ascii	Bp!Da
+0x00084F67	ascii	[`hI4
+0x000852B8	ascii	,H,I J
+0x000875BA	ascii	QXXXQ
+0x00087DB4	ascii	ZPZ0!
+0x00087DE4	ascii	SPS0"
+0x00087E0E	ascii	DdTPT0
+0x0008943A	ascii	RPR0!
+0x0008A303	ascii	APL I
+0x0008A50A	ascii	HX$H'
+0x0008A97A	ascii	F@&D 
+0x0008A9C6	ascii	C@#E'
+0x0008B012	ascii	YPY0 B
+0x0008BA63	ascii	$bh@4
+0x0008BACF	ascii	$ah@4
+0x0008BB3F	ascii	$`hB4
+0x0008BC2B	ascii	$ah@4
+0x0008BC4B	ascii	$`hB4
+0x0008BCF7	ascii	$`hB4
+0x0008C15F	ascii	$bh@4
+0x0008C1CB	ascii	$ahB4
+0x0008C23B	ascii	$bhA4
+0x0008C323	ascii	$`hA4
+0x0008C343	ascii	$`hB4
+0x0008C3EF	ascii	$ahB4
+0x0008C497	ascii	 bh@4
+0x0008C4B7	ascii	 bh@4
+0x0008C667	ascii	 bh@4
+0x0008C687	ascii	 bh@4
+0x0008CBC7	ascii	$bh@4
+0x0008CBEF	ascii	$bhA4
+0x0008CC4B	ascii	$`hA4
+0x0008CC73	ascii	$ahB4
+0x0008CD43	ascii	$bhA4
+0x0008CD6B	ascii	$`hA4
+0x0008CDE3	ascii	$ahB4
+0x0008CE0B	ascii	$bhA4
+0x0008CF17	ascii	$bh@4
+0x0008CF3B	ascii	$bh@4
+0x0008CFCB	ascii	$bh@4
+0x0008D63F	ascii	$bh@4
+0x0008D65F	ascii	$bh@4
+0x0008D6C3	ascii	$bhA4
+0x0008D6E3	ascii	$ch@4
+0x0008D757	ascii	$bhC4
+0x0008D7DB	ascii	$bhA4
+0x0008D883	ascii	$`hB4
+0x00090D02	ascii	WXW8'
+0x00091937	ascii	eehgh
+0x000926B9	ascii	%PPP0
+0x00092A70	ascii	XPX0TX
+0x00092B0A	ascii	RPVPR0V0
+0x00092B48	ascii	TPT0VB
+0x00092BC0	ascii	\P\0%
+0x000930FE	ascii	I@"E#@$
+0x00093134	ascii	#I!@.
+0x00093A56	ascii	Z<*@*!
+0x00093A62	ascii	ZD*@*A
+0x00093A7F	ascii	(*A*H
+0x00093ABA	ascii	ZHf(*@
+0x00093C22	ascii	9@Od.
+0x00093C5E	ascii	91Od.
+0x00094F32	ascii	RPR0 
+0x000957BA	ascii	Z8#@$
+0x000960AC	ascii	)C.B&A$
+0x000961E0	ascii	#A#E#D#
+0x000961FA	ascii	Z,!C!@
+0x0009621B	ascii	X"A$H
+0x00096386	ascii	RXR8B
+0x0009651A	ascii	 AZXZ
+0x00096722	ascii	 + L M-
+0x000977D4	ascii	 A|Df
+0x00097F7C	ascii	!@"`#`
+0x00098306	utf16le	chijk
+0x00098A84	ascii	RAQDB
+0x00099C18	ascii	Y[` Y
+0x0009CA43	ascii	x!D E
+0x0009CAAF	ascii	0!D E
+0x0009CAC3	ascii	4!D E
+0x0009D203	ascii	0'E'A
+0x0009E482	ascii	 D E F
+0x0009FDF7	ascii	\!D E
+0x000A0E5F	ascii	L I A.
+0x000A1E72	ascii	\w J)
+0x000A6EAE	ascii	 D+J$
+0x000A6EDE	ascii	 D+J$
+0x000A9CCB	ascii	H,F-H
+0x000AA67F	ascii	@TX!E
+0x000AA70F	ascii	@TX%F
+0x000AA79B	ascii	@TX&H
+0x000AA82B	ascii	@TX(I
+0x000AAC72	ascii	_` Aa
+0x000AADFF	ascii	l#A#@
+0x000AB33E	ascii	edbdad
+0x000AB382	ascii	`dPXP
+0x000AB7E3	ascii	tf$ED
+0x000AEB5A	ascii	SBXBYB
+0x000B15CA	ascii	H@RBSB
+0x000B5526	ascii	SBQBUB
+0x000B59CF	ascii	@UAXB
+0x000B5C0B	ascii	<VAAH
+0x000B836C	ascii	SBUBXB
+0x000BA01A	ascii	VBXB\B
+0x000BA0C6	ascii	PB^B\B
+0x000BA972	ascii	VB]BRB
+0x000BB12B	ascii	LTBVB
+0x000BB5B0	ascii	TBSBQB
+0x000BBAF3	ascii	4$@!J
+0x000BBE5E	ascii	QBWBSB
+0x000BBF0B	ascii	LQA^B
+0x000BC1F7	ascii	HPBJ8
+0x000BC227	ascii	DD0Ep
+0x000BC316	ascii	Bp]BVB
+0x000BC3DB	ascii	DPBA0
+0x000BC69E	ascii	UBRBVB
+0x000BC903	ascii	DQBBP
+0x000BE817	ascii	0 A`l
+0x000BE91B	ascii	@"@R^
+0x000C1636	ascii	QHQ(R
+0x000C2222	ascii	OP0BT
+0x000C2230	ascii	0R0b0rT
+0x000C22A8	ascii	UqTp&
+0x000C2658	ascii	!r$r%r&r'r(r)r*r+r,r-r
+0x000C2A06	ascii	a(`e A
+0x000C2A92	ascii	a(`e A
+0x000C2BFA	ascii	a(`e A
+0x000C2E2E	ascii	a(`e A
+0x000C2E5A	ascii	a(`f A
+0x000C2E96	ascii	a(`f A
+0x000C2EDE	ascii	a(`e A
+0x000C2F0A	ascii	a(`f A
+0x000C2F46	ascii	a(`f A
+0x000C30AA	ascii	a(`e A
+0x000C30C6	ascii	a(`f A
+0x000C311E	ascii	a(`f A
+0x000C314A	ascii	a(`f A
+0x000C3182	ascii	a(`e A
+0x000C31D2	ascii	a(`e A
+0x000C3392	ascii	a(`f A
+0x000C33CE	ascii	a(`e A
+0x000C33DE	ascii	a(`f A
+0x000C3472	ascii	P7PXP
+0x000C35C6	ascii	a(`e A
+0x000C3636	ascii	a(`f A
+0x000C368A	ascii	a(`e A
+0x000C387E	ascii	a(`e A
+0x000C388E	ascii	a(`f A
+0x000C38CE	ascii	a(`e A
+0x000C38EA	ascii	a(`f A
+0x000C3E66	ascii	a(`f A
+0x000C3EA2	ascii	a(`e A
+0x000C3EB2	ascii	a(`f A
+0x000C3F1A	ascii	a(`e A
+0x000C3FDA	ascii	a(`e A
+0x000C407E	ascii	a(`e A
+0x000C40CA	ascii	a(`f A
+0x000C41B6	ascii	a(`e A
+0x000C41CA	ascii	P7PXP
+0x000C4230	ascii	 D!d"d#dD
+0x000C423A	ascii	%d&d'd(d)d*d+d,d-d.d/d`
+0x000C43F8	ascii	BBBBBBBBBBSsL1l2BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB_SsB_SsSsSsSsSsSsSsSsSsSsSsB_SsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBBSsBBBBBBBBBB
+0x000C4748	ascii	Boot../src/boot/bootinfo.c
+0x000C4763	ascii	../src/boot/bootinfo.c
+0x000C477A	ascii	../src/boot/bootinfo.c
+0x000C4791	ascii	../src/boot/bootinfo.c
+0x000C47A8	ascii	../src/boot/bootinfo.c
+0x000C57B0	utf16be	)*+,%
+0x000C57B1	utf16le	)*+,%
+0x000C5886	utf16be	-./0*
+0x000C5887	utf16le	-./0*
+0x000C5930	utf16be	 !!"#$
+0x000C5931	utf16le	 !!"#
+0x000C596A	utf16be	/012'
+0x000C596B	utf16le	/012'
+0x000C59B2	utf16be	3456,
+0x000C59B3	utf16le	3456,
+0x000C59FA	utf16be	 (08@HPX`hpx
+0x000C59FB	utf16le	 (08@HPX`hpx
+0x000C5A42	utf16be	33333333
+0x000C5A43	utf16le	3333333
+0x000C5A8A	utf16be	33333333
+0x000C5A8B	utf16le	3333333
+0x000C5DC6	ascii	27)7*(
+0x000C9EBE	ascii	CSF265
+0x000C9F65	ascii	DS-F1FT-19H406-AE
+0x000CA808	ascii	 N O P
+0x000CA89A	ascii	conti
+0x000CAA0C	ascii	../src/fim/fimprocessing.c
+0x000CAA27	ascii	../src/fim/fimprocessing.c
+0x000CAA42	ascii	../src/fim/fimprocessing.c
+0x000CAA5D	ascii	../src/fim/fimprocessing.c
+0x000CAA7B	ascii	../src/fim/fimprocessing.c
+0x000CAAAD	ascii	../src/fim/fimprocessing.c
+0x000CAACB	ascii	../src/fim/fimprocessing.c
+0x000CB0F4	ascii	../src/hal/halevt/halevt.c
+0x000CB10F	ascii	../src/hal/halevt/halevt.c
+0x000CB148	ascii	?&ff?@
+0x000CB19F	ascii	R?s33?s33?
+0x000CB270	ascii	#"! =<TSonmlkjih
+0x000CB2D4	ascii	../src/hal/mcal/ocsci/ocsci.c
+0x000CB2F2	ascii	../src/hal/mcal/ocsci/ocsci.c
+0x000CB374	ascii	?}x`;
+0x000CE213	ascii	"!DR,
+0x000D0BB8	ascii	?333?
+0x000D0C04	ascii	?333?&ff?Q
+0x000D0C37	ascii	\?333?aG
+0x000D0C48	ascii	?fff?J=q?:
+0x000D0C58	ascii	?O\)?=p
+0x000D0C6B	ascii	\?s33?W
+0x000D0C80	ascii	?J=q?}p
+0x000D0C98	ascii	?O\)?
+0x000D0C9F	ascii	{?fff?Tz
+0x000D0CC4	ascii	?s33?^
+0x000D0CDF	ascii	H?fff?
+0x000D0D0F	ascii	R?s33@
+0x000D0D74	ascii	@333@
+0x000D0D8C	ascii	@?\)@
+0x000D0DD4	ascii	@c33@;
+0x000D0DEB	ascii	\@o\)@HQ
+0x000D0E54	ascii	@_\)@
+0x000D0E60	ascii	@fff@
+0x000D0E83	ascii	\@z=q@
+0x000D1128	ascii	AFffA 
+0x000D1137	ascii	=A.ffA%
+0x000D1148	ascii	A2ffAx(
+0x000D1154	ascii	A?33A
+0x000D1174	ascii	Ar=qAe
+0x000D1184	ascii	ArffA
+0x000D11E8	ascii	B3ffA
+0x000D12AA	ascii	=qBAz
+0x000D12DC	ascii	BiffC
+0x000D1338	ascii	CiT{C
+0x000D13C8	ascii	DqZ=D< 
+0x000D13E7	ascii	)DK/\D
+0x000D1683	ascii	(!O] )"P^ )"R_!*"S`!*"Ta"+#Ub"+#Vc$-%We%.&Xf'0(Yg(2)Zh*3+[j+5-\l-7.]m/80_o0:1`q2<3as3=5bt5?6cv6@8dx8B:ez9D;f{;E=h}=G>i
+0x000D1A38	ascii	?US&?333?
+0x000D22A8	ascii	AzffAu
+0x000D22CE	ascii	z7[da
+0x000D373A	ascii	ADCGmbH
+0x000D3742	ascii	cccccc
+0x000D37D8	ascii	BM5T-19H406-AA
+0x000D37E7	ascii	BM5T-14F403-AA
+0x000D3850	ascii	sBM5T-14F397-BA
+0x000D399C	ascii	ADCGmbHInitNeuDefaultRestoreConvert
+0x000D39C0	ascii	Failed to initialize BUF-objects
+0x000D3AB6	utf16be	"#$%&'()*+
+0x000D3AB7	utf16le	"#$%&'()*
+0x000D3AC9	ascii	+}|}|
+0x000D3AE0	ascii	a@c ` a ` ` D
+0x000D3AEE	ascii	`@`@a@a`d
+0x000D3AFE	ascii	a@`@`@
+0x000D3C0F	ascii	DspACTL
+0x000D3C17	ascii	RoiBuildRoiList
+0x000D3C27	ascii	RoiPipLow
+0x000D3C31	ascii	RoiPipMid
+0x000D3C3B	ascii	RoiPipHigh
+0x000D3C46	ascii	RoiDMAJob
+0x000D3C53	ascii	HostACTL
+0x000D3C65	ascii	HostACTL
+0x000D3C71	ascii	HostACTL
+0x000D3C7D	ascii	DspACTL
+0x000D3C85	ascii	RoiBuildRoiList
+0x000D3C95	ascii	RoiPipLow
+0x000D3C9F	ascii	RoiPipMid
+0x000D3CA9	ascii	RoiPipHigh
+0x000D3CB4	ascii	RoiDMAJob
+0x000D3CBE	ascii	Failed to open message queue
+0x000D3CDB	ascii	Failed to open message queue
+0x000D3E19	ascii	Startup Complete.
+0x000D3E2D	ascii	PLL 0 setup ( DSP @ ? MHz ) 
+0x000D3E4A	ascii	w/ Onchip Oscilator... 
+0x000D3E62	ascii	w/ External Clock... 
+0x000D3E78	ascii	[Done]
+0x000D3E80	ascii	PLL 1 setup ( VPSS @ ? MHz / DDR2 @ ? MHz ) 
+0x000D3EAD	ascii	w/ Onchip Oscilator... 
+0x000D3EC5	ascii	w/ External Clock... 
+0x000D3EDB	ascii	[Done]
+0x000D3EE3	ascii	DDR2  setup ( DDR2 @ ? MHz ) w/ ?-bit bus... 
+0x000D3F11	ascii	[Done]
+0x000D3F19	ascii	Power setup ( All domains on )... 
+0x000D3F3C	ascii	[Done]
+0x000D3F44	ascii	PinMux setup.. 
+0x000D3F54	ascii	[Done]
+0x000D7258	ascii	../src/sys/csf2xx/sysswinit.c
+0x000D72F1	ascii	&xHNM
+0x000D7381	ascii	@mKR+
+0x000D73C3	ascii	$Bu)'
+0x000D7595	ascii	GB/IT~
+0x000D78A1	ascii	mj>zjZ
+0x000D78D1	ascii	l6qnk
+0x000D7A10	ascii	IiGM>nw
+0x000D864C	ascii	Default
+0x000D86FC	ascii	Nnk(Dz
+0x000D872C	ascii	Nnk(It$
+0x000D979F	ascii	dPdPdPd2dZdZdZd
+0x000D97B7	ascii	ZZdZdddZddddddd
+0x000D989A	ascii	wP>VwP?
+0x000D9E94	ascii	../src/xcp/xcp.c
+0x000D9EA5	ascii	../src/xcp/xcp.c
+0x000D9EC0	ascii	HighRateEvent10ms
+0x000D9ED2	ascii	LowRateEvent50ms
+0x000DA4B0	ascii	Ak33?_f
+0x000DA514	ascii	?fff?
+0x000DA630	ascii	Avff?_f
+0x000DA694	ascii	?_;d?
+0x000DA97D	ascii	%nfD]
+0x000DA9D5	ascii	%nfD]
+0x000DAA7C	ascii	D`aHC
+0x000DAADD	ascii	%nfD]
+0x000DAAFC	ascii	@*^5D
+0x000DAE1C	ascii	@Fff@
+0x000DAED0	ascii	@&ff@
+0x000DAFB4	ascii	?fff:
+0x000DB05A	ascii	\)B^=qDH
+0x000DB064	ascii	Aj=q>
+0x000DB308	ascii	?333>L
+0x000DB544	ascii	?333?333@
+0x000DB59C	ascii	@&ff?fff@
+0x000DB608	ascii	?333?
+0x000DB64B	ascii	qAk33=
+0x000DB694	ascii	?s33D8
+0x000DB6A0	ascii	?s33C
+0x000DB6AC	ascii	?s33Cp
+0x000DB6B8	ascii	?s33C
+0x000DB6C4	ascii	?s33C
+0x000DB6D0	ascii	?s33D
+0x000DB6DC	ascii	?s33C
+0x000DB7CE	ascii	ff?s33?s33
+0x000DB93E	ascii	33?333Ap
+0x000DB94C	ascii	?333:
+0x000DB958	ascii	@fff?333Ap
+0x000DB964	ascii	@s33?333A
+0x000DB9C0	ascii	?333=
+0x000DBA90	ascii	?333@
+0x000DBAD0	ascii	?333@@
+0x000DBB10	ascii	?333A 
+0x000DBBD4	ascii	?fff?fff?
+0x000DBC50	ascii	?fff?fff
+0x000DBD54	ascii	?fff=
+0x000DBE38	ascii	?fff=
+0x000DBF00	ascii	?333?333A
+0x000DC014	ascii	?333>
+0x000DC020	ascii	?&ff?&ff?333>
+0x000DC03C	ascii	?333>
+0x000DC84B	ascii	Xd(Ln
+0x000DC859	ascii	-"d`F'&
+0x000DC933	ascii	wlngw
+0x000DC96F	ascii	wlngw
+0x000DC9AB	ascii	wlngw
+0x000DCC13	ascii	z`PA!r
+0x000DCCC9	ascii	(BdLn
+0x000DCD5B	ascii	d0CA!
+0x000DD0E8	ascii	,gLn,
+0x000DD13F	ascii	nsNFF
+0x000DD26F	ascii	dtGln
+0x000DDDB0	ascii	@O G0
+0x000DDE47	ascii	Xnh,n
+0x000DE629	ascii	*BdLn
+0x000DE890	ascii	,n,n 
+0x000DE8BD	ascii	5Lnln
+0x000DEA5E	ascii	ewlne
+0x000DED30	ascii	,g,n,g
+0x000DF711	ascii	E,n,n
+0x000DF735	ascii	&&',n
+0x000DF817	ascii	&8cln
+0x000DF969	ascii	G,n,n
+0x000DF9BE	ascii	,n"GDC
+0x000DFA5D	ascii	G,nln
+0x000DFDEB	ascii	YN6KW
+0x000E0231	ascii	Flg&B
+0x000E0311	ascii	Flg&B
+0x000E0456	ascii	! %&a
+0x000E07BC	ascii	LnsNb
+0x000E0808	ascii	LnsNb
+0x000E0858	ascii	LnsNb
+0x000E08C9	ascii	U'ALnS
+0x000E099B	ascii	W&QLnS
+0x000E0E3F	ascii	y }0#
+0x000E0F34	ascii	,gLn,g
+0x000E0FA6	ascii	4@\gcjgN
+0x000E1032	ascii	"dPLln
+0x000E10CE	ascii	"dPLln
+0x000E1112	ascii	5wFG%w
+0x000E111A	ascii	"dPLln
+0x000E118E	ascii	"dPLln
+0x000E1252	ascii	"dPLln
+0x000E1332	ascii	"dPLln
+0x000E149D	ascii	5lnln
+0x000E16B0	ascii	Ln0F`
+0x000E195E	ascii	)#IH) 
+0x000E1B8F	ascii	wlnuw
+0x000E1BF3	ascii	Y@FFN
+0x000E1C55	ascii	(6d,n`F
+0x000E1C9B	ascii	bewln
+0x000E1CF1	ascii	V&N@ 
+0x000E1F36	ascii	fwuwLn
+0x000E2465	ascii	mj>zjZ
+0x000E2495	ascii	l6qnk
+0x000E25D4	ascii	IiGM>nw
+0x000E2642	ascii	1A26b
+0x000E27F9	ascii	ewh/?y
+0x000E2929	ascii	1wsHp
+0x000E2B0C	ascii	#bML"
+0x000E2B50	ascii	vQO+t
+0x000E2C34	ascii	^oEZ_
+0x000E2EE6	ascii	OZw3(?
+0x000E3066	ascii	V_:X1:
+0x000E308A	ascii	NJ2"v
+0x000E30B0	ascii	O*9y]
+0x000E337D	ascii	Qkkbal
+0x000E35D9	ascii	wn>Jj
+0x000E3B09	ascii	[-&LMb#{'
+0x000E3B4F	ascii	w+OQvr
+0x000E3B95	ascii	R1h58
+0x000E3C32	ascii	)\ZEo^m/
+0x000E3F03	ascii	H*0"ZOW
+0x000E4AE4	ascii	rroc tceatadehc i
+0x000E4AF6	ascii	kcrocntcernel  htgcehcni
+0x000E4B0F	ascii	kilavoc dl edtgnes sht
+0x000E4B26	ascii	tem oo ynagnelo htid rnatss ecobmyi
+0x000E4B4A	ascii	sllavns dierotlb d kcognel
+0x000E4B65	ascii	shtavni dilcolbyt kh
+0x000E4B7A	ascii	epedaerc rim ctamsu
+0x000E4B8E	ascii	hconknh nwedaelf r sga
+0x000E4BA5	ascii	tesavni dildniws wo
+0x000E4BB9	ascii	ezinknu nwopmocsser noihtemi
+0x000E4BD6	ascii	dorocntceraeh  redcehcni
+0x000E4BEF	ascii	kilavib del thtgnper 
+0x000E4C05	ascii	taeavni diltsidecnaoot raf cab ni
+0x000E4C27	ascii	kilavid dnatsc ec
+0x000E4C39	ascii	edoavni diletil/largnelc ht
+0x000E4C55	ascii	edoavni diltsidecnaes sni
+0x000E4C6F	ascii	tilavil daretel/lhtgnes s
+0x000E4C8B	ascii	tfni etal2.1 C 3.rypothgi991 02-5M 50 kraeldA
+0x000E4CDC	utf16be	+#;3SCsc
+0x000E4CDD	utf16le	+#;3SCsc
+0x000E4DBB	ascii	@avni diletil/largnelc ht
+0x000E4DD5	ascii	edoavni diltsidecnadoc ni
+0x000E4DEF	ascii	eilavid dnatst ecf oob ra
+0x000E4E09	ascii	kca.2.1

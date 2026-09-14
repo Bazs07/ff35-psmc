@@ -1,0 +1,17 @@
+How to install:
+---------------
+
+You have to get sources as follows (login: <an email address> passwd: anoncvs):
+
+cvs -z 9 -d :pserver:anoncvs@sources.redhat.com:/cvs/src login
+cvs -z 9 -d :pserver:anoncvs@sources.redhat.com:/cvs/src export -D 20050226 binutils
+
+Then rename exported directory:
+
+mv src binutils
+
+Then patch sources (you have to be in directory above binutils directory not inside it):
+
+patch -p0 </path_to_patch/binutils_20050226_dsp56800_x.y.z/binutils.patch
+
+Then compile according to binutils/README and enjoy :)

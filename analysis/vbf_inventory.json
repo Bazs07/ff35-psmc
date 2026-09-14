@@ -1,0 +1,430 @@
+[
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C217-AF.vbf",
+    "source_size": 479408,
+    "source_sha256": "06f18c5d4295a1eb9e4cc45bc94506b90bc49e385e5ed21f4aaf2c51174ff8fa",
+    "header_end": 1170,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "BV6T-14C217-AF",
+      "part_type": "EXE",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0xD257EBDD"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1170,
+        "address": 0,
+        "length": 38912,
+        "payload_offset": 1178,
+        "stored_checksum": 64273,
+        "checksum_matches": [],
+        "sha256": "b9014a6aefe1aac0dac5641eddd37f3a5b47c798de6a239573d0860a63a95434"
+      },
+      {
+        "index": 1,
+        "record_offset": 40092,
+        "address": 114688,
+        "length": 409600,
+        "payload_offset": 40100,
+        "stored_checksum": 6981,
+        "checksum_matches": [],
+        "sha256": "f71464911868f697caed4024b56aff78849f7c83a4226e1f2f81c2e9cd3a3e13"
+      },
+      {
+        "index": 2,
+        "record_offset": 449702,
+        "address": 67144704,
+        "length": 29696,
+        "payload_offset": 449710,
+        "stored_checksum": 9183,
+        "checksum_matches": [],
+        "sha256": "de4327cf738a7e7e88d4f4bd09b18d62efa2ca7e4d9f4b9adfb1dbb0975fde92"
+      }
+    ],
+    "parsed_end": 479408,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C218-AF.vbf",
+    "source_size": 76829,
+    "source_sha256": "462c1fd7ac343ae19b6eb2559c2923563cb2ef9ff5b88ddc5d31ac1f18512b7a",
+    "header_end": 1043,
+    "header": {
+      "vbf_version": "2.2",
+      "part_number": "BV6T-14C218-AF",
+      "part_type": "DATA",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0xD9614662"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1043,
+        "address": 38912,
+        "length": 75776,
+        "payload_offset": 1051,
+        "stored_checksum": 37013,
+        "checksum_matches": [],
+        "sha256": "6e1c11ae55b83ddc157e22f05cfdf4cdb0cbdb71e11d6d0b1b6c123cbaa313ac"
+      }
+    ],
+    "parsed_end": 76829,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C386-AA.vbf",
+    "source_size": 3158,
+    "source_sha256": "fd702b698896513614226a8e183f131162aaca5963e4de9ebadce0f25deb56ad",
+    "header_end": 1220,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "BV6T-14C386-AA",
+      "part_type": "SIGCFG",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0x2FF0A2E2"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1220,
+        "address": 67141632,
+        "length": 1928,
+        "payload_offset": 1228,
+        "stored_checksum": 7719,
+        "checksum_matches": [],
+        "sha256": "97e220ec5617121c57bd2ba460ee993840f6786a736d1c78ab16118d94222f66"
+      }
+    ],
+    "parsed_end": 3158,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\PSMC\\CV6T-14C217-AR.VBF",
+    "source_size": 479408,
+    "source_sha256": "cc68d97b1b8ca3ff9449d8e42ffa6ec16280f640f8b7928af4080b40592b96f5",
+    "header_end": 1170,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "CV6T-14C217-AR",
+      "part_type": "EXE",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0x5BE7CF1E"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1170,
+        "address": 0,
+        "length": 38912,
+        "payload_offset": 1178,
+        "stored_checksum": 49502,
+        "checksum_matches": [],
+        "sha256": "21d095f6ce8496695951a6ad2f012d428da87ea21c781b4f4a4d0992994e5074"
+      },
+      {
+        "index": 1,
+        "record_offset": 40092,
+        "address": 114688,
+        "length": 409600,
+        "payload_offset": 40100,
+        "stored_checksum": 7020,
+        "checksum_matches": [],
+        "sha256": "6e60963a3583993d1b872ebd88bb9b2f1acdeb397a7954a1ae75be3ce7d933b0"
+      },
+      {
+        "index": 2,
+        "record_offset": 449702,
+        "address": 67144704,
+        "length": 29696,
+        "payload_offset": 449710,
+        "stored_checksum": 40538,
+        "checksum_matches": [],
+        "sha256": "4e65a6493cf770d02a125c115a50c7b6b8d58969405bbd0292fafd896750d6c0"
+      }
+    ],
+    "parsed_end": 479408,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\PSMC\\CV6T-14C218-AX.VBF",
+    "source_size": 76818,
+    "source_sha256": "6fdc0ad81727fd39db98a486f2ec2b4de928100138fc93b8c3e5c2a8e307c5f7",
+    "header_end": 1032,
+    "header": {
+      "vbf_version": "2.2",
+      "part_number": "CV6T-14C218-AX",
+      "part_type": "DATA",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0x1F41A14D"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1032,
+        "address": 38912,
+        "length": 75776,
+        "payload_offset": 1040,
+        "stored_checksum": 42155,
+        "checksum_matches": [],
+        "sha256": "c010f759503cd3f84dec7892e6231b600952d032f34e81db538a1e36c8f2e146"
+      }
+    ],
+    "parsed_end": 76818,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\PSMC\\CV6T-14C386-AB.vbf",
+    "source_size": 3189,
+    "source_sha256": "fdd75f856f63057eb999c07f5c8479a5caa0e315eb01d943cd937c996e3e07dd",
+    "header_end": 1231,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "CV6T-14C386-AB",
+      "part_type": "SIGCFG",
+      "ecu_address": "0x730",
+      "data_format_identifier": null,
+      "file_checksum": "0x9CBD5E3F"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1231,
+        "address": 67141632,
+        "length": 1948,
+        "payload_offset": 1239,
+        "stored_checksum": 27585,
+        "checksum_matches": [],
+        "sha256": "d0a636e34cb6206908f7ed76c1885bf8a9633f3a7b3f39c3a44cdb4db6fd8791"
+      }
+    ],
+    "parsed_end": 3189,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\IPMA\\BM5T-14F397-AG.VBF",
+    "source_size": 898088,
+    "source_sha256": "212a8dbfb5f1c36203d5c710774fdebb2b49689c705a5689ccb79d451225ac75",
+    "header_end": 1086,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "BM5T-14F397-AG",
+      "part_type": "EXE",
+      "ecu_address": "0x706",
+      "data_format_identifier": null,
+      "file_checksum": "0xF2F65EAA"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1086,
+        "address": 131072,
+        "length": 896992,
+        "payload_offset": 1094,
+        "stored_checksum": 27724,
+        "checksum_matches": [],
+        "sha256": "3e68ac8ee8c2a25c026ca0ba2fadcec720394773a7ab2577e49899046f6ae3c1"
+      }
+    ],
+    "parsed_end": 898088,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\IPMA\\BM5T-14F397-BG.VBF",
+    "source_size": 1517905,
+    "source_sha256": "9ba363281e65595f76a2a132a88a850362d8765047217feb9f70d98774cf5c8a",
+    "header_end": 1091,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "BM5T-14F397-BG",
+      "part_type": "EXE",
+      "ecu_address": "0x706",
+      "data_format_identifier": null,
+      "file_checksum": "0xE07B8EE3"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1091,
+        "address": 2097152,
+        "length": 1516752,
+        "payload_offset": 1099,
+        "stored_checksum": 20341,
+        "checksum_matches": [],
+        "sha256": "4769f81b66a882172cfc49fd0b0b1f73adfb12e2770ec07c25d026b3c9ffd2fb"
+      },
+      {
+        "index": 1,
+        "record_offset": 1517853,
+        "address": 9437256,
+        "length": 16,
+        "payload_offset": 1517861,
+        "stored_checksum": 49469,
+        "checksum_matches": [],
+        "sha256": "cbf61aff8549df94500b1447134901c5a3df8253bb66bf96e1157e04833f9004"
+      },
+      {
+        "index": 2,
+        "record_offset": 1517879,
+        "address": 9445040,
+        "length": 16,
+        "payload_offset": 1517887,
+        "stored_checksum": 49469,
+        "checksum_matches": [],
+        "sha256": "cbf61aff8549df94500b1447134901c5a3df8253bb66bf96e1157e04833f9004"
+      }
+    ],
+    "parsed_end": 1517905,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\IPMA\\BM5T-14F398-AG.VBF",
+    "source_size": 16499,
+    "source_sha256": "af55131fafcf223cea31fd058a362c2a4998d8af243252d915f735b2bef97d64",
+    "header_end": 1105,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "BM5T-14F398-AG",
+      "part_type": "DATA",
+      "ecu_address": "0x706",
+      "data_format_identifier": null,
+      "file_checksum": "0x42404290"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1105,
+        "address": 12288,
+        "length": 15384,
+        "payload_offset": 1113,
+        "stored_checksum": 38391,
+        "checksum_matches": [],
+        "sha256": "528986bbf2a1e0447552d6cc6476578c06f33877cc828d51d2a5dd5ca44768df"
+      }
+    ],
+    "parsed_end": 16499,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F397-AG.VBF",
+    "source_size": 938731,
+    "source_sha256": "ab72408eef69e93b8ecb8e7c8cf5f9c7ab51076d82040b7437de59d110533d4e",
+    "header_end": 1193,
+    "header": {
+      "vbf_version": "2.4",
+      "part_number": "F1FT-14F397-AG",
+      "part_type": "EXE",
+      "ecu_address": "0x706",
+      "data_format_identifier": "0x00",
+      "file_checksum": "0xA07D1048"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1193,
+        "address": 65536,
+        "length": 937528,
+        "payload_offset": 1201,
+        "stored_checksum": 22090,
+        "checksum_matches": [],
+        "sha256": "b6b24c636b481b82c10494766c18ddc24c6202cf7db85382e54585ff6005c1d3"
+      }
+    ],
+    "parsed_end": 938731,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F397-BE.VBF",
+    "source_size": 1537280,
+    "source_sha256": "fb592c083fdb396880116f612ef0faa694c249f9de545646313283697475f777",
+    "header_end": 1094,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "F1FT-14F397-BE",
+      "part_type": "EXE",
+      "ecu_address": "0x706",
+      "data_format_identifier": null,
+      "file_checksum": "0x1EF92C70"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1094,
+        "address": 2097152,
+        "length": 1536124,
+        "payload_offset": 1102,
+        "stored_checksum": 51315,
+        "checksum_matches": [],
+        "sha256": "6a55d31776b691c4b10a92a7397f3ba56ac5ee2dd475408120a8e3f365a62baa"
+      },
+      {
+        "index": 1,
+        "record_offset": 1537228,
+        "address": 9437256,
+        "length": 16,
+        "payload_offset": 1537236,
+        "stored_checksum": 56206,
+        "checksum_matches": [],
+        "sha256": "e4e804a34257ee6d113031703dd3ddf79cea9c8b096969ffb50956bf3faa44a9"
+      },
+      {
+        "index": 2,
+        "record_offset": 1537254,
+        "address": 9445040,
+        "length": 16,
+        "payload_offset": 1537262,
+        "stored_checksum": 56206,
+        "checksum_matches": [],
+        "sha256": "e4e804a34257ee6d113031703dd3ddf79cea9c8b096969ffb50956bf3faa44a9"
+      }
+    ],
+    "parsed_end": 1537280,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  },
+  {
+    "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F398-AG.VBF",
+    "source_size": 26744,
+    "source_sha256": "1fda088b19629e4c61cac8446928fa4a1dae033a17c6aad9e6a17f22b485fab6",
+    "header_end": 1121,
+    "header": {
+      "vbf_version": "2.3",
+      "part_number": "F1FT-14F398-AG",
+      "part_type": "DATA",
+      "ecu_address": "0x706",
+      "data_format_identifier": null,
+      "file_checksum": "0x0676391F"
+    },
+    "records": [
+      {
+        "index": 0,
+        "record_offset": 1121,
+        "address": 9445376,
+        "length": 25613,
+        "payload_offset": 1129,
+        "stored_checksum": 50546,
+        "checksum_matches": [],
+        "sha256": "bb304cad7d145e52a64966e994266e9149d92f17516b4811359ec4910669b68c"
+      }
+    ],
+    "parsed_end": 26744,
+    "trailing_bytes": 0,
+    "trailing_hex": ""
+  }
+]

@@ -1,0 +1,30 @@
+0.5
+===
+- Update from mainstream binutils snapshot 2005-02-26
+
+0.4.1
+=====
+- corrected bugs: 
+  [ 824937 ] bftsth #xxxx,X:xxxx opcode generated incorrectly
+  [ 836842 ] brclr and bftsth opcodes generated incorrectly
+  [ 836851 ] non-multiply insn x:xxxx,fff generated incorrectly
+- read more in binutils_20030920_dsp56800_0.4.1.patch.README
+
+0.4
+===
+- corrected bug: [ 819655 ] cmp #,FDD generated incorrectly
+- corrected generation of following insns: lsll, tstw, add, cpm, move
+- made clean up in the port
+- finished gas,ld and binutils testsuites (now it's possible to use
+   make check in gas,ld and binutils directories, however not in
+   bfd directory)
+- read more in binutils_20030920_dsp56800_0.4.patch.README
+
+0.3
+===
+- This version is merge to mainstream binutils snapshot 2003-09-20. 
+    It is released as a patch. Meant as a preparation for adding this port
+    to official CVS.
+- Corrected bug: [ 801029 ] bfclr #const,x:addr fails with const > 0x8000
+- All other thing remain as they were in v0.2
+- read more in binutils_20030920_dsp56800.patch.README

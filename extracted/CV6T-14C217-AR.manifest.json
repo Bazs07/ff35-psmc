@@ -1,0 +1,60 @@
+{
+  "file": "CV6T-14C217-AR.VBF",
+  "size": 479408,
+  "vbf_version": "2.3",
+  "sw_part_number": "CV6T-14C217-AR",
+  "sw_part_type": "EXE",
+  "network": "CAN_HS",
+  "ecu_address": "0x730",
+  "frame_format": "CAN_STANDARD",
+  "data_format_identifier": null,
+  "call": null,
+  "file_checksum": 1541918494,
+  "header_end": 1170,
+  "trailing": 0,
+  "file_checksum_calc": 1541918494,
+  "file_checksum_ok": true,
+  "erase": [
+    [
+      0,
+      38912
+    ],
+    [
+      114688,
+      409600
+    ],
+    [
+      67144704,
+      29696
+    ]
+  ],
+  "blocks": [
+    {
+      "index": 0,
+      "file": "CV6T-14C217-AR.block00.0x00000000.bin",
+      "addr": 0,
+      "len": 38912,
+      "crc": 49502,
+      "crc_ok": true,
+      "sha256": "21d095f6ce8496695951a6ad2f012d428da87ea21c781b4f4a4d0992994e5074"
+    },
+    {
+      "index": 1,
+      "file": "CV6T-14C217-AR.block01.0x0001C000.bin",
+      "addr": 114688,
+      "len": 409600,
+      "crc": 7020,
+      "crc_ok": true,
+      "sha256": "6e60963a3583993d1b872ebd88bb9b2f1acdeb397a7954a1ae75be3ce7d933b0"
+    },
+    {
+      "index": 2,
+      "file": "CV6T-14C217-AR.block02.0x04008C00.bin",
+      "addr": 67144704,
+      "len": 29696,
+      "crc": 40538,
+      "crc_ok": true,
+      "sha256": "4e65a6493cf770d02a125c115a50c7b6b8d58969405bbd0292fafd896750d6c0"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F397-AG.VBF",
+  "source_size": 938731,
+  "source_sha256": "ab72408eef69e93b8ecb8e7c8cf5f9c7ab51076d82040b7437de59d110533d4e",
+  "header_end": 1193,
+  "header": {
+    "vbf_version": "2.4",
+    "part_number": "F1FT-14F397-AG",
+    "part_type": "EXE",
+    "ecu_address": "0x706",
+    "data_format_identifier": "0x00",
+    "file_checksum": "0xA07D1048"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1193,
+      "address": 65536,
+      "length": 937528,
+      "payload_offset": 1201,
+      "stored_checksum": 22090,
+      "checksum_matches": [],
+      "sha256": "b6b24c636b481b82c10494766c18ddc24c6202cf7db85382e54585ff6005c1d3"
+    }
+  ],
+  "parsed_end": 938731,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

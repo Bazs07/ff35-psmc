@@ -1,0 +1,1089 @@
+P:0x03F00  7880                .word 0x7880
+P:0x03F01  E700                NOP
+P:0x03F02  E410                .word 0xE410
+P:0x03F03  9DF4                .word 0x9DF4
+P:0x03F04  E146                .word 0xE146
+P:0x03F05  8754 000E           MOVE.W #0x000E,reg5:20
+P:0x03F07  7881                .word 0x7881
+P:0x03F08  A303                .word 0xA303
+P:0x03F09  E255 24F6           JSR P:0x124F6
+P:0x03F0B  A97F                BRA P:0x03F0B ; rel -0x1
+P:0x03F0C  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03F0E  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03F10  E708                RTS
+P:0x03F11  0000                .word 0x0000
+P:0x03F12  E700                NOP
+P:0x03F13  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03F15  835D                .word 0x835D
+P:0x03F16  0300                .word 0x0300
+P:0x03F17  E700                NOP
+P:0x03F18  E700                NOP
+P:0x03F19  E700                NOP
+P:0x03F1A  E700                NOP
+P:0x03F1B  E700                NOP
+P:0x03F1C  E700                NOP
+P:0x03F1D  8654 F352 0205      MOVE.W #0x0205,X:0xF352
+P:0x03F20  E40A                .word 0xE40A
+P:0x03F21  3BC0                .word 0x3BC0
+P:0x03F22  77C7                .word 0x77C7
+P:0x03F23  E806                .word 0xE806
+P:0x03F24  3F29                .word 0x3F29
+P:0x03F25  856A                .word 0x856A
+P:0x03F26  876A                .word 0x876A
+P:0x03F27  747A                .word 0x747A
+P:0x03F28  7880                .word 0x7880
+P:0x03F29  E700                NOP
+P:0x03F2A  E410                .word 0xE410
+P:0x03F2B  C7AA                .word 0xC7AA
+P:0x03F2C  2FA1                .word 0x2FA1
+P:0x03F2D  8754 000F           MOVE.W #0x000F,reg5:20
+P:0x03F2F  7881                .word 0x7881
+P:0x03F30  A303                .word 0xA303
+P:0x03F31  E255 24F6           JSR P:0x124F6
+P:0x03F33  A97F                BRA P:0x03F33 ; rel -0x1
+P:0x03F34  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03F36  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03F38  E708                RTS
+P:0x03F39  0000                .word 0x0000
+P:0x03F3A  E700                NOP
+P:0x03F3B  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03F3D  835D                .word 0x835D
+P:0x03F3E  0300                .word 0x0300
+P:0x03F3F  E700                NOP
+P:0x03F40  E700                NOP
+P:0x03F41  E700                NOP
+P:0x03F42  E700                NOP
+P:0x03F43  E700                NOP
+P:0x03F44  E700                NOP
+P:0x03F45  8654 F352 0206      MOVE.W #0x0206,X:0xF352
+P:0x03F48  E40A                .word 0xE40A
+P:0x03F49  3BCC                .word 0x3BCC
+P:0x03F4A  77C7                .word 0x77C7
+P:0x03F4B  E806                .word 0xE806
+P:0x03F4C  3F51                .word 0x3F51
+P:0x03F4D  856A                .word 0x856A
+P:0x03F4E  876A                .word 0x876A
+P:0x03F4F  747A                .word 0x747A
+P:0x03F50  7880                .word 0x7880
+P:0x03F51  E700                NOP
+P:0x03F52  E410                .word 0xE410
+P:0x03F53  6C1E                .word 0x6C1E
+P:0x03F54  57AE                .word 0x57AE
+P:0x03F55  8754 000E           MOVE.W #0x000E,reg5:20
+P:0x03F57  7881                .word 0x7881
+P:0x03F58  A303                .word 0xA303
+P:0x03F59  E255 24F6           JSR P:0x124F6
+P:0x03F5B  A97F                BRA P:0x03F5B ; rel -0x1
+P:0x03F5C  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03F5E  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03F60  E708                RTS
+P:0x03F61  0000                .word 0x0000
+P:0x03F62  E700                NOP
+P:0x03F63  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03F65  835D                .word 0x835D
+P:0x03F66  0300                .word 0x0300
+P:0x03F67  E700                NOP
+P:0x03F68  E700                NOP
+P:0x03F69  E700                NOP
+P:0x03F6A  E700                NOP
+P:0x03F6B  E700                NOP
+P:0x03F6C  E700                NOP
+P:0x03F6D  8654 F352 0207      MOVE.W #0x0207,X:0xF352
+P:0x03F70  E40A                .word 0xE40A
+P:0x03F71  3BD8                .word 0x3BD8
+P:0x03F72  77C7                .word 0x77C7
+P:0x03F73  E806                .word 0xE806
+P:0x03F74  3F79                .word 0x3F79
+P:0x03F75  856A                .word 0x856A
+P:0x03F76  876A                .word 0x876A
+P:0x03F77  747A                .word 0x747A
+P:0x03F78  7880                .word 0x7880
+P:0x03F79  E700                NOP
+P:0x03F7A  E410                .word 0xE410
+P:0x03F7B  9DC8                .word 0x9DC8
+P:0x03F7C  998A                .word 0x998A
+P:0x03F7D  8754 000E           MOVE.W #0x000E,reg5:20
+P:0x03F7F  7881                .word 0x7881
+P:0x03F80  A303                .word 0xA303
+P:0x03F81  E255 24F6           JSR P:0x124F6
+P:0x03F83  A97F                BRA P:0x03F83 ; rel -0x1
+P:0x03F84  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03F86  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03F88  E708                RTS
+P:0x03F89  0000                .word 0x0000
+P:0x03F8A  E700                NOP
+P:0x03F8B  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03F8D  835D                .word 0x835D
+P:0x03F8E  0300                .word 0x0300
+P:0x03F8F  E700                NOP
+P:0x03F90  E700                NOP
+P:0x03F91  E700                NOP
+P:0x03F92  E700                NOP
+P:0x03F93  E700                NOP
+P:0x03F94  E700                NOP
+P:0x03F95  8654 F352 0208      MOVE.W #0x0208,X:0xF352
+P:0x03F98  E40A                .word 0xE40A
+P:0x03F99  3BE4                .word 0x3BE4
+P:0x03F9A  77C7                .word 0x77C7
+P:0x03F9B  E806                .word 0xE806
+P:0x03F9C  3FA1                .word 0x3FA1
+P:0x03F9D  856A                .word 0x856A
+P:0x03F9E  876A                .word 0x876A
+P:0x03F9F  747A                .word 0x747A
+P:0x03FA0  7880                .word 0x7880
+P:0x03FA1  E700                NOP
+P:0x03FA2  E410                .word 0xE410
+P:0x03FA3  E446                .word 0xE446
+P:0x03FA4  346E                .word 0x346E
+P:0x03FA5  8754 000F           MOVE.W #0x000F,reg5:20
+P:0x03FA7  7881                .word 0x7881
+P:0x03FA8  A303                .word 0xA303
+P:0x03FA9  E255 24F6           JSR P:0x124F6
+P:0x03FAB  A97F                BRA P:0x03FAB ; rel -0x1
+P:0x03FAC  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03FAE  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03FB0  E708                RTS
+P:0x03FB1  0000                .word 0x0000
+P:0x03FB2  E700                NOP
+P:0x03FB3  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03FB5  835D                .word 0x835D
+P:0x03FB6  0300                .word 0x0300
+P:0x03FB7  E700                NOP
+P:0x03FB8  E700                NOP
+P:0x03FB9  E700                NOP
+P:0x03FBA  E700                NOP
+P:0x03FBB  E700                NOP
+P:0x03FBC  E700                NOP
+P:0x03FBD  8654 F352 0209      MOVE.W #0x0209,X:0xF352
+P:0x03FC0  E40A                .word 0xE40A
+P:0x03FC1  3BF0                .word 0x3BF0
+P:0x03FC2  77C7                .word 0x77C7
+P:0x03FC3  E806                .word 0xE806
+P:0x03FC4  3FC9                .word 0x3FC9
+P:0x03FC5  856A                .word 0x856A
+P:0x03FC6  876A                .word 0x876A
+P:0x03FC7  747A                .word 0x747A
+P:0x03FC8  7880                .word 0x7880
+P:0x03FC9  E700                NOP
+P:0x03FCA  E410                .word 0xE410
+P:0x03FCB  0AF2                .word 0x0AF2
+P:0x03FCC  23EF                .word 0x23EF
+P:0x03FCD  8754 000F           MOVE.W #0x000F,reg5:20
+P:0x03FCF  7881                .word 0x7881
+P:0x03FD0  A303                .word 0xA303
+P:0x03FD1  E255 24F6           JSR P:0x124F6
+P:0x03FD3  A97F                BRA P:0x03FD3 ; rel -0x1
+P:0x03FD4  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03FD6  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x03FD8  E708                RTS
+P:0x03FD9  0000                .word 0x0000
+P:0x03FDA  E700                NOP
+P:0x03FDB  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x03FDD  835D                .word 0x835D
+P:0x03FDE  0300                .word 0x0300
+P:0x03FDF  E700                NOP
+P:0x03FE0  E700                NOP
+P:0x03FE1  E700                NOP
+P:0x03FE2  E700                NOP
+P:0x03FE3  E700                NOP
+P:0x03FE4  E700                NOP
+P:0x03FE5  8654 F352 020A      MOVE.W #0x020A,X:0xF352
+P:0x03FE8  E40A                .word 0xE40A
+P:0x03FE9  3BFE                .word 0x3BFE
+P:0x03FEA  77C7                .word 0x77C7
+P:0x03FEB  E804                .word 0xE804
+P:0x03FEC  3FF1                .word 0x3FF1
+P:0x03FED  856A                .word 0x856A
+P:0x03FEE  876A                .word 0x876A
+P:0x03FEF  7C60                .word 0x7C60
+P:0x03FF0  7307                .word 0x7307
+P:0x03FF1  78E0                .word 0x78E0
+P:0x03FF2  E410                .word 0xE410
+P:0x03FF3  E04C                .word 0xE04C
+P:0x03FF4  4445                .word 0x4445
+P:0x03FF5  8754 0000           MOVE.W #0x0000,reg5:20
+P:0x03FF7  7881                .word 0x7881
+P:0x03FF8  A303                .word 0xA303
+P:0x03FF9  E255 24F6           JSR P:0x124F6
+P:0x03FFB  A97F                BRA P:0x03FFB ; rel -0x1
+P:0x03FFC  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x03FFE  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x04000  E708                RTS
+P:0x04001  0000                .word 0x0000
+P:0x04002  E700                NOP
+P:0x04003  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x04005  835D                .word 0x835D
+P:0x04006  0300                .word 0x0300
+P:0x04007  E700                NOP
+P:0x04008  E700                NOP
+P:0x04009  E700                NOP
+P:0x0400A  E700                NOP
+P:0x0400B  E700                NOP
+P:0x0400C  E700                NOP
+P:0x0400D  8654 F352 020B      MOVE.W #0x020B,X:0xF352
+P:0x04010  E40A                .word 0xE40A
+P:0x04011  3C06                .word 0x3C06
+P:0x04012  77C7                .word 0x77C7
+P:0x04013  E805                .word 0xE805
+P:0x04014  4019                .word 0x4019
+P:0x04015  856A                .word 0x856A
+P:0x04016  876A                .word 0x876A
+P:0x04017  7C60                .word 0x7C60
+P:0x04018  7307                .word 0x7307
+P:0x04019  78E0                .word 0x78E0
+P:0x0401A  E410                .word 0xE410
+P:0x0401B  97E8                .word 0x97E8
+P:0x0401C  4747                .word 0x4747
+P:0x0401D  8754 0000           MOVE.W #0x0000,reg5:20
+P:0x0401F  7881                .word 0x7881
+P:0x04020  A303                .word 0xA303
+P:0x04021  E255 24F6           JSR P:0x124F6
+P:0x04023  A97F                BRA P:0x04023 ; rel -0x1
+P:0x04024  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x04026  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x04028  E708                RTS
+P:0x04029  0000                .word 0x0000
+P:0x0402A  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x0402C  835D                .word 0x835D
+P:0x0402D  0300                .word 0x0300
+P:0x0402E  E700                NOP
+P:0x0402F  E700                NOP
+P:0x04030  E700                NOP
+P:0x04031  E700                NOP
+P:0x04032  E700                NOP
+P:0x04033  E700                NOP
+P:0x04034  8654 F352 0601      MOVE.W #0x0601,X:0xF352
+P:0x04037  E418                .word 0xE418
+P:0x04038  5555                .word 0x5555
+P:0x04039  0000                .word 0x0000
+P:0x0403A  8750 AAAA           MOVE.W #0xAAAA,reg5:16
+P:0x0403C  8122                .word 0x8122
+P:0x0403D  8751 AAFF           MOVE.W #0xAAFF,reg5:17
+P:0x0403F  E419                .word 0xE419
+P:0x04040  FF55                .word 0xFF55
+P:0x04041  0000                .word 0x0000
+P:0x04042  8D50                .word 0x8D50
+P:0x04043  00AA                .word 0x00AA
+P:0x04044  A103                .word 0xA103
+P:0x04045  E255 24F6           JSR P:0x124F6
+P:0x04047  A97F                BRA P:0x04047 ; rel -0x1
+P:0x04048  8D50                .word 0x8D50
+P:0x04049  5500                .word 0x5500
+P:0x0404A  A003                .word 0xA003
+P:0x0404B  E255 24F6           JSR P:0x124F6
+P:0x0404D  A97F                BRA P:0x0404D ; rel -0x1
+P:0x0404E  8D48                .word 0x8D48
+P:0x0404F  5500                .word 0x5500
+P:0x04050  A103                .word 0xA103
+P:0x04051  E255 24F6           JSR P:0x124F6
+P:0x04053  A97F                BRA P:0x04053 ; rel -0x1
+P:0x04054  8D48                .word 0x8D48
+P:0x04055  00AA                .word 0x00AA
+P:0x04056  A003                .word 0xA003
+P:0x04057  E255 24F6           JSR P:0x124F6
+P:0x04059  A97F                BRA P:0x04059 ; rel -0x1
+P:0x0405A  8950                .word 0x8950
+P:0x0405B  0055                .word 0x0055
+P:0x0405C  A103                .word 0xA103
+P:0x0405D  E255 24F6           JSR P:0x124F6
+P:0x0405F  A97F                BRA P:0x0405F ; rel -0x1
+P:0x04060  8950                .word 0x8950
+P:0x04061  AA00                .word 0xAA00
+P:0x04062  A003                .word 0xA003
+P:0x04063  E255 24F6           JSR P:0x124F6
+P:0x04065  A97F                BRA P:0x04065 ; rel -0x1
+P:0x04066  8948                .word 0x8948
+P:0x04067  AA00                .word 0xAA00
+P:0x04068  A103                .word 0xA103
+P:0x04069  E255 24F6           JSR P:0x124F6
+P:0x0406B  A97F                BRA P:0x0406B ; rel -0x1
+P:0x0406C  8948                .word 0x8948
+P:0x0406D  0055                .word 0x0055
+P:0x0406E  A003                .word 0xA003
+P:0x0406F  E255 24F6           JSR P:0x124F6
+P:0x04071  A97F                BRA P:0x04071 ; rel -0x1
+P:0x04072  8348                .word 0x8348
+P:0x04073  AA05                .word 0xAA05
+P:0x04074  E700                NOP
+P:0x04075  E700                NOP
+P:0x04076  8F21                .word 0x8F21
+P:0x04077  A303                .word 0xA303
+P:0x04078  E255 24F6           JSR P:0x124F6
+P:0x0407A  A97F                BRA P:0x0407A ; rel -0x1
+P:0x0407B  8350                .word 0x8350
+P:0x0407C  A055                .word 0xA055
+P:0x0407D  E700                NOP
+P:0x0407E  E700                NOP
+P:0x0407F  7886                .word 0x7886
+P:0x04080  A303                .word 0xA303
+P:0x04081  E255 24F6           JSR P:0x124F6
+P:0x04083  A97F                BRA P:0x04083 ; rel -0x1
+P:0x04084  8148                .word 0x8148
+P:0x04085  AA00                .word 0xAA00
+P:0x04086  E700                NOP
+P:0x04087  E700                NOP
+P:0x04088  8F30                .word 0x8F30
+P:0x04089  A303                .word 0xA303
+P:0x0408A  E255 24F6           JSR P:0x124F6
+P:0x0408C  A97F                BRA P:0x0408C ; rel -0x1
+P:0x0408D  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x0408F  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x04091  E708                RTS
+P:0x04092  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x04094  835D                .word 0x835D
+P:0x04095  0300                .word 0x0300
+P:0x04096  E700                NOP
+P:0x04097  E700                NOP
+P:0x04098  E700                NOP
+P:0x04099  E700                NOP
+P:0x0409A  E700                NOP
+P:0x0409B  E700                NOP
+P:0x0409C  8654 F352 0602      MOVE.W #0x0602,X:0xF352
+P:0x0409F  8751 AAFF           MOVE.W #0xAAFF,reg5:17
+P:0x040A1  8551                .word 0x8551
+P:0x040A2  FFAA                .word 0xFFAA
+P:0x040A3  E700                NOP
+P:0x040A4  4CC0                .word 0x4CC0
+P:0x040A5  5555                .word 0x5555
+P:0x040A6  A303                .word 0xA303
+P:0x040A7  E255 24F6           JSR P:0x124F6
+P:0x040A9  A97F                BRA P:0x040A9 ; rel -0x1
+P:0x040AA  8750 AAAA           MOVE.W #0xAAAA,reg5:16
+P:0x040AC  E408                .word 0xE408
+P:0x040AD  5555                .word 0x5555
+P:0x040AE  8F50                .word 0x8F50
+P:0x040AF  AA05                .word 0xAA05
+P:0x040B0  E700                NOP
+P:0x040B1  E700                NOP
+P:0x040B2  E255 24F6           JSR P:0x124F6
+P:0x040B4  A97F                BRA P:0x040B4 ; rel -0x1
+P:0x040B5  E700                NOP
+P:0x040B6  E700                NOP
+P:0x040B7  8F50                .word 0x8F50
+P:0x040B8  55FE                .word 0x55FE
+P:0x040B9  E700                NOP
+P:0x040BA  E700                NOP
+P:0x040BB  8F48                .word 0x8F48
+P:0x040BC  5585                .word 0x5585
+P:0x040BD  E700                NOP
+P:0x040BE  E700                NOP
+P:0x040BF  E255 24F6           JSR P:0x124F6
+P:0x040C1  A97F                BRA P:0x040C1 ; rel -0x1
+P:0x040C2  8F48                .word 0x8F48
+P:0x040C3  AA7E                .word 0xAA7E
+P:0x040C4  E700                NOP
+P:0x040C5  E700                NOP
+P:0x040C6  8B50                .word 0x8B50
+P:0x040C7  5505                .word 0x5505
+P:0x040C8  E700                NOP
+P:0x040C9  E700                NOP
+P:0x040CA  E255 24F6           JSR P:0x124F6
+P:0x040CC  A97F                BRA P:0x040CC ; rel -0x1
+P:0x040CD  8B50                .word 0x8B50
+P:0x040CE  AAFE                .word 0xAAFE
+P:0x040CF  E700                NOP
+P:0x040D0  E700                NOP
+P:0x040D1  8B48                .word 0x8B48
+P:0x040D2  AA85                .word 0xAA85
+P:0x040D3  E700                NOP
+P:0x040D4  E700                NOP
+P:0x040D5  E255 24F6           JSR P:0x124F6
+P:0x040D7  A97F                BRA P:0x040D7 ; rel -0x1
+P:0x040D8  8B48                .word 0x8B48
+P:0x040D9  557E                .word 0x557E
+P:0x040DA  E700                NOP
+P:0x040DB  E700                NOP
+P:0x040DC  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x040DE  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x040E0  E708                RTS
+P:0x040E1  0000                .word 0x0000
+P:0x040E2  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x040E4  835D                .word 0x835D
+P:0x040E5  0300                .word 0x0300
+P:0x040E6  E700                NOP
+P:0x040E7  E700                NOP
+P:0x040E8  E700                NOP
+P:0x040E9  E700                NOP
+P:0x040EA  E700                NOP
+P:0x040EB  E700                NOP
+P:0x040EC  8654 F352 0401      MOVE.W #0x0401,X:0xF352
+P:0x040EF  D9FC 10D0           MOVE.W reg5:19,X:0x10D0
+P:0x040F1  DAFC 10D2           MOVE.W reg5:21,X:0x10D2
+P:0x040F3  81B4                .word 0x81B4
+P:0x040F4  D87D                .word 0xD87D
+P:0x040F5  086F                .word 0x086F
+P:0x040F6  DE7D                .word 0xDE7D
+P:0x040F7  086B                .word 0x086B
+P:0x040F8  E418                .word 0xE418
+P:0x040F9  5555                .word 0x5555
+P:0x040FA  0055                .word 0x0055
+P:0x040FB  E700                NOP
+P:0x040FC  E700                NOP
+P:0x040FD  8121                .word 0x8121
+P:0x040FE  812E                .word 0x812E
+P:0x040FF  E706                .word 0xE706
+P:0x04100  E41E                .word 0xE41E
+P:0x04101  AAAA                .word 0xAAAA
+P:0x04102  00AA                .word 0x00AA
+P:0x04103  E700                NOP
+P:0x04104  E700                NOP
+P:0x04105  81B1                .word 0x81B1
+P:0x04106  8124                .word 0x8124
+P:0x04107  E706                .word 0xE706
+P:0x04108  81BB                .word 0x81BB
+P:0x04109  81B6                .word 0x81B6
+P:0x0410A  8133                .word 0x8133
+P:0x0410B  813C                .word 0x813C
+P:0x0410C  81A9                .word 0x81A9
+P:0x0410D  E065                .word 0xE065
+P:0x0410E  E411                .word 0xE411
+P:0x0410F  5555                .word 0x5555
+P:0x04110  0055                .word 0x0055
+P:0x04111  7817                .word 0x7817
+P:0x04112  A303                .word 0xA303
+P:0x04113  E255 24F6           JSR P:0x124F6
+P:0x04115  A97F                BRA P:0x04115 ; rel -0x1
+P:0x04116  8A8D                .word 0x8A8D
+P:0x04117  E700                NOP
+P:0x04118  E700                NOP
+P:0x04119  E706                .word 0xE706
+P:0x0411A  8A88                .word 0x8A88
+P:0x0411B  E700                NOP
+P:0x0411C  E700                NOP
+P:0x0411D  E706                .word 0xE706
+P:0x0411E  899A                .word 0x899A
+P:0x0411F  8C19                .word 0x8C19
+P:0x04120  85A9                .word 0x85A9
+P:0x04121  E700                NOP
+P:0x04122  8FA9                .word 0x8FA9
+P:0x04123  A303                .word 0xA303
+P:0x04124  E255 24F6           JSR P:0x124F6
+P:0x04126  A97F                BRA P:0x04126 ; rel -0x1
+P:0x04127  E700                NOP
+P:0x04128  E700                NOP
+P:0x04129  E706                .word 0xE706
+P:0x0412A  8122                .word 0x8122
+P:0x0412B  8133                .word 0x8133
+P:0x0412C  813C                .word 0x813C
+P:0x0412D  81A9                .word 0x81A9
+P:0x0412E  E065                .word 0xE065
+P:0x0412F  E411                .word 0xE411
+P:0x04130  AAAA                .word 0xAAAA
+P:0x04131  00AA                .word 0x00AA
+P:0x04132  7817                .word 0x7817
+P:0x04133  A303                .word 0xA303
+P:0x04134  E255 24F6           JSR P:0x124F6
+P:0x04136  A97F                BRA P:0x04136 ; rel -0x1
+P:0x04137  E700                NOP
+P:0x04138  E700                NOP
+P:0x04139  899A                .word 0x899A
+P:0x0413A  8C19                .word 0x8C19
+P:0x0413B  E700                NOP
+P:0x0413C  E700                NOP
+P:0x0413D  8EA9                .word 0x8EA9
+P:0x0413E  A303                .word 0xA303
+P:0x0413F  E255 24F6           JSR P:0x124F6
+P:0x04141  A97F                BRA P:0x04141 ; rel -0x1
+P:0x04142  F9FC 10D0           MOVE.W X:0x10D0,reg5:19
+P:0x04144  FAFC 10D2           MOVE.W X:0x10D2,reg5:21
+P:0x04146  F87D                .word 0xF87D
+P:0x04147  086F                .word 0x086F
+P:0x04148  E700                NOP
+P:0x04149  E700                NOP
+P:0x0414A  812B                .word 0x812B
+P:0x0414B  FE7D                .word 0xFE7D
+P:0x0414C  086B                .word 0x086B
+P:0x0414D  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x0414F  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x04151  E708                RTS
+P:0x04152  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x04154  835D                .word 0x835D
+P:0x04155  0300                .word 0x0300
+P:0x04156  E700                NOP
+P:0x04157  E700                NOP
+P:0x04158  E700                NOP
+P:0x04159  E700                NOP
+P:0x0415A  E700                NOP
+P:0x0415B  E700                NOP
+P:0x0415C  8654 F352 0402      MOVE.W #0x0402,X:0xF352
+P:0x0415F  DE7D                .word 0xDE7D
+P:0x04160  086B                .word 0x086B
+P:0x04161  E418                .word 0xE418
+P:0x04162  AAAA                .word 0xAAAA
+P:0x04163  00AA                .word 0x00AA
+P:0x04164  E419                .word 0xE419
+P:0x04165  5555                .word 0x5555
+P:0x04166  0055                .word 0x0055
+P:0x04167  8424                .word 0x8424
+P:0x04168  A503                .word 0xA503
+P:0x04169  E255 24F6           JSR P:0x124F6
+P:0x0416B  A97F                BRA P:0x0416B ; rel -0x1
+P:0x0416C  E700                NOP
+P:0x0416D  8425                .word 0x8425
+P:0x0416E  A403                .word 0xA403
+P:0x0416F  E255 24F6           JSR P:0x124F6
+P:0x04171  A97F                BRA P:0x04171 ; rel -0x1
+P:0x04172  E700                NOP
+P:0x04173  8430                .word 0x8430
+P:0x04174  A503                .word 0xA503
+P:0x04175  E255 24F6           JSR P:0x124F6
+P:0x04177  A97F                BRA P:0x04177 ; rel -0x1
+P:0x04178  E700                NOP
+P:0x04179  8431                .word 0x8431
+P:0x0417A  A403                .word 0xA403
+P:0x0417B  E255 24F6           JSR P:0x124F6
+P:0x0417D  A97F                BRA P:0x0417D ; rel -0x1
+P:0x0417E  E700                NOP
+P:0x0417F  8434                .word 0x8434
+P:0x04180  A503                .word 0xA503
+P:0x04181  E255 24F6           JSR P:0x124F6
+P:0x04183  A97F                BRA P:0x04183 ; rel -0x1
+P:0x04184  E700                NOP
+P:0x04185  8435                .word 0x8435
+P:0x04186  A403                .word 0xA403
+P:0x04187  E255 24F6           JSR P:0x124F6
+P:0x04189  A97F                BRA P:0x04189 ; rel -0x1
+P:0x0418A  E700                NOP
+P:0x0418B  812D                .word 0x812D
+P:0x0418C  8921                .word 0x8921
+P:0x0418D  8126                .word 0x8126
+P:0x0418E  8525                .word 0x8525
+P:0x0418F  8D31                .word 0x8D31
+P:0x04190  E41B                .word 0xE41B
+P:0x04191  0000                .word 0x0000
+P:0x04192  0000                .word 0x0000
+P:0x04193  E700                NOP
+P:0x04194  E700                NOP
+P:0x04195  8FB3                .word 0x8FB3
+P:0x04196  A303                .word 0xA303
+P:0x04197  E255 24F6           JSR P:0x124F6
+P:0x04199  A97F                BRA P:0x04199 ; rel -0x1
+P:0x0419A  E700                NOP
+P:0x0419B  7747                .word 0x7747
+P:0x0419C  E77F                .word 0xE77F
+P:0x0419D  8628                .word 0x8628
+P:0x0419E  FFFF                .word 0xFFFF
+P:0x0419F  8F38                .word 0x8F38
+P:0x041A0  A303                .word 0xA303
+P:0x041A1  E255 24F6           JSR P:0x124F6
+P:0x041A3  A97F                BRA P:0x041A3 ; rel -0x1
+P:0x041A4  81A5                .word 0x81A5
+P:0x041A5  8C2D                .word 0x8C2D
+P:0x041A6  E41D                .word 0xE41D
+P:0x041A7  FFFF                .word 0xFFFF
+P:0x041A8  00FF                .word 0x00FF
+P:0x041A9  E700                NOP
+P:0x041AA  E700                NOP
+P:0x041AB  8FAE                .word 0x8FAE
+P:0x041AC  A303                .word 0xA303
+P:0x041AD  E255 24F6           JSR P:0x124F6
+P:0x041AF  A97F                BRA P:0x041AF ; rel -0x1
+P:0x041B0  83AE                .word 0x83AE
+P:0x041B1  0002                .word 0x0002
+P:0x041B2  8FB3                .word 0x8FB3
+P:0x041B3  A303                .word 0xA303
+P:0x041B4  E255 24F6           JSR P:0x124F6
+P:0x041B6  A97F                BRA P:0x041B6 ; rel -0x1
+P:0x041B7  FE7D                .word 0xFE7D
+P:0x041B8  086B                .word 0x086B
+P:0x041B9  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x041BB  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x041BD  E708                RTS
+P:0x041BE  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x041C0  835D                .word 0x835D
+P:0x041C1  0300                .word 0x0300
+P:0x041C2  E700                NOP
+P:0x041C3  E700                NOP
+P:0x041C4  E700                NOP
+P:0x041C5  E700                NOP
+P:0x041C6  E700                NOP
+P:0x041C7  E700                NOP
+P:0x041C8  8654 F352 0403      MOVE.W #0x0403,X:0xF352
+P:0x041CB  81B4                .word 0x81B4
+P:0x041CC  D87D                .word 0xD87D
+P:0x041CD  086F                .word 0x086F
+P:0x041CE  DE7D                .word 0xDE7D
+P:0x041CF  086B                .word 0x086B
+P:0x041D0  E418                .word 0xE418
+P:0x041D1  AAAA                .word 0xAAAA
+P:0x041D2  00AA                .word 0x00AA
+P:0x041D3  E419                .word 0xE419
+P:0x041D4  5555                .word 0x5555
+P:0x041D5  0055                .word 0x0055
+P:0x041D6  E41A                .word 0xE41A
+P:0x041D7  5555                .word 0x5555
+P:0x041D8  00D5                .word 0x00D5
+P:0x041D9  E41C                .word 0xE41C
+P:0x041DA  AAAA                .word 0xAAAA
+P:0x041DB  002A                .word 0x002A
+P:0x041DC  8123                .word 0x8123
+P:0x041DD  8533                .word 0x8533
+P:0x041DE  8F36                .word 0x8F36
+P:0x041DF  A303                .word 0xA303
+P:0x041E0  E255 24F6           JSR P:0x124F6
+P:0x041E2  A97F                BRA P:0x041E2 ; rel -0x1
+P:0x041E3  8127                .word 0x8127
+P:0x041E4  8533                .word 0x8533
+P:0x041E5  8FA3                .word 0x8FA3
+P:0x041E6  A303                .word 0xA303
+P:0x041E7  E255 24F6           JSR P:0x124F6
+P:0x041E9  A97F                BRA P:0x041E9 ; rel -0x1
+P:0x041EA  8123                .word 0x8123
+P:0x041EB  8537                .word 0x8537
+P:0x041EC  8F35                .word 0x8F35
+P:0x041ED  A303                .word 0xA303
+P:0x041EE  E255 24F6           JSR P:0x124F6
+P:0x041F0  A97F                BRA P:0x041F0 ; rel -0x1
+P:0x041F1  8027                .word 0x8027
+P:0x041F2  8F34                .word 0x8F34
+P:0x041F3  A303                .word 0xA303
+P:0x041F4  E255 24F6           JSR P:0x124F6
+P:0x041F6  A97F                BRA P:0x041F6 ; rel -0x1
+P:0x041F7  8D21                .word 0x8D21
+P:0x041F8  81B3                .word 0x81B3
+P:0x041F9  E41D                .word 0xE41D
+P:0x041FA  0005                .word 0x0005
+P:0x041FB  0000                .word 0x0000
+P:0x041FC  E700                NOP
+P:0x041FD  E700                NOP
+P:0x041FE  84AD                .word 0x84AD
+P:0x041FF  A203                .word 0xA203
+P:0x04200  E255 24F6           JSR P:0x124F6
+P:0x04202  A97F                BRA P:0x04202 ; rel -0x1
+P:0x04203  84B9                .word 0x84B9
+P:0x04204  84BD                .word 0x84BD
+P:0x04205  84AD                .word 0x84AD
+P:0x04206  A303                .word 0xA303
+P:0x04207  E255 24F6           JSR P:0x124F6
+P:0x04209  A97F                BRA P:0x04209 ; rel -0x1
+P:0x0420A  E700                NOP
+P:0x0420B  84A9                .word 0x84A9
+P:0x0420C  A303                .word 0xA303
+P:0x0420D  E255 24F6           JSR P:0x124F6
+P:0x0420F  A97F                BRA P:0x0420F ; rel -0x1
+P:0x04210  E700                NOP
+P:0x04211  8FA7                .word 0x8FA7
+P:0x04212  A303                .word 0xA303
+P:0x04213  E255 24F6           JSR P:0x124F6
+P:0x04215  A97F                BRA P:0x04215 ; rel -0x1
+P:0x04216  E700                NOP
+P:0x04217  84A9                .word 0x84A9
+P:0x04218  A203                .word 0xA203
+P:0x04219  E255 24F6           JSR P:0x124F6
+P:0x0421B  A97F                BRA P:0x0421B ; rel -0x1
+P:0x0421C  8B23                .word 0x8B23
+P:0x0421D  8F35                .word 0x8F35
+P:0x0421E  A303                .word 0xA303
+P:0x0421F  E255 24F6           JSR P:0x124F6
+P:0x04221  A97F                BRA P:0x04221 ; rel -0x1
+P:0x04222  F87D                .word 0xF87D
+P:0x04223  086F                .word 0x086F
+P:0x04224  E700                NOP
+P:0x04225  E700                NOP
+P:0x04226  812B                .word 0x812B
+P:0x04227  FE7D                .word 0xFE7D
+P:0x04228  086B                .word 0x086B
+P:0x04229  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x0422B  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x0422D  E708                RTS
+P:0x0422E  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x04230  835D                .word 0x835D
+P:0x04231  0300                .word 0x0300
+P:0x04232  E700                NOP
+P:0x04233  E700                NOP
+P:0x04234  E700                NOP
+P:0x04235  E700                NOP
+P:0x04236  E700                NOP
+P:0x04237  E700                NOP
+P:0x04238  8654 F352 0404      MOVE.W #0x0404,X:0xF352
+P:0x0423B  81B4                .word 0x81B4
+P:0x0423C  D87D                .word 0xD87D
+P:0x0423D  086F                .word 0x086F
+P:0x0423E  DE7D                .word 0xDE7D
+P:0x0423F  086B                .word 0x086B
+P:0x04240  E419                .word 0xE419
+P:0x04241  FFFF                .word 0xFFFF
+P:0x04242  00FF                .word 0x00FF
+P:0x04243  874A FFFF           MOVE.W #0xFFFF,reg5:10
+P:0x04245  E700                NOP
+P:0x04246  E700                NOP
+P:0x04247  85A6                .word 0x85A6
+P:0x04248  8F26                .word 0x8F26
+P:0x04249  A303                .word 0xA303
+P:0x0424A  E255 24F6           JSR P:0x124F6
+P:0x0424C  A97F                BRA P:0x0424C ; rel -0x1
+P:0x0424D  874C 00FF           MOVE.W #0x00FF,reg5:12
+P:0x0424F  E700                NOP
+P:0x04250  E700                NOP
+P:0x04251  81A9                .word 0x81A9
+P:0x04252  85BC                .word 0x85BC
+P:0x04253  8F2C                .word 0x8F2C
+P:0x04254  A303                .word 0xA303
+P:0x04255  E255 24F6           JSR P:0x124F6
+P:0x04257  A97F                BRA P:0x04257 ; rel -0x1
+P:0x04258  85B1                .word 0x85B1
+P:0x04259  8F2D                .word 0x8F2D
+P:0x0425A  A303                .word 0xA303
+P:0x0425B  E255 24F6           JSR P:0x124F6
+P:0x0425D  A97F                BRA P:0x0425D ; rel -0x1
+P:0x0425E  8758 00FF           MOVE.W #0x00FF,reg5:24
+P:0x04260  E700                NOP
+P:0x04261  E700                NOP
+P:0x04262  E40C                .word 0xE40C
+P:0x04263  00DD                .word 0x00DD
+P:0x04264  9F5E                .word 0x9F5E
+P:0x04265  81B6                .word 0x81B6
+P:0x04266  8F38                .word 0x8F38
+P:0x04267  A303                .word 0xA303
+P:0x04268  E255 24F6           JSR P:0x124F6
+P:0x0426A  A97F                BRA P:0x0426A ; rel -0x1
+P:0x0426B  E40B                .word 0xE40B
+P:0x0426C  10CE                .word 0x10CE
+P:0x0426D  E411                .word 0xE411
+P:0x0426E  AAAA                .word 0xAAAA
+P:0x0426F  5555                .word 0x5555
+P:0x04270  7D90                .word 0x7D90
+P:0x04271  D143                .word 0xD143
+P:0x04272  0001                .word 0x0001
+P:0x04273  D797                .word 0xD797
+P:0x04274  F07D                .word 0xF07D
+P:0x04275  0867                .word 0x0867
+P:0x04276  788E                .word 0x788E
+P:0x04277  E40E                .word 0xE40E
+P:0x04278  0001                .word 0x0001
+P:0x04279  E700                NOP
+P:0x0427A  E700                NOP
+P:0x0427B  8136                .word 0x8136
+P:0x0427C  F756                .word 0xF756
+P:0x0427D  F516                .word 0xF516
+P:0x0427E  78EE                .word 0x78EE
+P:0x0427F  D17D                .word 0xD17D
+P:0x04280  0867                .word 0x0867
+P:0x04281  F27D                .word 0xF27D
+P:0x04282  0867                .word 0x0867
+P:0x04283  78AE                .word 0x78AE
+P:0x04284  813B                .word 0x813B
+P:0x04285  F51B                .word 0xF51B
+P:0x04286  F71F                .word 0xF71F
+P:0x04287  78EE                .word 0x78EE
+P:0x04288  7997                .word 0x7997
+P:0x04289  A303                .word 0xA303
+P:0x0428A  E255 24F6           JSR P:0x124F6
+P:0x0428C  A97F                BRA P:0x0428C ; rel -0x1
+P:0x0428D  F67C 10CE           MOVE.W X:0x10CE,reg5:12
+P:0x0428F  10CC                .word 0x10CC
+P:0x04290  F07C 10CC           MOVE.W X:0x10CC,reg5:0
+P:0x04292  7836                .word 0x7836
+P:0x04293  A303                .word 0xA303
+P:0x04294  E255 24F6           JSR P:0x124F6
+P:0x04296  A97F                BRA P:0x04296 ; rel -0x1
+P:0x04297  F87D                .word 0xF87D
+P:0x04298  086F                .word 0x086F
+P:0x04299  E700                NOP
+P:0x0429A  E700                NOP
+P:0x0429B  812B                .word 0x812B
+P:0x0429C  FE7D                .word 0xFE7D
+P:0x0429D  086B                .word 0x086B
+P:0x0429E  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x042A0  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x042A2  E708                RTS
+P:0x042A3  0000                .word 0x0000
+P:0x042A4  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x042A6  835D                .word 0x835D
+P:0x042A7  0300                .word 0x0300
+P:0x042A8  E700                NOP
+P:0x042A9  E700                NOP
+P:0x042AA  E700                NOP
+P:0x042AB  E700                NOP
+P:0x042AC  E700                NOP
+P:0x042AD  E700                NOP
+P:0x042AE  8654 F352 0501      MOVE.W #0x0501,X:0xF352
+P:0x042B1  A904                BRA P:0x042B6 ; rel +0x4
+P:0x042B2  E93F                .word 0xE93F
+P:0x042B3  42B4                .word 0x42B4
+P:0x042B4  E700                NOP
+P:0x042B5  E700                NOP
+P:0x042B6  815D                .word 0x815D
+P:0x042B7  0001                .word 0x0001
+P:0x042B8  A006                .word 0xA006
+P:0x042B9  E700                NOP
+P:0x042BA  E700                NOP
+P:0x042BB  E700                NOP
+P:0x042BC  E255 24F6           JSR P:0x124F6
+P:0x042BE  A97F                BRA P:0x042BE ; rel -0x1
+P:0x042BF  835D                .word 0x835D
+P:0x042C0  0001                .word 0x0001
+P:0x042C1  A106                .word 0xA106
+P:0x042C2  E700                NOP
+P:0x042C3  E700                NOP
+P:0x042C4  E700                NOP
+P:0x042C5  E255 24F6           JSR P:0x124F6
+P:0x042C7  A97F                BRA P:0x042C7 ; rel -0x1
+P:0x042C8  835D                .word 0x835D
+P:0x042C9  0004                .word 0x0004
+P:0x042CA  A306                .word 0xA306
+P:0x042CB  E700                NOP
+P:0x042CC  E700                NOP
+P:0x042CD  E700                NOP
+P:0x042CE  E255 24F6           JSR P:0x124F6
+P:0x042D0  A97F                BRA P:0x042D0 ; rel -0x1
+P:0x042D1  815D                .word 0x815D
+P:0x042D2  0004                .word 0x0004
+P:0x042D3  A206                .word 0xA206
+P:0x042D4  E700                NOP
+P:0x042D5  E700                NOP
+P:0x042D6  E700                NOP
+P:0x042D7  E255 24F6           JSR P:0x124F6
+P:0x042D9  A97F                BRA P:0x042D9 ; rel -0x1
+P:0x042DA  815D                .word 0x815D
+P:0x042DB  000A                .word 0x000A
+P:0x042DC  A406                .word 0xA406
+P:0x042DD  E700                NOP
+P:0x042DE  E700                NOP
+P:0x042DF  E700                NOP
+P:0x042E0  E255 24F6           JSR P:0x124F6
+P:0x042E2  A97F                BRA P:0x042E2 ; rel -0x1
+P:0x042E3  815D                .word 0x815D
+P:0x042E4  000E                .word 0x000E
+P:0x042E5  A606                .word 0xA606
+P:0x042E6  E700                NOP
+P:0x042E7  E700                NOP
+P:0x042E8  E700                NOP
+P:0x042E9  E255 24F6           JSR P:0x124F6
+P:0x042EB  A97F                BRA P:0x042EB ; rel -0x1
+P:0x042EC  835D                .word 0x835D
+P:0x042ED  000E                .word 0x000E
+P:0x042EE  A706                .word 0xA706
+P:0x042EF  E700                NOP
+P:0x042F0  E700                NOP
+P:0x042F1  E700                NOP
+P:0x042F2  E255 24F6           JSR P:0x124F6
+P:0x042F4  A97F                BRA P:0x042F4 ; rel -0x1
+P:0x042F5  815D                .word 0x815D
+P:0x042F6  0008                .word 0x0008
+P:0x042F7  835D                .word 0x835D
+P:0x042F8  0002                .word 0x0002
+P:0x042F9  A506                .word 0xA506
+P:0x042FA  E700                NOP
+P:0x042FB  E700                NOP
+P:0x042FC  E700                NOP
+P:0x042FD  E255 24F6           JSR P:0x124F6
+P:0x042FF  A97F                BRA P:0x042FF ; rel -0x1
+P:0x04300  815D                .word 0x815D
+P:0x04301  0005                .word 0x0005
+P:0x04302  AC06                .word 0xAC06
+P:0x04303  E700                NOP
+P:0x04304  E700                NOP
+P:0x04305  E700                NOP
+P:0x04306  E255 24F6           JSR P:0x124F6
+P:0x04308  A97F                BRA P:0x04308 ; rel -0x1
+P:0x04309  835D                .word 0x835D
+P:0x0430A  0005                .word 0x0005
+P:0x0430B  AD06                .word 0xAD06
+P:0x0430C  E700                NOP
+P:0x0430D  E700                NOP
+P:0x0430E  E700                NOP
+P:0x0430F  E255 24F6           JSR P:0x124F6
+P:0x04311  A97F                BRA P:0x04311 ; rel -0x1
+P:0x04312  835D                .word 0x835D
+P:0x04313  0030                .word 0x0030
+P:0x04314  815D                .word 0x815D
+P:0x04315  0004                .word 0x0004
+P:0x04316  AE06                .word 0xAE06
+P:0x04317  E700                NOP
+P:0x04318  E700                NOP
+P:0x04319  E700                NOP
+P:0x0431A  E255 24F6           JSR P:0x124F6
+P:0x0431C  A97F                BRA P:0x0431C ; rel -0x1
+P:0x0431D  835D                .word 0x835D
+P:0x0431E  0034                .word 0x0034
+P:0x0431F  AF06                .word 0xAF06
+P:0x04320  E700                NOP
+P:0x04321  E700                NOP
+P:0x04322  E700                NOP
+P:0x04323  E255 24F6           JSR P:0x124F6
+P:0x04325  A97F                BRA P:0x04325 ; rel -0x1
+P:0x04326  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x04328  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x0432A  E708                RTS
+P:0x0432B  0000                .word 0x0000
+P:0x0432C  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x0432E  835D                .word 0x835D
+P:0x0432F  0300                .word 0x0300
+P:0x04330  E700                NOP
+P:0x04331  E700                NOP
+P:0x04332  E700                NOP
+P:0x04333  E700                NOP
+P:0x04334  E700                NOP
+P:0x04335  E700                NOP
+P:0x04336  8654 F352 0502      MOVE.W #0x0502,X:0xF352
+P:0x04339  815D                .word 0x815D
+P:0x0433A  0001                .word 0x0001
+P:0x0433B  E050                .word 0xE050
+P:0x0433C  4340                .word 0x4340
+P:0x0433D  E255 24F6           JSR P:0x124F6
+P:0x0433F  A97F                BRA P:0x0433F ; rel -0x1
+P:0x04340  835D                .word 0x835D
+P:0x04341  0001                .word 0x0001
+P:0x04342  E150                .word 0xE150
+P:0x04343  4347                .word 0x4347
+P:0x04344  E255 24F6           JSR P:0x124F6
+P:0x04346  A97F                BRA P:0x04346 ; rel -0x1
+P:0x04347  835D                .word 0x835D
+P:0x04348  0004                .word 0x0004
+P:0x04349  E350                .word 0xE350
+P:0x0434A  434E                .word 0x434E
+P:0x0434B  E255 24F6           JSR P:0x124F6
+P:0x0434D  A97F                BRA P:0x0434D ; rel -0x1
+P:0x0434E  815D                .word 0x815D
+P:0x0434F  0004                .word 0x0004
+P:0x04350  E250                .word 0xE250
+P:0x04351  4355                .word 0x4355
+P:0x04352  E255 24F6           JSR P:0x124F6
+P:0x04354  A97F                BRA P:0x04354 ; rel -0x1
+P:0x04355  815D                .word 0x815D
+P:0x04356  000A                .word 0x000A
+P:0x04357  E450                .word 0xE450
+P:0x04358  435C                .word 0x435C
+P:0x04359  E255 24F6           JSR P:0x124F6
+P:0x0435B  A97F                BRA P:0x0435B ; rel -0x1
+P:0x0435C  815D                .word 0x815D
+P:0x0435D  000E                .word 0x000E
+P:0x0435E  E650                .word 0xE650
+P:0x0435F  4363                .word 0x4363
+P:0x04360  E255 24F6           JSR P:0x124F6
+P:0x04362  A97F                BRA P:0x04362 ; rel -0x1
+P:0x04363  835D                .word 0x835D
+P:0x04364  000E                .word 0x000E
+P:0x04365  E750                .word 0xE750
+P:0x04366  436A                .word 0x436A
+P:0x04367  E255 24F6           JSR P:0x124F6
+P:0x04369  A97F                BRA P:0x04369 ; rel -0x1
+P:0x0436A  815D                .word 0x815D
+P:0x0436B  0008                .word 0x0008
+P:0x0436C  835D                .word 0x835D
+P:0x0436D  0002                .word 0x0002
+P:0x0436E  E550                .word 0xE550
+P:0x0436F  4373                .word 0x4373
+P:0x04370  E255 24F6           JSR P:0x124F6
+P:0x04372  A97F                BRA P:0x04372 ; rel -0x1
+P:0x04373  835D                .word 0x835D
+P:0x04374  0030                .word 0x0030
+P:0x04375  815D                .word 0x815D
+P:0x04376  0004                .word 0x0004
+P:0x04377  E654                .word 0xE654
+P:0x04378  437C                .word 0x437C
+P:0x04379  E255 24F6           JSR P:0x124F6
+P:0x0437B  A97F                BRA P:0x0437B ; rel -0x1
+P:0x0437C  835D                .word 0x835D
+P:0x0437D  0034                .word 0x0034
+P:0x0437E  E754                .word 0xE754
+P:0x0437F  4383                .word 0x4383
+P:0x04380  E255 24F6           JSR P:0x124F6
+P:0x04382  A97F                BRA P:0x04382 ; rel -0x1
+P:0x04383  E082                .word 0xE082
+P:0x04384  EA02                .word 0xEA02
+P:0x04385  700B                .word 0x700B
+P:0x04386  4C00                .word 0x4C00
+P:0x04387  A303                .word 0xA303
+P:0x04388  E255 24F6           JSR P:0x124F6
+P:0x0438A  A97F                BRA P:0x0438A ; rel -0x1
+P:0x0438B  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x0438D  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x0438F  E708                RTS
+P:0x04390  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x04392  835D                .word 0x835D
+P:0x04393  0300                .word 0x0300
+P:0x04394  E700                NOP
+P:0x04395  E700                NOP
+P:0x04396  E700                NOP
+P:0x04397  E700                NOP
+P:0x04398  E700                NOP
+P:0x04399  E700                NOP
+P:0x0439A  8654 F352 0503      MOVE.W #0x0503,X:0xF352
+P:0x0439D  8750 0002           MOVE.W #0x0002,reg5:16
+P:0x0439F  E802                .word 0xE802
+P:0x043A0  43CC                .word 0x43CC
+P:0x043A1  851E                .word 0x851E
+P:0x043A2  7856                .word 0x7856
+P:0x043A3  A21E                .word 0xA21E
+P:0x043A4  E700                NOP
+P:0x043A5  E700                NOP
+P:0x043A6  8F5E                .word 0x8F5E
+P:0x043A7  0121                .word 0x0121
+P:0x043A8  E700                NOP
+P:0x043A9  E700                NOP
+P:0x043AA  E700                NOP
+P:0x043AB  8F5C                .word 0x8F5C
+P:0x043AC  8095                .word 0x8095
+P:0x043AD  E700                NOP
+P:0x043AE  E700                NOP
+P:0x043AF  E700                NOP
+P:0x043B0  E801                .word 0xE801
+P:0x043B1  43BB                .word 0x43BB
+P:0x043B2  8B5C                .word 0x8B5C
+P:0x043B3  808E                .word 0x808E
+P:0x043B4  851E                .word 0x851E
+P:0x043B5  5E81                .word 0x5E81
+P:0x043B6  A20B                .word 0xA20B
+P:0x043B7  8F1B                .word 0x8F1B
+P:0x043B8  E700                NOP
+P:0x043B9  E700                NOP
+P:0x043BA  E700                NOP
+P:0x043BB  E700                NOP
+P:0x043BC  851E                .word 0x851E
+P:0x043BD  7A86                .word 0x7A86
+P:0x043BE  A203                .word 0xA203
+P:0x043BF  700B                .word 0x700B
+P:0x043C0  E700                NOP
+P:0x043C1  A907                BRA P:0x043C9 ; rel +0x7
+P:0x043C2  8F1B                .word 0x8F1B
+P:0x043C3  E700                NOP
+P:0x043C4  E700                NOP
+P:0x043C5  E255 24F6           JSR P:0x124F6
+P:0x043C7  A97F                BRA P:0x043C7 ; rel -0x1
+P:0x043C8  E700                NOP
+P:0x043C9  E700                NOP
+P:0x043CA  E700                NOP
+P:0x043CB  E700                NOP
+P:0x043CC  E700                NOP
+P:0x043CD  DF7C F352           MOVE.W reg5:30,X:0xF352
+P:0x043CF  FDFC 10CA           MOVE.W X:0x10CA,reg5:27
+P:0x043D1  E708                RTS
+P:0x043D2  DDFC 10CA           MOVE.W reg5:27,X:0x10CA
+P:0x043D4  835D                .word 0x835D
+P:0x043D5  0300                .word 0x0300
+P:0x043D6  E700                NOP
+P:0x043D7  E700                NOP
+P:0x043D8  E700                NOP
+P:0x043D9  E700                NOP
+P:0x043DA  E700                NOP
+P:0x043DB  E700                NOP
+P:0x043DC  8654 F352 0504      MOVE.W #0x0504,X:0xF352
+P:0x043DF  E5FE                .word 0xE5FE
+P:0x043E0  4682                .word 0x4682
+P:0x043E1  A103                .word 0xA103
+P:0x043E2  E255 24F6           JSR P:0x124F6
+P:0x043E4  A97F                BRA P:0x043E4 ; rel -0x1
+P:0x043E5  E481                .word 0xE481
+P:0x043E6  5602                .word 0x5602
+P:0x043E7  A103                .word 0xA103
+P:0x043E8  E255 24F6           JSR P:0x124F6
+P:0x043EA  A97F                BRA P:0x043EA ; rel -0x1
+P:0x043EB  8652                .word 0x8652
+P:0x043EC  AAAA                .word 0xAAAA
+P:0x043ED  8852                .word 0x8852
+P:0x043EE  5555                .word 0x5555
+P:0x043EF  A103                .word 0xA103
+P:0x043F0  E255 24F6           JSR P:0x124F6
+P:0x043F2  A97F                BRA P:0x043F2 ; rel -0x1
+P:0x043F3  8747 AAAA           MOVE.W #0xAAAA,reg5:7
+P:0x043F5  73E3                .word 0x73E3
+P:0x043F6  A103                .word 0xA103
+P:0x043F7  E255 24F6           JSR P:0x124F6
+P:0x043F9  A97F                BRA P:0x043F9 ; rel -0x1
+P:0x043FA  73E3                .word 0x73E3
+P:0x043FB  E700                NOP
+P:0x043FC  A003                .word 0xA003
+P:0x043FD  E255 24F6           JSR P:0x124F6
+P:0x043FF  A97F                BRA P:0x043FF ; rel -0x1

@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F399-AD.VBF",
+  "source_size": 5952,
+  "source_sha256": "795ba13d72e8da45637393c3676c341ba593fa8adc4de7a0c29beaa5ab1681dc",
+  "header_end": 1030,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "F1FT-14F399-AD",
+    "part_type": "SBL",
+    "ecu_address": "0x706",
+    "data_format_identifier": null,
+    "file_checksum": "0xB5D7B0CB"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1030,
+      "address": 8519680,
+      "length": 4912,
+      "payload_offset": 1038,
+      "stored_checksum": 58861,
+      "checksum_matches": [],
+      "sha256": "91bd7aaa7abd1fbe65c96a84db2453c22e1b3f190029cc9bf7cef8750e974ce5"
+    }
+  ],
+  "parsed_end": 5952,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

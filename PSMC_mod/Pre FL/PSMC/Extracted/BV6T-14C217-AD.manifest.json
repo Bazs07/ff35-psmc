@@ -1,0 +1,49 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C217-AD.VBF",
+  "source_size": 479408,
+  "source_sha256": "dbb7f3aa6900495bf68689becb6dce374f7aabd989d59ed96f724f448e377fe8",
+  "header_end": 1170,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "BV6T-14C217-AD",
+    "part_type": "EXE",
+    "ecu_address": "0x730",
+    "data_format_identifier": null,
+    "file_checksum": "0xFFD713B0"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1170,
+      "address": 0,
+      "length": 38912,
+      "payload_offset": 1178,
+      "stored_checksum": 40374,
+      "checksum_matches": [],
+      "sha256": "0d7280f343803b565ad9bcc4da373d57314e57da0ad2cd6adb665218c50fc029"
+    },
+    {
+      "index": 1,
+      "record_offset": 40092,
+      "address": 114688,
+      "length": 409600,
+      "payload_offset": 40100,
+      "stored_checksum": 44881,
+      "checksum_matches": [],
+      "sha256": "46cdaddc5b020660cadd3f34dc71f84bc0051fa4828364f309c4db47f59fc821"
+    },
+    {
+      "index": 2,
+      "record_offset": 449702,
+      "address": 67144704,
+      "length": 29696,
+      "payload_offset": 449710,
+      "stored_checksum": 39202,
+      "checksum_matches": [],
+      "sha256": "2222daa25c8872ece626311bdbc01aa8403678cd5c1117a0acab048989052af1"
+    }
+  ],
+  "parsed_end": 479408,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

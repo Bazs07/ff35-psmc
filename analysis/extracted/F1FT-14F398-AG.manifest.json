@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F398-AG.VBF",
+  "source_size": 26744,
+  "source_sha256": "1fda088b19629e4c61cac8446928fa4a1dae033a17c6aad9e6a17f22b485fab6",
+  "header_end": 1121,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "F1FT-14F398-AG",
+    "part_type": "DATA",
+    "ecu_address": "0x706",
+    "data_format_identifier": null,
+    "file_checksum": "0x0676391F"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1121,
+      "address": 9445376,
+      "length": 25613,
+      "payload_offset": 1129,
+      "stored_checksum": 50546,
+      "checksum_matches": [],
+      "sha256": "bb304cad7d145e52a64966e994266e9149d92f17516b4811359ec4910669b68c"
+    }
+  ],
+  "parsed_end": 26744,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

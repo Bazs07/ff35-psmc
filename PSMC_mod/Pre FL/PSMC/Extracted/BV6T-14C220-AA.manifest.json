@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C220-AA.vbf",
+  "source_size": 5023,
+  "source_sha256": "24bc5bd3e01ec09a7c6819a5f565664c613b60f63abb26022c628809ffb6181f",
+  "header_end": 1043,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "BV6T-14C220-AA",
+    "part_type": "SBL",
+    "ecu_address": "0x730",
+    "data_format_identifier": null,
+    "file_checksum": "0x3BA01752"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1043,
+      "address": 651264,
+      "length": 3970,
+      "payload_offset": 1051,
+      "stored_checksum": 27720,
+      "checksum_matches": [],
+      "sha256": "7f0421b4192ec230972a9549ddf536899cd906ba56e903d7660e2959deedf226"
+    }
+  ],
+  "parsed_end": 5023,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

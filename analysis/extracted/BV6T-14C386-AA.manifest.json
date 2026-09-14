@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\PSMC\\BV6T-14C386-AA.vbf",
+  "source_size": 3158,
+  "source_sha256": "fd702b698896513614226a8e183f131162aaca5963e4de9ebadce0f25deb56ad",
+  "header_end": 1220,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "BV6T-14C386-AA",
+    "part_type": "SIGCFG",
+    "ecu_address": "0x730",
+    "data_format_identifier": null,
+    "file_checksum": "0x2FF0A2E2"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1220,
+      "address": 67141632,
+      "length": 1928,
+      "payload_offset": 1228,
+      "stored_checksum": 7719,
+      "checksum_matches": [],
+      "sha256": "97e220ec5617121c57bd2ba460ee993840f6786a736d1c78ab16118d94222f66"
+    }
+  ],
+  "parsed_end": 3158,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

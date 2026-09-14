@@ -1,0 +1,316 @@
+<title>LaRefAng sávközép</title>
+<meta name="description" content="Ford Focus Mk3.5 EPS sávközépre vezetés élő szimuláció — a gyári ±5.87° LaRefAng nudge burkon belül.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#0b0f13; --bg2:#0e141a; --panel:#131b22; --panel2:#18222b; --hair:#25313b;
+  --ink:#e7edf1; --dim:#7f8f9a; --faint:#586773;
+  --teal:#33d6c0; --teal-dim:#1c6f66; --amber:#f0b429; --red:#ff5d52;
+  --asphalt:#161d24; --asphalt2:#111820; --asphalt-ego:#1b242d; --edge:#cdd6dc; --dash:#e0a72e;
+  --shadow:0 2px 14px rgba(0,0,0,.45);
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --disp:"Chakra Petch",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--disp);margin:0;
+  padding:0 14px calc(env(safe-area-inset-bottom,0) + 22px);line-height:1.4;
+  -webkit-text-size-adjust:100%;max-width:520px;margin-inline:auto;
+  background-image:radial-gradient(120% 60% at 50% -10%, #10171e 0%, var(--bg) 60%);}
+header{padding-block:16px 10px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin:0 0 4px}
+h1{font-size:26px;font-weight:700;letter-spacing:.01em;margin:0;text-wrap:balance;line-height:1.05}
+.sub{font-family:var(--mono);font-size:12px;color:var(--dim);margin:6px 0 0;letter-spacing:.02em}
+.stage{position:relative;border:1px solid var(--hair);border-radius:14px;overflow:hidden;
+  background:var(--asphalt2);box-shadow:var(--shadow);margin-top:14px}
+canvas{display:block;width:100%;height:auto;touch-action:manipulation}
+.hud{position:absolute;left:10px;top:9px;right:10px;display:flex;justify-content:space-between;
+  align-items:flex-start;pointer-events:none;font-family:var(--mono)}
+.hud .seg{font-size:11px;letter-spacing:.08em;color:var(--ink);background:rgba(8,12,16,.6);
+  padding:4px 8px;border-radius:6px;border:1px solid var(--hair)}
+.hud .dist{font-size:11px;color:var(--dim);background:rgba(8,12,16,.6);padding:4px 8px;
+  border-radius:6px;border:1px solid var(--hair)}
+.status{position:absolute;left:10px;right:10px;bottom:10px;text-align:center;font-family:var(--mono);
+  font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px;
+  border-radius:8px;border:1px solid var(--teal-dim);color:var(--teal);background:rgba(9,20,19,.78);
+  transition:color .2s,border-color .2s,background .2s}
+.status.warn{color:var(--amber);border-color:#6b5312;background:rgba(28,22,6,.8)}
+.status.crit{color:var(--red);border-color:#6e2420;background:rgba(30,12,11,.82)}
+/* telemetria */
+.tele{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.cell{background:var(--panel);border:1px solid var(--hair);border-radius:11px;padding:10px 11px}
+.cell .k{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.cell .v{font-family:var(--mono);font-weight:600;font-size:23px;margin-top:3px;font-variant-numeric:tabular-nums;line-height:1}
+.cell .u{font-size:12px;color:var(--faint);font-weight:400}
+/* LaRefAng meter */
+.meter{margin-top:12px;background:var(--panel);border:1px solid var(--hair);border-radius:11px;padding:12px}
+.meter .top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono)}
+.meter .lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.meter .val{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.track{position:relative;height:16px;margin-top:9px;border-radius:8px;background:var(--asphalt);
+  border:1px solid var(--hair);overflow:hidden}
+.track .mid{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--faint)}
+.track .fill{position:absolute;top:0;bottom:0;left:50%;width:0;background:var(--teal);opacity:.85}
+.track .fill.warn{background:var(--amber)} .track .fill.crit{background:var(--red)}
+.track .zone{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(90deg,transparent 0 5px,rgba(255,93,82,.14) 5px 10px)}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:5px}
+/* vezerlok */
+.controls{margin-top:14px;background:var(--panel);border:1px solid var(--hair);border-radius:13px;padding:14px}
+.btnrow{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
+button{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--ink);background:var(--panel2);
+  border:1px solid var(--hair);border-radius:10px;padding:13px 8px;cursor:pointer;letter-spacing:.02em;
+  min-height:48px;transition:border-color .15s,background .15s}
+button:active{background:#1f2b35}
+button.primary{color:#06110f;background:var(--teal);border-color:var(--teal)}
+button.off{color:var(--dim)}
+button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.slider{margin-top:15px}
+.slider .row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;margin-bottom:7px}
+.slider .row .name{color:var(--dim);letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+.slider .row .num{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:var(--asphalt);border:1px solid var(--hair)}
+input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:var(--asphalt);border:1px solid var(--hair)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+  background:var(--teal);border:3px solid var(--bg2);margin-top:-12px;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--teal);border:3px solid var(--bg2)}
+input[type=range]:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px}
+.note{font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--dim);margin-top:16px;
+  border-top:1px solid var(--hair);padding-top:13px}
+.note b{color:var(--ink);font-weight:600}
+.note .can{color:var(--teal)}
+footer{font-family:var(--mono);font-size:10px;color:var(--faint);text-align:center;margin-top:16px;letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){.status{transition:none}}
+</style>
+
+<header>
+  <p class="eyebrow">Ford Focus Mk3.5 · EPS · within-envelope</p>
+  <h1>Sávközépre vezetés a nudge-csatornán</h1>
+  <p class="sub">LaRefAng_No_Req · CAN 0x3CB · ±5.87° (±102.4 mrad) gyári burok</p>
+</header>
+
+<div class="stage">
+  <canvas id="road" width="720" height="760" aria-label="Felülnézeti út-szimuláció: az autó a sávközepet tartja"></canvas>
+  <div class="hud">
+    <span class="seg" id="segLbl">EGYENES</span>
+    <span class="dist" id="distLbl">0 m</span>
+  </div>
+  <div class="status" id="status">RENDSZER AKTÍV · KÖZÉPEN TART</div>
+</div>
+
+<div class="tele">
+  <div class="cell"><div class="k">Sebesség</div><div class="v" id="vSpd">100<span class="u"> km/h</span></div></div>
+  <div class="cell"><div class="k">Oldal-hiba</div><div class="v" id="vErr">0.00<span class="u"> m</span></div></div>
+  <div class="cell"><div class="k">Ívsugár</div><div class="v" id="vRad">∞<span class="u"> m</span></div></div>
+</div>
+
+<div class="meter">
+  <div class="top"><span class="lbl">LaRefAng kormány-referencia</span><span class="val" id="vAng">+0.00°</span></div>
+  <div class="track" id="track">
+    <div class="mid"></div>
+    <div class="fill" id="fill"></div>
+  </div>
+  <div class="scale"><span>−5.87°</span><span>0</span><span>+5.87°</span></div>
+</div>
+
+<div class="controls">
+  <div class="btnrow">
+    <button id="playBtn" class="primary">Szünet</button>
+    <button id="resetBtn">Újra</button>
+    <button id="assistBtn">Asszisztens: BE</button>
+  </div>
+  <div class="slider">
+    <div class="row"><span class="name">Sebesség</span><span class="num" id="nSpd">100 km/h</span></div>
+    <input type="range" id="speed" min="30" max="140" step="5" value="100" aria-label="Sebesség km/h">
+  </div>
+  <div class="slider">
+    <div class="row"><span class="name">Szabályozó erősítés (k_la)</span><span class="num" id="nGain">0.085</span></div>
+    <input type="range" id="gain" min="0.03" max="0.15" step="0.005" value="0.085" aria-label="Szabályozó erősítés">
+  </div>
+  <div class="slider">
+    <div class="row"><span class="name">Előretekintés</span><span class="num" id="nLook">12 m</span></div>
+    <input type="range" id="lookahead" min="5" max="20" step="1" value="12" aria-label="Előretekintés méter">
+  </div>
+</div>
+
+<p class="note">
+  A szabályozó a kamera sáv-adatából <b>LaRefAng</b> referenciaszöget számol, és a
+  <span class="can">Lane_Assist_Data2 (0x3CB)</span> üzenetben küldi — a <b>gyári ±5.87° burokra telítve</b>.
+  Egyenesen és autópálya-íven (R≈250 m) középen tart; <b>éles kanyarban (R≈28 m) a referencia telít, az
+  autó kilép → a vezető átvesz</b>. Ez a burok szándékos: a beavatkozás sosem lép ki a biztonságos tartományból.
+</p>
+<footer>Kinematikus bicycle-model · a lca_sim/ Python-referencia böngésző-portja</footer>
+
+<script>
+(function(){
+  "use strict";
+  const cv=document.getElementById('road'), ctx=cv.getContext('2d');
+  const S={ // state
+    s:0, e_y:0.35, e_psi:0, delta:0, playing:true, assist:true, takeover:false,
+    v:100/3.6, k_la:0.085, Lh:12, k_ff:1.0, L:2.648, tau:0.15, LA:5.868
+  };
+  const css=getComputedStyle(document.documentElement);
+  const C=n=>css.getPropertyValue(n).trim();
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce) S.playing=false;
+
+  // --- ut-profil: ismetlodo hurok (m) ---
+  function curvature(s){
+    const p=((s%1040)+1040)%1040;
+    if(p<250) return 0;            // egyenes
+    if(p<560) return 1/250;        // autopalya-iv (jobbra)
+    if(p<760) return 0;            // egyenes
+    if(p<880) return -1/28;        // eles kanyar (balra, varosi)
+    return 0;                      // egyenes
+  }
+  function segName(s){
+    const p=((s%1040)+1040)%1040, r=curvature(s);
+    if(r===0) return {t:'EGYENES', r:0};
+    if(Math.abs(1/r)>100) return {t:'AUTÓPÁLYA-ÍV', r:1/r};
+    return {t:'ÉLES KANYAR', r:1/r};
+  }
+
+  // --- fizika lepes ---
+  function stepPhysics(dt){
+    const kappa=curvature(S.s);
+    let ref_deg, sat=false;
+    const lookErr = S.e_y + S.Lh*Math.sin(S.e_psi);
+    const delta_des = S.k_ff*S.L*kappa - S.k_la*lookErr;   // kivant kerek-szog [rad]
+    ref_deg = delta_des*180/Math.PI;
+    if(Math.abs(ref_deg)>S.LA){ sat=true; ref_deg = Math.sign(ref_deg)*S.LA; }
+    // takeover: ha kilep a savbol, egy erosebb "vezeto" veszi at (korlat nelkul), amig vissza nem all
+    let cmd_rad;
+    if(Math.abs(S.e_y)>1.5) S.takeover=true;
+    if(S.takeover){
+      cmd_rad = -0.16*(S.e_y + S.Lh*Math.sin(S.e_psi)) + S.L*kappa; // vezeto: nagyobb hataskor
+      if(Math.abs(S.e_y)<0.25) S.takeover=false;
+    } else {
+      cmd_rad = (S.assist? ref_deg*Math.PI/180 : 0);
+    }
+    S.delta += (cmd_rad - S.delta)*(dt/S.tau);
+    S.e_y   += S.v*Math.sin(S.e_psi)*dt;
+    S.e_psi += (S.v*Math.tan(S.delta)/S.L - S.v*kappa)*dt;
+    S.s     += S.v*dt;
+    return {ref_deg, sat, kappa};
+  }
+
+  // --- kirajzolas (felulnezeti, jarmu-frame) ---
+  let W,H,cx,cy,pxV,pxM,dpr;
+  function resize(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    const cssW=cv.clientWidth; const cssH=Math.round(cssW*1.06);
+    cv.width=Math.round(cssW*dpr); cv.height=Math.round(cssH*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    W=cssW; H=cssH; cx=W/2; cy=H*0.80;
+    pxV = cy/70;                 // 70 m elore lathato a felso elig
+    pxM = W/7.4;                 // rakozelites: az ego-sav ~fel kepernyo-szeles
+  }
+  const laneHalf=1.8, viewDist=72, dd=1.5;
+  function draw(live){
+    ctx.clearRect(0,0,W,H);
+    // teljes aszfalt-hatter
+    const bg=ctx.createLinearGradient(0,0,0,cy);
+    bg.addColorStop(0,C('--asphalt2')); bg.addColorStop(1,C('--asphalt'));
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+    // jarmu-frame: kozepvonal + ego savhatarok (+-1.8m) + szomszed osztok (+-5.4m)
+    let x=-S.e_y, y=0, th=-S.e_psi;
+    const cM=[],cL=[],cR=[],cLL=[],cRR=[];
+    for(let d=0; d<=viewDist; d+=dd){
+      const kap=curvature(S.s+d);
+      th += kap*dd; x += Math.sin(th)*dd; y += Math.cos(th)*dd;
+      const nx=Math.cos(th), ny=-Math.sin(th); // normal
+      const P=ox=>[cx+(x+ox*nx)*pxM, cy-(y+ox*ny)*pxV];
+      cM.push(P(0)); cL.push(P(-laneHalf)); cR.push(P(laneHalf)); cLL.push(P(-3*laneHalf)); cRR.push(P(3*laneHalf));
+    }
+    // ego-sav aszfalt (vilagosabb szalag a ket savhatar kozott)
+    ctx.beginPath(); ctx.moveTo(cL[0][0],cL[0][1]);
+    for(const p of cL) ctx.lineTo(p[0],p[1]);
+    for(let i=cR.length-1;i>=0;i--) ctx.lineTo(cR[i][0],cR[i][1]);
+    ctx.closePath(); ctx.fillStyle=C('--asphalt-ego'); ctx.fill();
+    const stroke=(pts,w,col,dash,offs)=>{ctx.lineWidth=w;ctx.strokeStyle=col;ctx.lineJoin='round';ctx.lineCap='round';
+      ctx.setLineDash(dash||[]);ctx.lineDashOffset=offs||0;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+      for(const p of pts)ctx.lineTo(p[0],p[1]);ctx.stroke();ctx.setLineDash([]);};
+    const dOff=-((S.s*pxV)%40);
+    // szomszed-sav osztok (halvany), majd az ego savhatarok (feher szaggatott)
+    ctx.globalAlpha=0.3; stroke(cLL,3,C('--edge'),[16,24],dOff); stroke(cRR,3,C('--edge'),[16,24],dOff); ctx.globalAlpha=1;
+    stroke(cL,4,C('--edge'),[22,20],dOff); stroke(cR,4,C('--edge'),[22,20],dOff);
+    // teal cel-ut (a rendszer kovetett kozepvonala) - HUD overlay, NEM utfestes
+    ctx.save(); ctx.shadowColor=C('--teal'); ctx.shadowBlur=9; ctx.globalAlpha=0.75;
+    stroke(cM,2.5,C(S.takeover?'--red':'--teal'),[3,9],dOff); ctx.restore(); ctx.globalAlpha=1;
+    // auto
+    const off=Math.abs(S.e_y);
+    // auto
+    const carW=1.85*pxM, carL=4.4*pxV, ang=S.e_psi;
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(ang*0.5);
+    ctx.shadowColor='rgba(0,0,0,.5)'; ctx.shadowBlur=10; ctx.shadowOffsetY=3;
+    const carCol = S.takeover? C('--red') : (off>1.0? C('--amber') : C('--teal'));
+    ctx.fillStyle=carCol;
+    const r=6; const w2=carW/2,h2=carL/2;
+    ctx.beginPath();
+    ctx.moveTo(-w2+r,-h2); ctx.lineTo(w2-r,-h2); ctx.quadraticCurveTo(w2,-h2,w2,-h2+r);
+    ctx.lineTo(w2,h2-r); ctx.quadraticCurveTo(w2,h2,w2-r,h2); ctx.lineTo(-w2+r,h2);
+    ctx.quadraticCurveTo(-w2,h2,-w2,h2-r); ctx.lineTo(-w2,-h2+r); ctx.quadraticCurveTo(-w2,-h2,-w2+r,-h2);
+    ctx.closePath(); ctx.fill();
+    ctx.shadowBlur=0;
+    // szelvedo-sav
+    ctx.fillStyle='rgba(6,17,15,.55)'; ctx.fillRect(-w2*0.7,-h2*0.55,carW*0.7,carL*0.2);
+    ctx.restore();
+  }
+
+  // --- HUD frissites ---
+  const el=id=>document.getElementById(id);
+  function updateHUD(live){
+    const seg=segName(S.s);
+    el('segLbl').textContent=seg.t;
+    el('distLbl').textContent=Math.round(S.s)+' m';
+    el('vSpd').innerHTML=Math.round(S.v*3.6)+'<span class="u"> km/h</span>';
+    el('vErr').innerHTML=(S.e_y>=0?'+':'')+S.e_y.toFixed(2)+'<span class="u"> m</span>';
+    el('vRad').innerHTML=(seg.r? Math.abs(Math.round(seg.r)) : '∞')+'<span class="u"> m</span>';
+    const a=live?live.ref_deg:0;
+    el('vAng').textContent=(a>=0?'+':'')+a.toFixed(2)+'°';
+    const fill=el('fill'), pct=Math.max(-1,Math.min(1,a/S.LA));
+    fill.style.width=Math.abs(pct)*50+'%';
+    fill.style.left=pct>=0?'50%':(50+pct*50)+'%';
+    const st=el('status'); const sat=live&&live.sat;
+    fill.className='fill'+(S.takeover?' crit':(sat?' warn':''));
+    if(S.takeover){ st.className='status crit'; st.textContent='TELÍTÉS · VEZETŐ ÁTVESZ'; }
+    else if(!S.assist){ st.className='status warn'; st.textContent='ASSZISZTENS KI · SODRÓDIK'; }
+    else if(sat){ st.className='status warn'; st.textContent='KÖZEL A ±5.87° BUROKHOZ'; }
+    else { st.className='status'; st.textContent='RENDSZER AKTÍV · KÖZÉPEN TART'; }
+  }
+
+  // --- fo hurok ---
+  let last=0;
+  function frame(t){
+    if(!last)last=t; let dtr=(t-last)/1000; last=t;
+    dtr=Math.min(dtr,0.05);
+    let live={ref_deg:0,sat:false};
+    if(S.playing){
+      const sub=4, h=dtr/sub;
+      for(let i=0;i<sub;i++) live=stepPhysics(h);
+    } else { const k=curvature(S.s); const le=S.e_y+S.Lh*Math.sin(S.e_psi);
+      let rd=(S.k_ff*S.L*k - S.k_la*le)*180/Math.PI; live.sat=Math.abs(rd)>S.LA;
+      live.ref_deg=Math.max(-S.LA,Math.min(S.LA,rd)); }
+    draw(live); updateHUD(live);
+    requestAnimationFrame(frame);
+  }
+
+  // --- vezerlok ---
+  function bindSlider(id,fn,fmt){ const s=el(id); const o=()=>{fn(parseFloat(s.value)); el(({speed:'nSpd',gain:'nGain',lookahead:'nLook'})[id]).textContent=fmt(parseFloat(s.value));}; s.addEventListener('input',o); o(); }
+  bindSlider('speed', v=>S.v=v/3.6, v=>Math.round(v)+' km/h');
+  bindSlider('gain', v=>S.k_la=v, v=>v.toFixed(3));
+  bindSlider('lookahead', v=>S.Lh=v, v=>Math.round(v)+' m');
+  el('playBtn').addEventListener('click',()=>{ S.playing=!S.playing; last=0;
+    el('playBtn').textContent=S.playing?'Szünet':'Indít'; });
+  el('resetBtn').addEventListener('click',()=>{ S.s=0;S.e_y=0.35;S.e_psi=0;S.delta=0;S.takeover=false; });
+  el('assistBtn').addEventListener('click',()=>{ S.assist=!S.assist;
+    const b=el('assistBtn'); b.textContent='Asszisztens: '+(S.assist?'BE':'KI'); b.classList.toggle('off',!S.assist); });
+  if(reduce) el('playBtn').textContent='Indít';
+
+  window.addEventListener('resize',()=>{resize();});
+  resize(); draw({ref_deg:0,sat:false}); updateHUD({ref_deg:0,sat:false});
+  requestAnimationFrame(frame);
+})();
+</script>

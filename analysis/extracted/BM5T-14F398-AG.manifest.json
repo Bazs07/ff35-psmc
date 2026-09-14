@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\IPMA\\BM5T-14F398-AG.VBF",
+  "source_size": 16499,
+  "source_sha256": "af55131fafcf223cea31fd058a362c2a4998d8af243252d915f735b2bef97d64",
+  "header_end": 1105,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "BM5T-14F398-AG",
+    "part_type": "DATA",
+    "ecu_address": "0x706",
+    "data_format_identifier": null,
+    "file_checksum": "0x42404290"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1105,
+      "address": 12288,
+      "length": 15384,
+      "payload_offset": 1113,
+      "stored_checksum": 38391,
+      "checksum_matches": [],
+      "sha256": "528986bbf2a1e0447552d6cc6476578c06f33877cc828d51d2a5dd5ca44768df"
+    }
+  ],
+  "parsed_end": 16499,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

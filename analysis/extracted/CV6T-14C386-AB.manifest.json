@@ -1,0 +1,29 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\FL\\PSMC\\CV6T-14C386-AB.vbf",
+  "source_size": 3189,
+  "source_sha256": "fdd75f856f63057eb999c07f5c8479a5caa0e315eb01d943cd937c996e3e07dd",
+  "header_end": 1231,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "CV6T-14C386-AB",
+    "part_type": "SIGCFG",
+    "ecu_address": "0x730",
+    "data_format_identifier": null,
+    "file_checksum": "0x9CBD5E3F"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1231,
+      "address": 67141632,
+      "length": 1948,
+      "payload_offset": 1239,
+      "stored_checksum": 27585,
+      "checksum_matches": [],
+      "sha256": "d0a636e34cb6206908f7ed76c1885bf8a9633f3a7b3f39c3a44cdb4db6fd8791"
+    }
+  ],
+  "parsed_end": 3189,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

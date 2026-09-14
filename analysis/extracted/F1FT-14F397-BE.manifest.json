@@ -1,0 +1,49 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\FL\\IPMA\\F1FT-14F397-BE.VBF",
+  "source_size": 1537280,
+  "source_sha256": "fb592c083fdb396880116f612ef0faa694c249f9de545646313283697475f777",
+  "header_end": 1094,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "F1FT-14F397-BE",
+    "part_type": "EXE",
+    "ecu_address": "0x706",
+    "data_format_identifier": null,
+    "file_checksum": "0x1EF92C70"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1094,
+      "address": 2097152,
+      "length": 1536124,
+      "payload_offset": 1102,
+      "stored_checksum": 51315,
+      "checksum_matches": [],
+      "sha256": "6a55d31776b691c4b10a92a7397f3ba56ac5ee2dd475408120a8e3f365a62baa"
+    },
+    {
+      "index": 1,
+      "record_offset": 1537228,
+      "address": 9437256,
+      "length": 16,
+      "payload_offset": 1537236,
+      "stored_checksum": 56206,
+      "checksum_matches": [],
+      "sha256": "e4e804a34257ee6d113031703dd3ddf79cea9c8b096969ffb50956bf3faa44a9"
+    },
+    {
+      "index": 2,
+      "record_offset": 1537254,
+      "address": 9445040,
+      "length": 16,
+      "payload_offset": 1537262,
+      "stored_checksum": 56206,
+      "checksum_matches": [],
+      "sha256": "e4e804a34257ee6d113031703dd3ddf79cea9c8b096969ffb50956bf3faa44a9"
+    }
+  ],
+  "parsed_end": 1537280,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}

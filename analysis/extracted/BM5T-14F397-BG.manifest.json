@@ -1,0 +1,49 @@
+{
+  "source": "C:\\UCDS_v3\\PSMC mod\\Pre FL\\IPMA\\BM5T-14F397-BG.VBF",
+  "source_size": 1517905,
+  "source_sha256": "9ba363281e65595f76a2a132a88a850362d8765047217feb9f70d98774cf5c8a",
+  "header_end": 1091,
+  "header": {
+    "vbf_version": "2.3",
+    "part_number": "BM5T-14F397-BG",
+    "part_type": "EXE",
+    "ecu_address": "0x706",
+    "data_format_identifier": null,
+    "file_checksum": "0xE07B8EE3"
+  },
+  "records": [
+    {
+      "index": 0,
+      "record_offset": 1091,
+      "address": 2097152,
+      "length": 1516752,
+      "payload_offset": 1099,
+      "stored_checksum": 20341,
+      "checksum_matches": [],
+      "sha256": "4769f81b66a882172cfc49fd0b0b1f73adfb12e2770ec07c25d026b3c9ffd2fb"
+    },
+    {
+      "index": 1,
+      "record_offset": 1517853,
+      "address": 9437256,
+      "length": 16,
+      "payload_offset": 1517861,
+      "stored_checksum": 49469,
+      "checksum_matches": [],
+      "sha256": "cbf61aff8549df94500b1447134901c5a3df8253bb66bf96e1157e04833f9004"
+    },
+    {
+      "index": 2,
+      "record_offset": 1517879,
+      "address": 9445040,
+      "length": 16,
+      "payload_offset": 1517887,
+      "stored_checksum": 49469,
+      "checksum_matches": [],
+      "sha256": "cbf61aff8549df94500b1447134901c5a3df8253bb66bf96e1157e04833f9004"
+    }
+  ],
+  "parsed_end": 1517905,
+  "trailing_bytes": 0,
+  "trailing_hex": ""
+}
