@@ -1,0 +1,82 @@
+tableA @0xE89ED (380x8)  tableB @0xE8824 (12B records)
+distinct 6-byte config prefixes : 76
+reachable descriptor indices    : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]  (13 total)
+descriptor-index histogram      : {0: 30, 1: 20, 2: 10, 3: 20, 4: 60, 5: 54, 6: 36, 7: 18, 8: 36, 9: 12, 10: 24, 11: 36, 12: 24}
+
+config prefix (6B) | key1 -> descriptor index
+  01 01 01 02 01 16 | {0: 3, 1: 3, 2: 3, 3: 3, 4: 3}
+  01 01 01 02 01 17 | {0: 3, 1: 3, 2: 3, 3: 3, 4: 3}
+  01 03 01 02 01 16 | {0: 3, 1: 3, 2: 3, 3: 3, 4: 3}
+  01 03 01 02 01 17 | {0: 3, 1: 3, 2: 3, 3: 3, 4: 3}
+  02 01 01 02 01 11 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  02 01 01 02 01 12 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  02 01 01 02 01 13 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  02 03 01 02 01 11 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  02 03 01 02 01 12 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  02 03 01 02 01 13 | {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+  04 01 01 02 01 12 | {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}
+  04 01 01 02 01 13 | {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}
+  04 03 01 02 01 12 | {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}
+  04 03 01 02 01 13 | {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}
+  05 01 01 02 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 01 01 02 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 01 01 03 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 01 01 03 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 01 02 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 01 02 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 01 03 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 01 03 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 02 02 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 02 02 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 02 03 01 16 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  05 03 02 03 01 17 | {0: 4, 1: 4, 2: 4, 3: 4, 4: 4}
+  06 01 01 02 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 01 01 02 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 01 01 02 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 01 01 03 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 01 01 03 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 01 01 03 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 02 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 02 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 02 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 03 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 03 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 01 03 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 02 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 02 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 02 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 03 01 11 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 03 01 12 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  06 03 02 03 01 13 | {0: 5, 1: 11, 2: 5, 3: 11, 4: 5}   <- key1 low-bit selects a sub-variant
+  07 01 01 02 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 01 01 02 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 01 01 03 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 01 01 03 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 01 02 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 01 02 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 01 03 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 01 03 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 02 02 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 02 02 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 02 03 01 12 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  07 03 02 03 01 13 | {0: 6, 1: 12, 2: 6, 3: 12, 4: 6}   <- key1 low-bit selects a sub-variant
+  08 01 01 02 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  08 01 01 03 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  08 03 01 02 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  08 03 01 03 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  08 03 02 02 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  08 03 02 03 01 21 | {0: 7, 1: 9, 2: 7, 3: 9, 4: 7}   <- key1 low-bit selects a sub-variant
+  11 01 01 02 01 21 | {0: 2, 1: 2, 2: 2, 3: 2, 4: 2}
+  11 03 01 02 01 21 | {0: 2, 1: 2, 2: 2, 3: 2, 4: 2}
+  71 01 01 02 01 50 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 02 01 51 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 02 01 52 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 02 01 53 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 02 01 54 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 02 01 55 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 50 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 51 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 52 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 53 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 54 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
+  71 01 01 03 01 55 | {0: 8, 1: 10, 2: 8, 3: 10, 4: 8}   <- key1 low-bit selects a sub-variant
