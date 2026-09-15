@@ -62,3 +62,32 @@ band (the `10000`/`1000`-scaled constants).
 
 [Label: STRONG hypothesis — supported by the absence of large-literal compares + the 2048-as-centre
 usage + the matching IPMA scaling; not a line-by-line proof of the full decode path.]
+
+## DECISIVE (option-1 result): the PSCM LaRefAng decode is unchanged Pre-FL → FL
+
+The core LCA question is whether the break is on the IPMA sending side or the PSCM receiving side. With
+both real binaries, the 12-bit-signal decode loop can be compared directly. The loop sits at
+**FL `P:0x12C85`** and **Pre-FL `P:0x11E32`** (delta `+0xE53` words = the main-block relocation), and a
+relocation-aware word comparison of the loop body gives:
+
+- **252 / 256 words identical (98%)**, 2 relocated-address words, and only **2 genuinely different
+  words** — both *after* the 12-cluster loop body (the following routine's relocated handles), not in
+  the LaRefAng decode itself. The tightly-aligned loop is therefore **~99% identical, differing only in
+  relocated addresses.**
+- The surrounding signal band (`P:0x12900–0x12E00`) is ~92% identical under a crude single-delta
+  alignment (the residual is largely alignment drift from internal code insertion, not proven logic
+  change); the reset handler and CAN-group ISRs are ~94–95% identical the same way.
+
+**Conclusion [STRONG]:** the PSCM's decoding/handling of the 12-bit lane-assist signal class (which
+contains `LaRefAng`) is **functionally unchanged between the Pre-FL application (where LCA works) and
+the FL application (where it doesn't).** Combined with the two other real-binary findings —
+(a) there is no separate tunable PSCM authority clamp (the ±5.87° ceiling is the field width), and
+(b) the only PSCM signal-config (14C386) delta is the APA-mode/park fields, not lane — the PSCM
+**receiving side is not where LCA breaks.**
+
+This promotes hypothesis **3** (the FL IPMA's send side / feature layer does not emit the same working
+`LaRefAng` command) to the leading explanation, on real-binary evidence, and correspondingly demotes
+the "FL PSCM accepts the request under a different condition" hypotheses (1/2). Any PSCM-side speed or
+hands-on gate, if present, is identical in both versions and therefore cannot be the differentiator —
+so the speed-gate hunt on the PSCM side is not where the LCA answer lies. The remaining LCA work
+belongs on the **IPMA send path** (partly in its absent lower flash) and/or a vehicle CAN log.
