@@ -90,6 +90,20 @@ def decode(words: list[int], index: int, pc: int) -> Decoded:
         register = op & 0x1F
         return Decoded(2, f"MOVE.W #0x{following[0]:04X},reg5:{register}")
 
+    # Bit-field ops, 16-bit mask in the following word (DSP56800ERM A.2, verified encodings)
+    if len(following) >= 2 and op == 0x8C54:          # 1000110001010100
+        return Decoded(3, f"BFTSTH #0x{following[1]:04X},X:0x{following[0]:04X} ; test bits==1")
+    if len(following) >= 2 and op == 0x8854:          # 1000100001010100
+        return Decoded(3, f"BFTSTL #0x{following[1]:04X},X:0x{following[0]:04X} ; test bits==0")
+    if following and op & 0xFFE0 == 0x8D40:           # 10001101010ddddd
+        return Decoded(2, f"BFTSTH #0x{following[0]:04X},reg5:{op & 0x1F} ; test bits==1")
+    if following and op & 0xFFE0 == 0x8140:           # 10000001010ddddd
+        return Decoded(2, f"BFCLR #0x{following[0]:04X},reg5:{op & 0x1F}")
+    if following and op & 0xFFE0 == 0x8540:           # 10000101010ddddd
+        return Decoded(2, f"BFCHG #0x{following[0]:04X},reg5:{op & 0x1F}")
+    if op == 0x4E44 and following:                    # 0100111001000100
+        return Decoded(2, f"DEC.W X:0x{following[0]:04X}")
+
     return Decoded(1, f".word 0x{op:04X}")
 
 
