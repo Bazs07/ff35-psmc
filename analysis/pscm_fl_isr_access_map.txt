@@ -1,0 +1,37 @@
+# PSCM FL ISR peripheral/RAM access map (X:0xFxxx = on-chip peripheral I/O)
+
+## vec0_reset  P:0x12BC9  (~340 insn to first RTI)
+   peripheral regs: ['0xF1AA', '0xF355']
+   RAM/data addrs : ['0x1BBD']
+
+## vec16  P:0x17D02  (~55 insn to first RTI)
+   peripheral regs: []
+   RAM/data addrs : ['0x1988', '0x19A7', '0x19AA']
+
+## vec17  P:0x12EAC  (~71 insn to first RTI)
+   peripheral regs: ['0xF143', '0xF166', '0xF1BD', '0xF353', '0xF361']
+   RAM/data addrs : []
+
+## vec20  P:0x12E83  (~105 insn to first RTI)
+   peripheral regs: ['0xF143', '0xF166', '0xF1BD', '0xF353', '0xF361']
+   RAM/data addrs : []
+
+## vec56  P:0x17CCC  (~49 insn to first RTI)
+   peripheral regs: []
+   RAM/data addrs : ['0x1988', '0x19A7', '0x1BDD']
+
+## vec68  P:0x122DC  (~49 insn to first RTI)
+   peripheral regs: ['0xF283', '0xF284']
+   RAM/data addrs : []
+
+## vec69  P:0x12311  (~98 insn to first RTI)
+   peripheral regs: ['0xF280', '0xF284']
+   RAM/data addrs : ['0x1643', '0x1647', '0x164C']
+
+## vec72  P:0x1237F  (~103 insn to first RTI)
+   peripheral regs: ['0xF284']
+   RAM/data addrs : ['0x164C']
+
+## vec78  P:0x040B4  (~29 insn to first RTI)
+   peripheral regs: []
+   RAM/data addrs : ['0x17D3']
