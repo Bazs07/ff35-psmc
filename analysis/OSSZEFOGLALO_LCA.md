@@ -210,6 +210,17 @@ So the new records both look like 3-bit fields:
 - `group 0x7F75`, shift 3, mask `0x38`, selector `0x80`;
 - `group 0x7F74`, shift 4, mask `0x70`, selector `0x02`.
 
+> **Refinement (2026-09, `SIGCFG_HANDLE_MAP.md`).** A version-invariant alignment
+> (`sigcfg_handle_map.py`) shows the two inserted records are not the whole story:
+> inside bank `0x7F75` a **5-bit** field on handle `7ED8` (mask `0x1F`, selector
+> `0x20`) was *retired* and a **2-bit** field on handle `7ECC` (mask `0x60`,
+> selector `0x10`) took its place — an in-place field swap the positional diff hid
+> inside a "replace" block. So the field-level change is **+3 / −1**, not simply
+> "two new fields", and bank `7F75` was genuinely re-laid-out (all its source
+> handles renumbered `−0x08`, every selector stepped down one one-hot). The
+> alignment also confirms bank `7F8A` relocated by a uniform **+0x14 = +20 bytes**
+> (the two added 10-byte records) and emits a Pre→FL handle remap table.
+
 The `0x7F75` group shows a clear layout shift in the FL: a new 3-bit field was
 inserted at selector `0x80`, while several existing field groups shifted to the
 next selector (`0x80 → 0x40`, `0x40 → 0x20`). In the `0x7F74` group, another
@@ -314,6 +325,9 @@ steering safety states are not yet fully mapped.
 - `analysis/pscm_sigcfg_decode.py` – 14C386 descriptor listing
 - `analysis/pscm_pre_sigcfg_decoded.txt` – Pre-FL descriptors
 - `analysis/pscm_fl_sigcfg_decoded.txt` – FL descriptors
+- `analysis/sigcfg_handle_map.py` – Pre-FL↔FL descriptor aligner & handle remap
+- `analysis/sigcfg_handle_map.txt` – aligned per-bank output & full remap table
+- `analysis/SIGCFG_HANDLE_MAP.md` – corrected net field-change (+3/−1) and relocation note
 - `analysis/sigcfg_pre_fl_diff.txt` – descriptor diff
 - `analysis/pscm_pre_sigcfg_code.lst` – Pre-FL related code listing
 - `analysis/pscm_fl_sigcfg_code.lst` – FL related code listing

@@ -1,5 +1,7 @@
 # PSCM / PSMC — Power Steering Control Module (EPS), Ford Focus Mk3.5
 
+> **Start here for the full picture:** [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md) is the consolidated end-to-end functional decode (boot, memory map, control style, CAN/signal-config engine, the LCA authority limits, and both open questions), integrating every doc below.
+
 The PSCM is the electric power steering control unit (EPS). Beyond ordinary steering assist, it is
 the **actuator end of two completely separate ADAS steering interfaces**, which is what makes it the
 central module for any lane-centering (LCA) work on this platform:
@@ -30,11 +32,20 @@ parking does not imply the LCA steering path was retained.
 
 ### Processor architecture — resolved the hard way
 Identifying this MCU took several wrong turns, all recorded honestly in `PSCM.md`:
-DSP56800E → SH-2A → V850 → **RH850 (final)**. The repeated confusion came from the same `0xE255`
-byte pattern decoding plausibly under several instruction sets, and from V850 being dense enough that
-even pure data decodes into valid-looking instructions.
+DSP56800E → SH-2A → V850 → RH850 → **DSP56800E (final, corrected 2026-09-15 — see the banner below)**.
+The repeated confusion came from the same `0xE255` byte pattern decoding plausibly under several
+instruction sets; that same pattern is now shown bit-exactly to be the DSP56800E `JSR <ABS19>` opcode.
 
-**Current verdict: Renesas RH850** (the V850 successor, standard in modern EPS units). Ghidra has no
+> ✅ **Resolved 2026-09-15 → DSP56800E.** A bit-exact opcode check of the reset/exception vector table
+> against the in-repo DSP56800E manual ([`analysis/PSCM_ISA_RESOLUTION.md`](analysis/PSCM_ISA_RESOLUTION.md),
+> reproduce with `analysis/pscm_isa_vectorcheck.py`) shows all four vector entries are DSP56800E
+> `JSR <ABS19>` (`P:0x12BC9 / 0x1912B / 0x11D76 / 0x11D3E`) — the DSC vector-table convention the manual
+> documents. **The RH850/V850 decompiles and the conclusions drawn from them are therefore artifacts**
+> (the `__saturate` engine, `DAT_ffffe0ff` clamp and `0x61aa` speed-gate are retired as evidence); the
+> signal-config, calibration, memory-map and IPMA findings are unaffected. The paragraph below is kept
+> for the record of how the identification went wrong before being corrected.
+
+**Superseded verdict (RH850 line of work — now retired):** the earlier work settled on Renesas RH850. Ghidra has no
 out-of-the-box RH850 support; two community SLEIGH modules were tested and the
 **esaulenka `ghidra_v850` (`v850e3:LE:32:default`)** module gives substantially cleaner output than the
 ZEEKRZERO one (no `__saturate` spam). With jarl-based seeding, 336 clean function boundaries were
@@ -63,10 +74,17 @@ Findings from the static IPMA↔PSCM comparison (`analysis/OSSZEFOGLALO_LCA.md`,
   boundaries verified arithmetically, not estimated). Their most likely meaning is the expanded
   automatic-parking mode request/status (`ApaMdeStat_D_RqDrv` / `ApaMde_D_Stat`) — an inference, not
   CAN-ID-level proof. Most of the rest of the signal-config engine is shared structure with only
-  pointer relocations.
-- A **speed-gate-like comparison** (`25000 >= in_r18`) exists in the main control function at
-  `0x1d160` and is confirmed present by both RH850 modules — but **its semantics cannot be verified**
-  at current tooling quality (speed vs. torque vs. angle, and its unit, are unknown).
+  pointer relocations. **Refinement (`analysis/SIGCFG_HANDLE_MAP.md`):** a version-invariant
+  alignment shows the change is actually **+3 / −1**, not a plain "two new fields" — bank `7F75` was
+  re-laid-out (a 5-bit field on `7ED8` retired; a 2-bit `7ECC` and a 3-bit `7EEB` added; all handles
+  renumbered −0x08 and every selector stepped down one one-hot), while bank `7F74` gained a second
+  3-bit field packed onto the already-used handle `7EB9`. Bank `7F8A` (the `0x86xx` output side)
+  relocated by a uniform **+0x14 = +20 bytes = the two added 10-byte descriptors**, confirming the
+  "engine unchanged, content relocated" thesis arithmetically. The note also emits a Pre→FL handle
+  remap so the *same* signal can be lined up across the `AF`/`AR` applications despite the renumbering.
+- ~~A **speed-gate-like comparison** (`25000 >= in_r18`) at `0x1d160`~~ — **retired:** this came from
+  the RH850 decode, now shown to be the wrong ISA (see the resolution banner); it is a phantom, not a
+  real speed gate.
 
 Ranked hypotheses for the break, from the analysis:
 1. FL PSCM accepts the LCA request under a different condition than the Pre-FL application.

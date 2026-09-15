@@ -1,0 +1,181 @@
+# PSCM 14C386 SIGCFG cross-version handle map
+# Pre-FL descriptors=83  FL descriptors=85
+
+== bank 7F6C  pre= 1 fl= 1 matched=1 ==
+   PRE 7F6C/7F6C  ->  FL 7F6C/7F6C  [sh0 mask00 sel00 fl00]
+
+== bank 7F74  pre=18 fl=19 matched=18 ==
+   PRE 7EBC/0000  ->  FL 7EBC/0000  [sh8 mask00 sel04 fl00]
+   PRE 7EB8/7EB6  ->  FL 7EB8/7EB6  [sh6 maskC0 sel02 fl80]
+   PRE 7EAE/7EAE  ->  FL 7EAE/7EAE  [sh2 mask3C sel01 fl40]
+   PRE 7EB1/7EB3  ->  FL 7EB1/7EB3  [sh0 maskFF sel01 fl80]
+   PRE 7EAF/7EAE  ->  FL 7EAF/7EAE  [sh0 mask03 sel01 fl02]
+   PRE 7EB3/7EB3  ->  FL 7EB3/7EB3  [sh4 mask30 sel01 fl40]
+   PRE 7EB3/7EB3  ->  FL 7EB3/7EB3  [sh0 mask01 sel01 fl02]
+   PRE 7EBB/0000  ->  FL 7EBB/0000  [sh2 mask0C sel02 fl00]
+   PRE 7EBB/0000  ->  FL 7EBB/0000  [sh4 mask10 sel02 fl00]
+   PRE 7EBA/0000  ->  FL 7EBA/0000  [sh0 maskFF sel02 fl00]
+   PRE 7EB9/0000  ->  FL 7EB9/0000  [sh0 mask0F sel02 fl00]
+   PRE 7EBB/0000  ->  FL 7EBB/0000  [sh5 mask20 sel02 fl00]
+   PRE 7EAF/7EAE  ->  FL 7EAF/7EAE  [sh2 maskFC sel01 fl01]
+   PRE 7EAD/0000  ->  FL 7EAD/0000  [sh0 maskFF sel01 fl00]
+   ++ FL-ONLY  h0=7EB9/0000 idx80 @0x0376  sh4 mask70 sel02 fl00
+   PRE 7EC4/0000  ->  FL 7EC4/0000  [sh8 mask00 sel08 fl00]
+   PRE 7EB6/7EB6  ->  FL 7EB6/7EB6  [sh0 mask03 sel02 fl04]
+   PRE 7EB6/0000  ->  FL 7EB6/0000  [sh3 mask18 sel02 fl00]
+   PRE 7EB6/0000  ->  FL 7EB6/0000  [sh5 mask20 sel02 fl00]
+
+== bank 7F75  pre=17 fl=18 matched=16 ==
+   -- PRE-ONLY h0=7ED8/7ED6 idx3 @0x0074  sh0 mask1F sel20 fl40
+   PRE 7EEA/0000  ->  FL 7EE2/0000  [sh7 mask80 sel40 fl00]  <== handle relocated
+   PRE 7EEA/7EE4  ->  FL 7EE2/7EDC  [sh0 mask7F sel40 fl08]  <== handle relocated
+   PRE 7EE8/0000  ->  FL 7EE0/0000  [sh0 mask0F sel40 fl00]  <== handle relocated
+   PRE 7EE9/0000  ->  FL 7EE1/0000  [sh0 maskFF sel40 fl00]  <== handle relocated
+   PRE 7EE8/0000  ->  FL 7EE0/0000  [sh4 mask30 sel40 fl00]  <== handle relocated
+   ++ FL-ONLY  h0=7ECC/7ECC idx8 @0x00A6  sh5 mask60 sel10 fl80
+   PRE 7EE2/0000  ->  FL 7EDA/0000  [sh4 maskF0 sel20 fl00]  <== handle relocated
+   PRE 7EE1/0000  ->  FL 7ED9/0000  [sh0 maskFF sel20 fl00]  <== handle relocated
+   PRE 7EE2/7EDD  ->  FL 7EDA/7ED5  [sh0 mask0F sel20 fl08]  <== handle relocated
+   PRE 7EDF/0000  ->  FL 7ED7/0000  [sh7 mask80 sel20 fl00]  <== handle relocated
+   PRE 7EDF/7EDD  ->  FL 7ED7/7ED5  [sh0 mask0F sel20 fl04]  <== handle relocated
+   PRE 7EDE/0000  ->  FL 7ED6/0000  [sh0 maskFF sel20 fl00]  <== handle relocated
+   PRE 7EDD/0000  ->  FL 7ED5/0000  [sh0 mask03 sel20 fl00]  <== handle relocated
+   PRE 7EDD/0000  ->  FL 7ED5/0000  [sh4 mask70 sel20 fl00]  <== handle relocated
+   PRE 7EDF/0000  ->  FL 7ED7/0000  [sh4 mask70 sel20 fl00]  <== handle relocated
+   PRE 7ED3/0000  ->  FL 7ED3/0000  [sh1 mask06 sel10 fl00]
+   PRE 7ED1/7ED3  ->  FL 7ED1/7ED3  [sh0 maskFF sel10 fl01]
+   ++ FL-ONLY  h0=7EEB/7EEB idx31 @0x018C  sh3 mask38 sel80 fl40
+
+== bank 7F79  pre= 3 fl= 3 matched=3 ==
+   PRE 7EEC/0000  ->  FL 7EEC/0000  [sh8 mask00 sel01 fl00]
+   PRE 7EFC/0000  ->  FL 7EFC/0000  [sh8 mask00 sel04 fl00]
+   PRE 7EF4/0000  ->  FL 7EF4/0000  [sh8 mask00 sel02 fl00]
+
+== bank 7F7D  pre=30 fl=30 matched=30 ==
+   PRE 7F18/7F18  ->  FL 7F18/7F18  [sh3 mask08 sel04 fl10]
+   PRE 7F0D/7F0D  ->  FL 7F0D/7F0D  [sh3 mask78 sel02 fl80]
+   PRE 7F22/0000  ->  FL 7F22/0000  [sh6 maskC0 sel08 fl00]
+   PRE 7F0E/7F0D  ->  FL 7F0E/7F0D  [sh3 maskF8 sel02 fl01]
+   PRE 7F0D/0000  ->  FL 7F0D/0000  [sh1 mask06 sel02 fl00]
+   PRE 7F11/7F0C  ->  FL 7F11/7F0C  [sh3 maskF8 sel02 fl80]
+   PRE 7F2C/7F2C  ->  FL 7F2C/7F2C  [sh3 mask08 sel20 fl10]
+   PRE 7F14/7F14  ->  FL 7F14/7F14  [sh3 mask08 sel04 fl10]
+   PRE 7F0A/7F0A  ->  FL 7F0A/7F0A  [sh0 mask7F sel01 fl80]
+   PRE 7F04/0000  ->  FL 7F04/0000  [sh0 mask0F sel01 fl00]
+   PRE 7F08/0000  ->  FL 7F08/0000  [sh0 mask7F sel01 fl00]
+   PRE 7F06/0000  ->  FL 7F06/0000  [sh7 mask80 sel01 fl00]
+   PRE 7F05/0000  ->  FL 7F05/0000  [sh0 maskFF sel01 fl00]
+   PRE 7F08/0000  ->  FL 7F08/0000  [sh7 mask80 sel01 fl00]
+   PRE 7F04/0000  ->  FL 7F04/0000  [sh4 mask30 sel01 fl00]
+   PRE 7F18/7F18  ->  FL 7F18/7F18  [sh5 mask20 sel04 fl40]
+   PRE 7F18/7F14  ->  FL 7F18/7F14  [sh7 mask80 sel04 fl04]
+   PRE 7F3C/0000  ->  FL 7F3C/0000  [sh8 mask00 sel80 fl00]
+   PRE 7F3A/0000  ->  FL 7F3A/0000  [sh0 mask0F sel40 fl00]
+   PRE 7F3B/0000  ->  FL 7F3B/0000  [sh0 maskFF sel40 fl00]
+   PRE 7F1E/7F1E  ->  FL 7F1E/7F1E  [sh0 mask03 sel08 fl04]
+   PRE 7F3A/0000  ->  FL 7F3A/0000  [sh4 mask30 sel40 fl00]
+   PRE 7F20/7F20  ->  FL 7F20/7F20  [sh0 mask0F sel08 fl10]
+   PRE 7F38/7F3A  ->  FL 7F38/7F3A  [sh0 maskFF sel40 fl40]
+   PRE 7F24/7F24  ->  FL 7F24/7F24  [sh0 mask7F sel10 fl80]
+   PRE 7F26/7F26  ->  FL 7F26/7F26  [sh0 mask7F sel10 fl80]
+   PRE 7F28/7F28  ->  FL 7F28/7F28  [sh0 mask7F sel10 fl80]
+   PRE 7F2A/7F2A  ->  FL 7F2A/7F2A  [sh0 mask7F sel10 fl80]
+   PRE 7F22/0000  ->  FL 7F22/0000  [sh4 mask30 sel08 fl00]
+   PRE 7F1C/7F1E  ->  FL 7F1C/7F1E  [sh0 mask01 sel08 fl08]
+
+== bank 7F81  pre= 1 fl= 1 matched=1 ==
+   PRE 7F44/0000  ->  FL 7F44/0000  [sh8 mask00 sel01 fl00]
+
+== bank 7F8A  pre=13 fl=13 matched=13 ==
+   PRE 8608/7F8A  ->  FL 861C/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 8628/7F8A  ->  FL 863C/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 8621/7F8A  ->  FL 8635/7F8A  [sh5 mask00 sel02 fl02]  <== handle relocated
+   PRE 860A/7F8A  ->  FL 861E/7F8A  [sh4 mask00 sel02 fl02]  <== handle relocated
+   PRE 860E/7F8A  ->  FL 8622/7F8A  [sh3 mask00 sel02 fl02]  <== handle relocated
+   PRE 8613/7F8A  ->  FL 8627/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 862E/7F8A  ->  FL 8642/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 8611/7F8A  ->  FL 8625/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 861F/7F8A  ->  FL 8633/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 8626/7F8A  ->  FL 863A/7F8A  [sh0 maskFF sel02 fl02]  <== handle relocated
+   PRE 8615/7F8A  ->  FL 8629/7F8A  [sh4 mask00 sel02 fl02]  <== handle relocated
+   PRE 8619/7F8A  ->  FL 862D/7F8A  [sh6 mask00 sel02 fl02]  <== handle relocated
+   PRE 8629/7F8A  ->  FL 863D/7F8A  [sh5 mask00 sel02 fl02]  <== handle relocated
+
+== net field change per bank (added / removed) ==
+   bank 7F74: +1 -0
+      ++ added    h0=7EB9 3-bit (mask70 sh4 sel02 fl00)
+   bank 7F75: +2 -1
+      -- removed  h0=7ED8 5-bit (mask1F sh0 sel20 fl40)
+      ++ added    h0=7ECC 2-bit (mask60 sh5 sel10 fl80)
+      ++ added    h0=7EEB 3-bit (mask38 sh3 sel80 fl40)
+
+== Pre-FL -> FL handle remap (source/validity handles) ==
+   7EAD -> 7EAD
+   7EAE -> 7EAE
+   7EAF -> 7EAF
+   7EB1 -> 7EB1
+   7EB3 -> 7EB3
+   7EB6 -> 7EB6
+   7EB8 -> 7EB8
+   7EB9 -> 7EB9
+   7EBA -> 7EBA
+   7EBB -> 7EBB
+   7EBC -> 7EBC
+   7EC4 -> 7EC4
+   7ED1 -> 7ED1
+   7ED3 -> 7ED3
+   7EDD -> 7ED5   (relocated)
+   7EDE -> 7ED6   (relocated)
+   7EDF -> 7ED7   (relocated)
+   7EE1 -> 7ED9   (relocated)
+   7EE2 -> 7EDA   (relocated)
+   7EE4 -> 7EDC   (relocated)
+   7EE8 -> 7EE0   (relocated)
+   7EE9 -> 7EE1   (relocated)
+   7EEA -> 7EE2   (relocated)
+   7EEC -> 7EEC
+   7EF4 -> 7EF4
+   7EFC -> 7EFC
+   7F04 -> 7F04
+   7F05 -> 7F05
+   7F06 -> 7F06
+   7F08 -> 7F08
+   7F0A -> 7F0A
+   7F0C -> 7F0C
+   7F0D -> 7F0D
+   7F0E -> 7F0E
+   7F11 -> 7F11
+   7F14 -> 7F14
+   7F18 -> 7F18
+   7F1C -> 7F1C
+   7F1E -> 7F1E
+   7F20 -> 7F20
+   7F22 -> 7F22
+   7F24 -> 7F24
+   7F26 -> 7F26
+   7F28 -> 7F28
+   7F2A -> 7F2A
+   7F2C -> 7F2C
+   7F38 -> 7F38
+   7F3A -> 7F3A
+   7F3B -> 7F3B
+   7F3C -> 7F3C
+   7F44 -> 7F44
+   7F6C -> 7F6C
+   7F8A -> 7F8A
+   8608 -> 861C   (relocated)
+   860A -> 861E   (relocated)
+   860E -> 8622   (relocated)
+   8611 -> 8625   (relocated)
+   8613 -> 8627   (relocated)
+   8615 -> 8629   (relocated)
+   8619 -> 862D   (relocated)
+   861F -> 8633   (relocated)
+   8621 -> 8635   (relocated)
+   8626 -> 863A   (relocated)
+   8628 -> 863C   (relocated)
+   8629 -> 863D   (relocated)
+   862E -> 8642   (relocated)
+
+new FL-only fields: 3   dropped Pre-only fields: 1
+handle remap is internally consistent (no conflicting mappings).
