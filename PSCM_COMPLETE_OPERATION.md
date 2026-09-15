@@ -226,10 +226,12 @@ Chain, with the current verdict at each link:
    is APA-mode, not lane (§4.3), so no lane-side regression is visible in the sigcfg — but the *code*
    condition is not readable.
 
-Ranked hypotheses for the break (unchanged): (1) FL PSCM accepts the request under a different
-condition; (2) a lane field lands on a different handle/validation state in FL `14C386` — **weakened**
-by §4.2/§4.3, since the sigcfg delta is park, not lane; (3) the FL IPMA's not-yet-visible CAN layer
-doesn't emit the command; (4) the FL calibration supplies a different threshold/flag. A single FL-car
+Ranked hypotheses for the break, **updated with real-binary evidence**: (3) **the FL IPMA send side
+doesn't emit the same working `LaRefAng`** is now the leading explanation — the PSCM's LaRefAng decode
+is ~99% identical Pre-FL↔FL (§1b), so the receiving side did not change. (1)/(2) (FL PSCM accepts under
+a different condition / a lane field lands on a different handle) are **demoted**: the decode code is
+unchanged and the 14C386 delta is park, not lane. (4) a calibration threshold remains possible but
+secondary. A single FL-car
 CAN log (LCA bit off vs on) would settle whether the break is on the IPMA sending side or the PSCM
 receiving side.
 
