@@ -32,17 +32,20 @@ parking does not imply the LCA steering path was retained.
 
 ### Processor architecture — resolved the hard way
 Identifying this MCU took several wrong turns, all recorded honestly in `PSCM.md`:
-DSP56800E → SH-2A → V850 → **RH850 (final)**. The repeated confusion came from the same `0xE255`
-byte pattern decoding plausibly under several instruction sets, and from V850 being dense enough that
-even pure data decodes into valid-looking instructions.
+DSP56800E → SH-2A → V850 → RH850 → **DSP56800E (final, corrected 2026-09-15 — see the banner below)**.
+The repeated confusion came from the same `0xE255` byte pattern decoding plausibly under several
+instruction sets; that same pattern is now shown bit-exactly to be the DSP56800E `JSR <ABS19>` opcode.
 
-> ⚠️ **Contested:** the newest data-level analysis (`FF3.5_ANALYSIS_root/27_pscm_autopark_datalevel.md`)
-> re-reads the reset-vector table as **DSP56800E** (`JSR P:0x12BC9`) and argues the RH850 decode is an
-> artifact. This is unresolved — see the "central unresolved question" section of
-> [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md); the load-bearing conclusions below are
-> stated so they do not depend on which ISA is correct.
+> ✅ **Resolved 2026-09-15 → DSP56800E.** A bit-exact opcode check of the reset/exception vector table
+> against the in-repo DSP56800E manual ([`analysis/PSCM_ISA_RESOLUTION.md`](analysis/PSCM_ISA_RESOLUTION.md),
+> reproduce with `analysis/pscm_isa_vectorcheck.py`) shows all four vector entries are DSP56800E
+> `JSR <ABS19>` (`P:0x12BC9 / 0x1912B / 0x11D76 / 0x11D3E`) — the DSC vector-table convention the manual
+> documents. **The RH850/V850 decompiles and the conclusions drawn from them are therefore artifacts**
+> (the `__saturate` engine, `DAT_ffffe0ff` clamp and `0x61aa` speed-gate are retired as evidence); the
+> signal-config, calibration, memory-map and IPMA findings are unaffected. The paragraph below is kept
+> for the record of how the identification went wrong before being corrected.
 
-**Current verdict (per the RH850 line of work): Renesas RH850** (the V850 successor, standard in modern EPS units). Ghidra has no
+**Superseded verdict (RH850 line of work — now retired):** the earlier work settled on Renesas RH850. Ghidra has no
 out-of-the-box RH850 support; two community SLEIGH modules were tested and the
 **esaulenka `ghidra_v850` (`v850e3:LE:32:default`)** module gives substantially cleaner output than the
 ZEEKRZERO one (no `__saturate` spam). With jarl-based seeding, 336 clean function boundaries were
@@ -79,9 +82,9 @@ Findings from the static IPMA↔PSCM comparison (`analysis/OSSZEFOGLALO_LCA.md`,
   relocated by a uniform **+0x14 = +20 bytes = the two added 10-byte descriptors**, confirming the
   "engine unchanged, content relocated" thesis arithmetically. The note also emits a Pre→FL handle
   remap so the *same* signal can be lined up across the `AF`/`AR` applications despite the renumbering.
-- A **speed-gate-like comparison** (`25000 >= in_r18`) exists in the main control function at
-  `0x1d160` and is confirmed present by both RH850 modules — but **its semantics cannot be verified**
-  at current tooling quality (speed vs. torque vs. angle, and its unit, are unknown).
+- ~~A **speed-gate-like comparison** (`25000 >= in_r18`) at `0x1d160`~~ — **retired:** this came from
+  the RH850 decode, now shown to be the wrong ISA (see the resolution banner); it is a phantom, not a
+  real speed gate.
 
 Ranked hypotheses for the break, from the analysis:
 1. FL PSCM accepts the LCA request under a different condition than the Pre-FL application.

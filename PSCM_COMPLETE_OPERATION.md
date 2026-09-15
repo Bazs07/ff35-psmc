@@ -27,7 +27,18 @@ LCA steering path was retained — the two must be analysed separately.
 
 ---
 
-## 1. THE CENTRAL UNRESOLVED QUESTION: which CPU is this?
+## 1. CPU identity — RESOLVED: DSP56800E (see `analysis/PSCM_ISA_RESOLUTION.md`)
+
+> **Resolved 2026-09-15.** A bit-exact opcode check of the reset/exception vector table against the
+> in-repo DSP56800E manual settles this in favour of **DSP56800E**: all four documented vector entries
+> decode as `JSR <ABS19>` (identical `word0=0xE255`, fixed opcode bit satisfied, clean targets
+> `P:0x12BC9 / 0x1912B / 0x11D76 / 0x11D3E`), which is exactly the DSC vector-table convention the
+> manual documents. Reproduce with `analysis/pscm_isa_vectorcheck.py`. **Consequence:** the RH850/V850
+> decompiles and every claim derived from them (the 1698 `__saturate` engine, the `DAT_ffffe0ff`
+> clamp, the `0x61aa` speed-gate) are artifacts and are retired as evidence; the signal-config,
+> calibration, memory-map and IPMA findings are unaffected. The subsections below are kept for the
+> record but now read as *the RH850 interpretation that has been superseded*.
+
 
 The project's own most recent, highest-effort analyses **disagree** on the PSCM core, and this is the
 single most important thing to resolve because it decides which decompile (if any) is trustworthy.
