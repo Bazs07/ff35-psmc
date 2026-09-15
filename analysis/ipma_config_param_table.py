@@ -31,7 +31,9 @@ from pathlib import Path
 from collections import Counter
 
 LST = Path(__file__).resolve().parent / "ipma_fl_m32r.lst"
-TABLE = 0xE2448
+LST_PRE = Path(__file__).resolve().parent / "ipma_pre_m32r.lst"
+TABLE = 0xE2448        # FL config-descriptor table base
+TABLE_PRE = 0xE98C0    # Pre-FL config-descriptor table base (same accessor idiom)
 _ROW = re.compile(r'^0x([0-9A-Fa-f]{8})\s+((?:[0-9a-f]{2} ){3}[0-9a-f]{2})')
 
 
@@ -83,5 +85,37 @@ def main():
     print("group-word histogram:", dict(sorted(Counter(int.from_bytes(d[12:14],'big') for _,d,_,_ in rows).items())))
 
 
+def enum(mem, base):
+    def has(s, n): return all(s + i in mem for i in range(n))
+    def rd(s, n): return bytes(mem.get(s + i, 0) for i in range(n))
+    lo, hi = min(mem), max(mem)
+    out = {}
+    for cid in range(0x300):
+        e = base + cid * 16
+        if not has(e, 16):
+            break
+        d = rd(e, 16)
+        ln = int.from_bytes(d[4:6], "big"); mk = int.from_bytes(d[6:8], "big"); dp = int.from_bytes(d[8:12], "big")
+        if mk == 0xFFFF and 0 < ln <= 64 and lo <= dp <= hi:
+            out[cid] = (ln, int.from_bytes(d[12:14], "big"), rd(dp, min(ln, 20)))
+    return out
+
+
+def diff():
+    fl = enum(load_mem(LST), TABLE)
+    pre = enum(load_mem(LST_PRE), TABLE_PRE)
+    print(f"Pre-FL params={len(pre)} (table @0x{TABLE_PRE:X})  FL params={len(fl)} (table @0x{TABLE:X})")
+    add = sorted(set(fl) - set(pre)); rem = sorted(set(pre) - set(fl))
+    lench = [c for c in fl if c in pre and fl[c][0] != pre[c][0]]
+    print("FL-only config params:", [f"0x{c:03X}" for c in add])
+    print("Pre-FL-only config params:", [f"0x{c:03X}" for c in rem])
+    print("length-changed params:", [(f"0x{c:03X}", pre[c][0], "->", fl[c][0]) for c in lench])
+    for c in add:
+        ln, grp, tmpl = fl[c]
+        print(f"  new FL param 0x{c:03X}: len={ln} group=0x{grp:02X} default={tmpl.hex(' ')}")
+
+
 if __name__ == "__main__":
     main()
+    print("\n===== Pre-FL vs FL config-table diff =====")
+    diff()

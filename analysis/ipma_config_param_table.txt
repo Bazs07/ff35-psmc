@@ -289,3 +289,12 @@ ASCII/part-number defaults:
 
 12-byte As-Built config-DID params: ['0x022', '0x023', '0x024', '0x0BE', '0x0C5', '0x0C6', '0x0C8', '0x117']
 group-word histogram: {16: 1, 32: 30, 33: 21, 34: 1, 35: 1, 40: 5, 41: 209, 42: 2, 43: 7, 57: 1, 169: 1}
+
+===== Pre-FL vs FL config-table diff =====
+Pre-FL params=276 (table @0xE98C0)  FL params=279 (table @0xE2448)
+FL-only config params: ['0x11C', '0x11D', '0x11E']
+Pre-FL-only config params: []
+length-changed params: []
+  new FL param 0x11C: len=1 group=0x2B default=00
+  new FL param 0x11D: len=8 group=0x2B default=00 00 00 00 00 00 00 00
+  new FL param 0x11E: len=1 group=0x2B default=ff
