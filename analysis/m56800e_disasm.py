@@ -69,6 +69,12 @@ def decode(words: list[int], index: int, pc: int) -> Decoded:
     if op & 0xFF80 == 0xA900:
         offset = sign_extend(op & 0x7F, 7)
         return Decoded(1, f"BRA P:0x{pc + 1 + offset:05X} ; rel {offset:+#x}")
+    # Bcc <OFFSET7>:  1010 CCCC 0A aaaaaa   (bit7 == 0)
+    if op & 0xF080 == 0xA000:
+        cc = {0: "cc", 1: "cs", 2: "ne", 3: "eq", 4: "ge", 5: "lt", 6: "gt", 7: "le",
+              0xC: "hi", 0xD: "ls", 0xE: "nn", 0xF: "nr"}.get((op >> 8) & 0xF, "?")
+        offset = sign_extend(op & 0x7F, 7)
+        return Decoded(1, f"B{cc} P:0x{pc + 1 + offset:05X} ; rel {offset:+#x}")
 
     if following and op & 0xF07F == 0xF07C:
         register = (op >> 7) & 0x1F
