@@ -11,9 +11,10 @@ the callers of 0xAD1B4 (at 0xB3790/0xB37B4, both passing arg0 = ctx+0x1B4) and
 the populator 0xB5AD8, is a two-stage table lookup keyed by a config identity:
 
   ctx[0x1A8..] holds a 7-byte config key  (6 bytes + 1 byte at +8),
-     populated from the module config/NVM area via 0x2CD04 (reads 0x804150,
-     0x82FFA3/4 — the persistent config region), i.e. an As-Built-derived
-     vehicle identity, not a live sensor value.
+     assembled by the config accessor 0x8904C from IPMA config parameters
+     0x117 (6 bytes) and 0x119 (1 byte), read from the persistent FL config
+     struct at 0x82D768 (config-descriptor table 0xE2448) — i.e. a static
+     As-Built configuration value, not a live sensor value.
   0xB5AD8 searches an 8-byte-stride table (tableA @0xE89ED, 380 entries) for the
      entry whose first 6 bytes == key[0:6] and byte[6] == key1; the matched
      entry's byte[7] is an index r8.
