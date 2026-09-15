@@ -76,6 +76,29 @@ not in the opcode stream.
 
 ---
 
+## 1b. REAL-BINARY findings (2026-09-15) — supersede the RH850 sections below
+
+The raw PSCM flash is now in hand (FL `CV6T-14C217-AR` block00/01/02, SHA256 matching the manifest;
+Pre-FL `BV6T-14C217-AF` extracted from its VBF). Disassembled under the **correct** ISA (DSP56800E),
+these supersede the RH850-derived §3/§5 (kept below only as the retired interpretation):
+
+- **Interrupt map** (`analysis/PSCM_ISR_MAP.md`, `pscm_vectors.py`): 82 `JSR<ABS19>` vectors, 8 active
+  ISRs on two on-chip peripheral groups (A: `0xF143/F166/F1BD/F353/F361`; B: `0xF280–F284`), plus a
+  default handler. Interrupt configuration is **identical Pre-FL ↔ FL** (same active vector indices),
+  giving 8 homologous ISR pairs. Relocation is piecewise: main block **+0xE53 words** (`+0x1CA6` B),
+  early **+0x570**, late **+0x183A** — the docs' `+0xB008` is retired.
+- **No separate authority clamp** (`analysis/PSCM_SIGNAL_REGION.md`): block01 has only **2 `CMP #imm16`**
+  total; `0x0800` (2048) appears only as the 12-bit-signal **centre-offset** in the reset-time
+  signal-decoder setup loop (`P:0x12C85`), never as a compare bound. The `±5.87° LaRefAng` ceiling is
+  the **12-bit field width × 0.05 mrad/bit scaling**, not a tunable clamp; the `±2060`/`±10000` hunt was
+  for something that does not exist as a compare-limit.
+- **DECISIVE for LCA:** the 12-bit lane-signal decode (the `LaRefAng` class) is **~99% byte-identical
+  Pre-FL ↔ FL** (FL `P:0x12C85` vs Pre-FL `P:0x11E32`, delta `+0xE53`; 252/256 words identical, rest
+  relocated addresses). With the `14C386` delta being APA-mode/park (not lane) and the no-clamp finding,
+  **the PSCM receiving side is not where LCA breaks** — hypothesis **3** (FL IPMA send side) leads on
+  real-binary evidence. Any PSCM speed/hands-on gate is identical in both versions, so it cannot be the
+  differentiator.
+
 ## 2. Memory / flash map [PROVEN — identical Pre-FL and FL]
 
 | VBF byte address | Length | Contents |
