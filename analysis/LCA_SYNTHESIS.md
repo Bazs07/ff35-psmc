@@ -20,6 +20,7 @@ per-track docs.
 | IPMA | `../../ff35-ipma/IPMA_CAN_FEATURES.md` | CAN routing table (286 records); three-layer feature gating; **separate continuous-LCA signal refuted at CAN level** |
 | IPMA | `../../ff35-ipma/IPMA_DIAG_CONFIG.md` | UDS + DID table + DE00–DE03 As-Built family; **no dedicated centering code path**; FL adds three group-0x2B params |
 | IPMA | `../../ff35-ipma/IPMA_BOOT_VISION.md` | CSF microkernel, 10/50 ms rasters; image processing runs on an external TI DaVinci-class DSP, not in this host image |
+| IPMA | `../../ff35-ipma/IPMA_ACTIVATION_GATE.md` | **the FL gate resolved** — param 0x11E (ID 286) is the feature-status latch; done with real binutils m32r objdump |
 
 ## The five community/bench hypotheses — verdicts
 
@@ -79,10 +80,27 @@ math (0.05 mrad/bit scaling and ±5.9° saturation); the DE03 As-Built storage p
 
 The one firmware-visible change on the facelift: **the FL IPMA config adds exactly three new As-Built
 parameters, all in ADAS group 0x2B — 0x11C (len1, default 00), 0x11D (len8), 0x11E (len1, default
-ff)**, with no Pre-FL-only params and no length changes. These are the strongest candidate for a **new
-coupled precondition** that the old Pre-FL coding recipe (setting the LCA bit) no longer satisfies on
-FL. Which of the three gates lane activation is a HYPOTHESIS — not provable from the app image alone,
-because the final 0x3CA status packing lives in the absent lower flash (0x0–0xFFFF).
+ff)**, with no Pre-FL-only params and no length changes.
+
+**This is now resolved to a single param (`IPMA_ACTIVATION_GATE.md`).** Using a real GNU binutils 2.42
+`m32r-elf-objdump` (built from vendored source) to follow the `seth`/`or3`/`add3` constant-pool address
+construction the custom disassembler could not, all 84 config-accessor (`0x8904c`) call sites were
+enumerated and each param ID recovered, mapping every As-Built param to its one consumer:
+
+- **0x11E (ID 286) — THE GATE.** Read at `0xb2c44` inside the feature-status computation `0xb2bdc`:
+  `cmpi r9,#3; bnc` — if the 0x11E byte is <3 it is used *directly* as the feature-status enum written
+  to `0x82d8a4` (value 0 forces "off"); if it is 0xFF (the FL default) the status defers to the computed
+  path (flag `0x82d916` → 1 available / 2 active). It is a persistent feature-status enable/override
+  latch, re-written on status transition at `0xaf96c`.
+- **0x11C (ID 284)** — a provisioning/coding **handshake flag** (sole read `0x35b34`, only when
+  provisioning-mode `(0x8064d4)==2`); not wired to the runtime FSM or LaRefAng.
+- **0x11D (ID 285, len8)** — a **4×u16 parameter record** copied into signal DB `0x82c178`; data, not a
+  gate.
+
+This also **refutes** the earlier "status logic lives in absent low flash" caveat: the 1/2/3 status
+*decision* and its bit-field packing (`and3 #0xe7` / `or3 #0x10` available / `or3 #0x18` active, `bset
+#0x4`) are in this image at `0x3bb80..0x3bd30`; only the final hardware TX-mailbox serialization is in
+the absent lower flash. The decision that emits the lane status is here and reads 0x11E.
 
 ## Bottom-line answer
 
@@ -94,20 +112,25 @@ continuous LCA/TJA only on the newer C519 (Focus Mk4), whose PAM/ADAS stack we d
 So enabling the LCA As-Built bit on the **facelift** does not produce centering because:
 
 1. There is no dedicated centering controller to switch on — only the shared LKA nudge; **and**
-2. Activation now depends on preconditions the bit alone doesn't meet — most likely the three new FL
-   group-0x2B As-Built params (0x11C/0x11D/0x11E) and/or the cal-resident PSCM/IPMA gates — whereas on
-   Pre-FL the single bit was sufficient.
+2. Activation now passes through the **FL feature-status latch param 0x11E** (group 0x2B, ID 286): its
+   FL default 0xFF makes lane status fall to the computed path, which additionally requires the
+   cal-resident PSCM/IPMA speed gates ([arm,band] pairs) to be satisfied — whereas on Pre-FL the single
+   coding bit was sufficient because this coupled precondition did not exist.
 
 This is a **configuration + capability-envelope** answer, not a code bug: the FL regression is in the
 As-Built precondition set, not in changed lane firmware.
 
 ## The single highest-value missing input
 
-Not more static RE. The decisive next step is the **car's As-Built export** — the live values of all
-DE0x DIDs and the group-0x2B params (0x11C/0x11D/0x11E, plus 0x02A/0x039/0x03E/0x0BD) — compared
-against a **working Pre-FL car's export**. That one diff would pin which precondition the FL bit fails
-to satisfy, which the firmware alone cannot reveal (the values are stored config, not code). A CAN log
-of the bit being toggled, and the absent lower-flash region, are secondary.
+Not more static RE. With the gating param now identified (0x11E), the decisive next step is the **car's
+As-Built export** — specifically the live value of group-0x2B param **0x11E** (plus 0x11C/0x11D and
+0x02A/0x039/0x03E/0x0BD), compared against a **working Pre-FL car's export**. The static analysis
+predicts a concrete, testable coding change: **0x11E holding the FL default 0xFF (or 0) instead of a
+value <3 that forces the feature-status enum to "active/available"** is the likely culprit. Setting
+0x11E appropriately via the DE-family coding DID — together with the cal-resident speed gates — is the
+low-risk (Tier-1/Tier-3 coding, no code flash, no F1FT checksum problem) path to test on the owner's
+car. A CAN log of the lane-status byte in 0x3CA while toggling the coding, and the absent lower-flash
+region, are secondary confirmations.
 
 *(Community/third-party items are testimony and bench notes; the verdicts above rest on the cited
 binary evidence in the per-track docs. Nothing here has been flashed — static analysis only.)*
