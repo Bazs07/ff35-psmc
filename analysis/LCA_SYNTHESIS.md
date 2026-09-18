@@ -112,25 +112,43 @@ continuous LCA/TJA only on the newer C519 (Focus Mk4), whose PAM/ADAS stack we d
 So enabling the LCA As-Built bit on the **facelift** does not produce centering because:
 
 1. There is no dedicated centering controller to switch on — only the shared LKA nudge; **and**
-2. Activation now passes through the **FL feature-status latch param 0x11E** (group 0x2B, ID 286): its
-   FL default 0xFF makes lane status fall to the computed path, which additionally requires the
-   cal-resident PSCM/IPMA speed gates ([arm,band] pairs) to be satisfied — whereas on Pre-FL the single
-   coding bit was sufficient because this coupled precondition did not exist.
+2. Activation is a **coupled precondition set**, not one bit. The full trace of the status-computation
+   function `0xb2bdc` (see `IPMA_ACTIVATION_GATE.md` §7) shows the published lane-status enum
+   (`0x82d8a4`, the value the CAN getter `0xb44f4` hands to the 0x3CA packing) is set by:
+   - **param 0x11E** (group 0x2B, ID 286) as a *direct override* when its value is 0/1/2 — but its **FL
+     default 0xFF is behaviorally transparent** (it takes the identical "compute" path a Pre-FL module
+     takes when the param is absent), so 0x11E is a *new lever*, not by itself the cause of the break;
+   - otherwise the **compute path**: enum = active/available depending on the runtime gate flag
+     `0x82d916`;
+   - and, independently, the actual lane **subfields** are only published as valid when **param 279
+     (0x117) maps to code 1 AND param 281 (0x119) is present/valid** — else they are zeroed with a
+     "degraded" quality flag even if the enum reads "active";
+   - all of it still subject to the **cal-resident speed [arm,band] gates**.
+
+   So the FL regression is the combination of these coupled preconditions (the `0x82d916` runtime gate,
+   the 0x117/0x119 config, and the cal speed-gates), which the plain LCA coding bit no longer satisfies —
+   not a single changed value.
 
 This is a **configuration + capability-envelope** answer, not a code bug: the FL regression is in the
 As-Built precondition set, not in changed lane firmware.
 
 ## The single highest-value missing input
 
-Not more static RE. With the gating param now identified (0x11E), the decisive next step is the **car's
-As-Built export** — specifically the live value of group-0x2B param **0x11E** (plus 0x11C/0x11D and
-0x02A/0x039/0x03E/0x0BD), compared against a **working Pre-FL car's export**. The static analysis
-predicts a concrete, testable coding change: **0x11E holding the FL default 0xFF (or 0) instead of a
-value <3 that forces the feature-status enum to "active/available"** is the likely culprit. Setting
-0x11E appropriately via the DE-family coding DID — together with the cal-resident speed gates — is the
-low-risk (Tier-1/Tier-3 coding, no code flash, no F1FT checksum problem) path to test on the owner's
-car. A CAN log of the lane-status byte in 0x3CA while toggling the coding, and the absent lower-flash
-region, are secondary confirmations.
+Not more static RE. With the status-computation function fully traced, the decisive next step is the
+**car's As-Built export** — specifically the live values of group-0x2B params **0x117 (279), 0x119
+(281) and 0x11E (286)** (plus 0x11C/0x11D and 0x02A/0x039/0x03E/0x0BD), compared against a **working
+Pre-FL car's export**. The static analysis gives a concrete, testable recipe, all via DE-family coding
+DIDs (no code flash, no F1FT checksum problem):
+
+1. Force the status enum with **0x11E = 2** (direct override to "active"), and
+2. Ensure **0x117 maps to the enabled code and 0x119 is present/valid** so the subfields publish with
+   quality = 1 (otherwise the enum says "active" but the lane data is zeroed/degraded), and
+3. Confirm the cal-resident speed [arm,band] gates admit the target speed range.
+
+A CAN log of the lane-status byte in 0x3CA (and the subfield validity) while toggling the coding, plus
+the absent lower-flash TX layer, are the secondary confirmations. The one thing the firmware cannot
+reveal is the live value of the runtime gate `0x82d916` and which upstream precondition sets it — that
+needs the car.
 
 *(Community/third-party items are testimony and bench notes; the verdicts above rest on the cited
 binary evidence in the per-track docs. Nothing here has been flashed — static analysis only.)*
