@@ -119,7 +119,11 @@ So enabling the LCA As-Built bit on the **facelift** does not produce centering 
      default 0xFF is behaviorally transparent** (it takes the identical "compute" path a Pre-FL module
      takes when the param is absent), so 0x11E is a *new lever*, not by itself the cause of the break;
    - otherwise the **compute path**: enum = active/available depending on the runtime gate flag
-     `0x82d916`;
+     `0x82d916` — now traced (see `IPMA_STATUS_GATE_FLAG.md`) to **byte[6] of the 8-byte record for
+     signal/param 0x117 (ID 279)**, written by the inbound-message handler `0x32668`, i.e. an
+     inhibit/not-ready reason code **delivered over the bus from another node** (0 → active, nonzero →
+     available); the physical precondition it encodes is produced off-image and is only knowable from the
+     car's live bus;
    - and, independently, the actual lane **subfields** are only published as valid when **param 279
      (0x117) maps to code 1 AND param 281 (0x119) is present/valid** — else they are zeroed with a
      "degraded" quality flag even if the enum reads "active";
@@ -147,8 +151,11 @@ DIDs (no code flash, no F1FT checksum problem):
 
 A CAN log of the lane-status byte in 0x3CA (and the subfield validity) while toggling the coding, plus
 the absent lower-flash TX layer, are the secondary confirmations. The one thing the firmware cannot
-reveal is the live value of the runtime gate `0x82d916` and which upstream precondition sets it — that
-needs the car.
+reveal is now pinned to a concrete bus artifact: the runtime gate `0x82d916` is **byte[6] of the inbound
+8-byte message that carries signal 0x117**, delivered by handler `0x32668`. So the decisive live capture
+is **that inbound message on the car** — its byte[6] (the inhibit reason code) and the rest of the 0x117
+record (which also drives the subfield-enable key-lookup). Param 0x117 is the linchpin of the whole
+status decision, and its producer is another node, not this IPMA.
 
 *(Community/third-party items are testimony and bench notes; the verdicts above rest on the cited
 binary evidence in the per-track docs. Nothing here has been flashed — static analysis only.)*
