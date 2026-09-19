@@ -90,7 +90,10 @@ per-track doc.
 On the facelift, the LCA chain is intact and equivalent to the working Kuga **everywhere the firmware
 can be coded** — the enum computes ACTIVE, the speed gates are correct, the PSCM applies LaRefAng
 identically. The one in-image break is that the **IPMA As-Built lane records (0x117 primary key, 0x119
-discriminator) are unprovisioned on FL**, so the lane subfields publish degraded. That is
+discriminator) are at their unprovisioned all-zero value on this car**, so the key-lookup fails and the
+lane subfields publish degraded. Note (V8): the all-zero descriptor *default* is baked into **both** the
+FL and the working Kuga images — it is not an FL-specific change; a working car simply has `0x117`
+**provisioned to a valid key** (by the factory As-Built stage / vision-DSP), which this car is missing. That is
 **coding-addressable** (DE-family / 0x48-class UDS writes), and is the concrete thing to try first once
 diagnostic access is available. The only thing that could still block LCA after correct coding is the
 **upstream CSF2F0 vision-DSP build**, which is not coding-reachable and would require the matched CSF265-
