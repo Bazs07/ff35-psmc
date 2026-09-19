@@ -2,6 +2,14 @@
 
 > **Start here for the full picture:** [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md) is the consolidated end-to-end functional decode (boot, memory map, control style, CAN/signal-config engine, the LCA authority limits, and both open questions), integrating every doc below.
 
+> **LCA investigation — 2026-09-19 full-mapping campaign (capstone here).** [`analysis/LCA_GAP_ANALYSIS.md`](analysis/LCA_GAP_ANALYSIS.md) is the node-by-node "what is missing for LCA" map. PSCM-side campaign docs:
+> - [`analysis/PSCM_ASBUILT.md`](analysis/PSCM_ASBUILT.md) — full As-Built/coding mechanism; verdict: **no PSCM coding item gates lane-apply**.
+> - [`analysis/PSCM_PREFL_FL_DIFF.md`](analysis/PSCM_PREFL_FL_DIFF.md) — lane decode/apply **byte-identical Pre-FL↔FL modulo relocation** (full recompile).
+> - [`analysis/PSCM_ASSIST_MAP.md`](analysis/PSCM_ASSIST_MAP.md) — torque-assist map, speed source, current loop (core math in absent block00).
+> - [`analysis/OSSZEFOGLALO_LCA.md`](analysis/OSSZEFOGLALO_LCA.md) — Hungarian summary with the 2026-09-19 update resolving the old ranked hypotheses.
+> - Companion IPMA docs live in [`../ff35-ipma/`](../ff35-ipma/) (activation gate, enablement prediction, key structure, xplat diff, verification/sim).
+> **Bottom line:** the FL LCA break is the **unprovisioned IPMA As-Built lane records (0x117 key / 0x119 discriminator)** — coding-addressable — with a residual non-codeable limit in the CSF2F0 vision DSP; the PSCM, PAM, and the speed gates are ruled out as causes.
+
 The PSCM is the electric power steering control unit (EPS). Beyond ordinary steering assist, it is
 the **actuator end of two completely separate ADAS steering interfaces**, which is what makes it the
 central module for any lane-centering (LCA) work on this platform:

@@ -350,3 +350,48 @@ processing engine remained shared. The most important open question now is not
 whether the AsBuilt bit is stored, but whether the `0x3CA/0x3CB` lane-assist
 command reaches the correct internal handle in the FL PSCM, and under what
 condition the AR application accepts it.
+
+---
+
+## Frissítés — 2026-09-19 kampány (a fenti rangsorolt hipotézisek feloldása)
+
+Az éjszakai teljes-feltérképező kampány (valódi GNU binutils 2.42 m32r objdump + a működő
+Kuga CV4T és a Pre-FL PSCM referenciaként) a fenti nyitott kérdéseket nagyrészt lezárta.
+Autós hozzáférés (As-Built export, CAN-log) NEM állt rendelkezésre, így minden statikus,
+firmware-alapú; semmit sem flasheltünk. Részletek: `LCA_GAP_ANALYSIS.md` (capstone),
+`../../ff35-ipma/IPMA_ACTIVATION_GATE.md`, `IPMA_ENABLEMENT_STATIC.md`, `IPMA_XPLAT_DIFF.md`,
+`PSCM_ASBUILT.md`, `PSCM_PREFL_FL_DIFF.md`, `LCA_VERIFICATION.md`.
+
+**A bizonyított fő ok (in-image):** az FL IPMA sáv-státusz döntése (`0xb2bdc`) az enumot
+ACTIVE-ra számolja alaphelyzetben, DE a tényleges sáv-almezők **DEGRADED**-ként publikálódnak,
+mert a **0x117 (signal 279) As-Built rekord gyári alapértéke csupa nulla**, ami a `0xe89ed`
+kulcstábla 76 kulcsának **egyikére sem illik** → a `0xb5ad8` keresés „not found" → degradált ág.
+Ezt szimulációval, a bináris valódi tábláin, függetlenül is reprodukáltuk (V1/V3).
+
+**A régi rangsorolt hipotézisek feloldása:**
+1. *FL PSCM parancs-értelmezés / feature-gate* → **CÁFOLVA.** A PSCM-nek nincs coding-eleme,
+   ami a sáv-apply-t kapuzná (`PSCM_ASBUILT.md`), és a sáv-decode/apply hurok **bájt-azonos
+   Pre-FL↔FL** (relokációtól eltekintve; a teljes app újrafordítás, +0xE53 szó eltolás)
+   (`PSCM_PREFL_FL_DIFF.md`).
+2. *PSCM signal-map különbség* → a 14C386 két új 3-bites mezője az **APA/merőleges parkolás**
+   bővítéséhez tartozik, nem a sávtartáshoz (`SIGCFG_HANDLE_MAP.md`); a sáv-handle feldolgozás
+   változatlan.
+3. *FL IPMA funkcionális küldő út* → a valódi törés az **IPMA As-Built provisionálása** (0x117
+   kulcs + 0x119 diszkriminátor), nem maga a küldő kód. A végső 0x3CA csomagolás a hiányzó alsó
+   flashben van, de a döntés és a bit-pakolás ebben az image-ben van (`IPMA_ACTIVATION_GATE.md`).
+4. *Kalibrációs kapu* → a sebességkapuk **jelen vannak és helyesek** (LCA 80/5/75, LKA 64.6/5),
+   **azonosak a működő Kugáéval** (`IPMA_XPLAT_DIFF.md`, V4/V5); mind a 13 LCA cal-rekord 80 km/h,
+   nincs alacsonyabb sebességű LCA rekord — nem ez a törés oka.
+
+**Kuga (CV4T, működő) vs Focus (F1FT) — a lényeg:** a *kódolható* státusz-lánc (kapuk, 279/280/281
+lane-paraméterek, availability-számítás, enum→0x3CA) **egyenértékű**. Ford az FL-en hozzáadta a
+0x11E enum-reteszt (a Kugán nem létezik), de a 0xFF alapérték jóindulatú. A **nem coding-gal
+orvosolható** különbség a **vision-DSP platform (CSF2F0 az FL-en vs CSF265 a Kugán)** — a DSP
+állítja elő fentebb azokat a rekord-értékeket, amiket a host fogyaszt.
+
+**Következtetés (a régi „Rövid összefoglaló" felülírva):** a facelift LCA-törés nem azon múlik,
+hogy tárolódik-e az As-Built bit (tárolódik), hanem hogy az **IPMA As-Built sáv-rekordjai (0x117,
+0x119) provisionálatlanok az FL alapállapotban**, ezért a sáv-almezők degradáltak. Ez **coding-gal
+orvosolható** (DE-család / 0x48-osztályú UDS írások a 0x706-on), és ez a legelső kipróbálandó,
+amint diagnosztikai hozzáférés lesz. Ami ezután is blokkolhat, az kizárólag a **CSF2F0 DSP-build**
+képessége — ez nem coding-kérdés. A PSCM-et, a PAM-ot és a sebességkapukat mint okot kizártuk.
