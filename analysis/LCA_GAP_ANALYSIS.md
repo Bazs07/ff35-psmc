@@ -64,8 +64,9 @@ per-track doc.
    decisive in-firmware break.** Fix: write `0x117[0:6]` to a valid key (e.g. `02 01 01 02 01 11`).
    *(Independently reproduced by simulation — `LCA_VERIFICATION.md` V1/V3.)*
 2. **Param 0x119 (signal 281) byte[13] discriminator** must select a matching key row whose code maps
-   to a non-zero lane level (discriminator 1/2/3 → code 1/2/2; 0/4 → level-0). Sets the published lane
-   level once (1) is satisfied.
+   to a non-zero lane level. Decoded (see `../../ff35-ipma/LCA_OPEN_ITEMS.md` R2): discriminator 0/4 →
+   level 0 (off), 1 → level 1 (mid), 2/3 → level 2 (highest). **Set `0x119[13] = 2` for the highest lane
+   level.**
 3. **Param 0x11E (signal 286) enum latch** — optional lever: value 2 forces the status enum to ACTIVE
    directly; its FL default 0xFF is benign (defers to the compute path, which already yields ACTIVE).
    Not required if (1)+(2) hold, but available as a forcing override that CV4T does not even have.
