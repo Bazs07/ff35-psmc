@@ -118,12 +118,13 @@ So enabling the LCA As-Built bit on the **facelift** does not produce centering 
    - **param 0x11E** (group 0x2B, ID 286) as a *direct override* when its value is 0/1/2 — but its **FL
      default 0xFF is behaviorally transparent** (it takes the identical "compute" path a Pre-FL module
      takes when the param is absent), so 0x11E is a *new lever*, not by itself the cause of the break;
-   - otherwise the **compute path**: enum = active/available depending on the runtime gate flag
-     `0x82d916` — now traced (see `IPMA_STATUS_GATE_FLAG.md`) to **byte[6] of the 8-byte record for
-     signal/param 0x117 (ID 279)**, written by the inbound-message handler `0x32668`, i.e. an
-     inhibit/not-ready reason code **delivered over the bus from another node** (0 → active, nonzero →
-     available); the physical precondition it encodes is produced off-image and is only knowable from the
-     car's live bus;
+   - otherwise the **compute path**: enum = active/available depending on the gate flag `0x82d916` —
+     traced (see `IPMA_STATUS_GATE_FLAG.md`) to **byte[6] of the 8-byte record for signal/param 0x117
+     (ID 279)**, whose sole writer is the **UDS diagnostic service handler `0x32668`** (length-checked
+     8-byte payload → merge `0xb2e54` → NVM re-commit → UDS positive/NRC response). So this gate is a
+     **tester/coding-written byte on 0x706** (0 → active, nonzero → available), effectively a *second
+     coding lever* alongside 0x11E — not a periodic broadcast from another ECU as first assumed; the exact
+     DID/RID number is not pinned;
    - and, independently, the actual lane **subfields** are only published as valid when **param 279
      (0x117) maps to code 1 AND param 281 (0x119) is present/valid** — else they are zeroed with a
      "degraded" quality flag even if the enum reads "active";
@@ -150,12 +151,15 @@ DIDs (no code flash, no F1FT checksum problem):
 3. Confirm the cal-resident speed [arm,band] gates admit the target speed range.
 
 A CAN log of the lane-status byte in 0x3CA (and the subfield validity) while toggling the coding, plus
-the absent lower-flash TX layer, are the secondary confirmations. The one thing the firmware cannot
-reveal is now pinned to a concrete bus artifact: the runtime gate `0x82d916` is **byte[6] of the inbound
-8-byte message that carries signal 0x117**, delivered by handler `0x32668`. So the decisive live capture
-is **that inbound message on the car** — its byte[6] (the inhibit reason code) and the rest of the 0x117
-record (which also drives the subfield-enable key-lookup). Param 0x117 is the linchpin of the whole
-status decision, and its producer is another node, not this IPMA.
+the absent lower-flash TX layer, are the secondary confirmations. Crucially, the gate `0x82d916` turns
+out to be **coding-controlled, not a foreign broadcast**: it is byte[6] of the 8-byte signal-0x117
+record whose only writer is the UDS service `0x32668`. So both status levers — 0x11E (direct enum
+override) and 0x117/byte[6] (the active-vs-available gate) — are **diagnostic/coding writes on 0x706**.
+This means the whole active-vs-available decision is reachable by coding, and the decisive experiment is
+to read/compare these coding records (0x11E and the 0x117 record, plus 0x117's key bytes for the
+subfield-enable lookup and 0x119) against a working Pre-FL car — no code flash, no F1FT checksum
+problem. The exact DID/RID numbers behind these records are the one thing left to enumerate (against the
+module or a Ford As-Built database).
 
 *(Community/third-party items are testimony and bench notes; the verdicts above rest on the cited
 binary evidence in the per-track docs. Nothing here has been flashed — static analysis only.)*
