@@ -50,6 +50,14 @@ per-track doc.
 ## What is missing for LCA on the facelift — ranked
 
 ### A. Coding-addressable (no code flash; DE-family / 0x48-class UDS writes on 0x706)
+
+> **Write-access note (WS7 / `IPMA_ASBUILT_FULL.md`):** the decisive params **0x117 (279) and 0x119
+> (281) are in group 0x21 and are writable by generic WriteDataByIdentifier (0x2E)**; param **0x11E
+> (286) is group 0x2b with the commit write-lock (flags bit3) set, so it is rejected by generic 0x2E**
+> and settable only via the internal ADAS handler / DExx coding path. Since the primary fix uses 0x117
+> and 0x119 (the writable ones), the coding route is the ordinary one; 0x11E is only the optional
+> override and needs the DExx path. Descriptor id 276 (0x114) is the 25-byte NVM config image that the
+> DE00..DE03 DIDs are diagnostic views into.
 1. **Param 0x117 (signal 279) is unprovisioned.** FL default = all-zero, which matches **none** of the
    76 keys in table `0xe89ed`, so the key-lookup `0xb5ad8` returns not-found → the lane subfields publish
    **DEGRADED/zeroed (quality 2)**, even though the status *enum* computes to ACTIVE. **This is the
