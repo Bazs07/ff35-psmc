@@ -1,5 +1,15 @@
 # PSCM / PSMC — Power Steering Control Module (EPS), Ford Focus Mk3.5
 
+> **⚠️ UPDATE — LCA IS achievable by a PSCM firmware patch (not by coding).** The PSCM firmware
+> gates LCA by routing the LCA lane-request codes to a degenerate torque arm. A road-tested 5-defect /
+> 22-byte patch (iglooom, `CV6T-14C217-AR` — the same module as this car) enables sustained LCA
+> steering. All five stock sites and both internal checksum words are confirmed byte-for-byte in our
+> own dump, and our reproducible tool emits a VBF **bit-identical** to iglooom's published enabled
+> image (sha256 `24a9b235…f49999`). See [`analysis/PSCM_LCA_ENABLER_VERIFIED.md`](analysis/PSCM_LCA_ENABLER_VERIFIED.md)
+> and the tool in [`PSCM_LCA_mod/`](PSCM_LCA_mod/). This **reverses** the earlier "PSCM has no LCA
+> gate / not achievable" conclusion below (which holds only for *As-Built coding*). Patch is
+> iglooom's discovery — <https://github.com/iglooom/PSCM_Firmware_Mod>. Static research only; nothing flashed.
+
 > **Start here for the full picture:** [`PSCM_COMPLETE_OPERATION.md`](PSCM_COMPLETE_OPERATION.md) is the consolidated end-to-end functional decode (boot, memory map, control style, CAN/signal-config engine, the LCA authority limits, and both open questions), integrating every doc below.
 
 > **LCA investigation — 2026-09-19 full-mapping campaign (capstone here).** [`analysis/LCA_GAP_ANALYSIS.md`](analysis/LCA_GAP_ANALYSIS.md) is the node-by-node "what is missing for LCA" map. PSCM-side campaign docs:
@@ -8,7 +18,11 @@
 > - [`analysis/PSCM_ASSIST_MAP.md`](analysis/PSCM_ASSIST_MAP.md) — torque-assist map, speed source, current loop (core math in absent block00).
 > - [`analysis/OSSZEFOGLALO_LCA.md`](analysis/OSSZEFOGLALO_LCA.md) — Hungarian summary with the 2026-09-19 update resolving the old ranked hypotheses.
 > - Companion IPMA docs live in [`../ff35-ipma/`](../ff35-ipma/) (activation gate, enablement prediction, key structure, xplat diff, verification/sim).
-> **Bottom line:** the FL LCA break is the **unprovisioned IPMA As-Built lane records (0x117 key / 0x119 discriminator)** — coding-addressable — with a residual non-codeable limit in the CSF2F0 vision DSP; the PSCM, PAM, and the speed gates are ruled out as causes.
+> **Bottom line (superseded — see the UPDATE banner at the top):** the As-Built-coding read below
+> stands (coding alone does not enable LCA), but the PSCM is **not** ruled out: its firmware routes the
+> LCA codes to a degenerate torque arm, and patching that (iglooom's 5-defect mod) enables real LCA
+> steering. The IPMA As-Built records / CSF2F0 DSP notes remain relevant to coding and to the ~3.7 s
+> re-arm residual, but they are no longer "the" break.
 
 The PSCM is the electric power steering control unit (EPS). Beyond ordinary steering assist, it is
 the **actuator end of two completely separate ADAS steering interfaces**, which is what makes it the

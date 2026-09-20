@@ -42,6 +42,11 @@ branch:
 | A | 0x63FEA | CRC-16/MCRF4XX (poly 0x1021 refl, init 0xFFFF) | `blk0 + blk1[0x1800:0x63FEA]` | **0xD110 ✓** |
 | B | 0x63FEC | sum16 little-endian | linear `blk0 + 14C218 + blk1`, bytes `[0:0x7FFEC]` | **0x3216 ✓** |
 
+**Bit-exact validation:** running the full pipeline on our own stock `CV6T-14C217-AR.VBF` + paired
+`CV6T-14C218-AX` produces a VBF whose sha256 is **identical** to iglooom's published road-tested
+enabled image: `24a9b235920e0eb54eb233445577630d2846574efb556a9aad74c5e207f49999`. So this
+re-implementation is byte-for-byte correct, not merely equivalent.
+
 Constraint: the paired **14C218** calibration must satisfy `sum16le(whole block) == 0xFFFF`
 (our `CV6T-14C218-AX` does: 0xFFFF ✓), so Word B stays valid without re-flashing the cal.
 Container is then repaired: per-block **CRC-16/CCITT-FALSE** + VBF header **file_checksum = CRC-32**
