@@ -1,5 +1,15 @@
 # LCA gap analysis — the complete chain, and exactly what is missing on the facelift
 
+> **⚠️ MAJOR CORRECTION (see `PSCM_LCA_ENABLER_VERIFIED.md`).** Node 6/7 and section C below rule the
+> **PSCM out** as an LCA blocker ("lane decode/apply byte-identical Pre-FL↔FL; applies whatever
+> LaRefAng it receives"). That is **wrong at the firmware level.** The PSCM app routes LCA request
+> codes to a degenerate torque arm; a road-tested 5-defect / 22-byte PSCM code patch (iglooom,
+> `CV6T-14C217-AR` — the same module as ours) enables sustained LCA steering. All five stock defect
+> sites + both checksum words are confirmed byte-for-byte in our image. So LCA **is** achievable — by
+> a **PSCM firmware patch**, not by coding. The plumbing we compared is intact; the gate is in the
+> per-state torque-chain dispatcher the disassembler could not decode. The ranking below still holds
+> for the *coding* surface, but "PSCM not the blocker" is superseded.
+
 > **⚠️ EMPIRICAL UPDATE — coding is confirmed insufficient.** The community reports trying **every**
 > As-Built/coding option with no LCA engagement on the FL. This does not contradict the analysis below —
 > it **resolves** its one open hedge: the host status chain (section A / coding) can be flipped to

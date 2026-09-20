@@ -1,5 +1,12 @@
 # PSCM (CV6T-14C217-AR) — As-Built / coding mechanism, config store, and the lane-apply gating verdict
 
+> **⚠️ CORRECTION (see `PSCM_LCA_ENABLER_VERIFIED.md`).** This doc's finding "the PSCM has no
+> lane/LCA gate" is true **only for As-Built coding**. At the **firmware** level the PSCM *does*
+> gate LCA: it routes LCA request codes to a degenerate torque arm. A road-tested 5-defect / 22-byte
+> code patch (iglooom `CV6T-14C217-AR`) enables real LCA steering, and all five stock sites plus both
+> checksum words are confirmed byte-for-byte in our own image. The "coding-independent / not the
+> blocker" framing below is superseded on that point.
+
 Static reverse-engineering only. Owner's own vehicle, nothing flashed. Target =
 NXP/Freescale **DSP56800E** (16-bit program words, `P = VBF_byte/2`). Diagnostic ECU
 address **0x730** on CAN_HS. Program addresses are `P` (word) addresses; all disassembly
