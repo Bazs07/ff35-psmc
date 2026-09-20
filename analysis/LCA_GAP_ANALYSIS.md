@@ -1,5 +1,16 @@
 # LCA gap analysis — the complete chain, and exactly what is missing on the facelift
 
+> **⚠️ EMPIRICAL UPDATE — coding is confirmed insufficient.** The community reports trying **every**
+> As-Built/coding option with no LCA engagement on the FL. This does not contradict the analysis below —
+> it **resolves** its one open hedge: the host status chain (section A / coding) can be flipped to
+> "enabled", but the **binding gate is upstream** (the vision-DSP capability and the FIM control law that
+> produces the reference angle), which coding cannot reach. So the ranking below still holds, but with
+> the emphasis corrected: **A (coding) is necessary-but-not-sufficient / empirically insufficient; B (the
+> CSF2F0 DSP capability) is the binding limit.** Firmware-side (code-patch) levers exist on the host emit
+> path but force the *emit*, not the centre-tracking *trajectory* — see
+> `../../ff35-ipma/IPMA_LCA_PATCH_ANALYSIS.md`. Most likely reading: **LCA is not implemented in the FL
+> C1MCA vision DSP** (Ford started it on C1MCA, completed it on C519/Mk4).
+
 Capstone of the overnight full-mapping campaign. Integrates the IPMA decode (F1FT vs working Kuga CV4T),
 the PSCM decode (Pre-FL vs FL, incl. As-Built), the PAM/other-module ruling, the static enablement
 prediction, and the independent verification/simulation. **Static analysis only; nothing flashed.** No
