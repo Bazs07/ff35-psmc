@@ -34,6 +34,12 @@ values below are read LE and match iglooom's quoted stock words exactly:
 
 **All 7 matched.** (Verification script re-runnable; see repo history. `E700` = DSP56800E `NOP`.)
 
+**Bit-exact end-to-end validation:** applying the 5 edits + full checksum repair (Word A, Word B,
+container CRC-16/CCITT, VBF file_checksum CRC-32) to our own stock VBF produces an image whose sha256
+equals iglooom's published road-tested `CV6T-14C217-AR_LCA_ENABLED.VBF`
+(`24a9b235920e0eb54eb233445577630d2846574efb556a9aad74c5e207f49999`). The reproducible tool lives in
+[`../PSCM_LCA_mod/`](../PSCM_LCA_mod/); we commit no flashable image.
+
 ## The mechanism (as documented by iglooom, now consistent with our decode)
 A lane-state dispatcher converts the CAN lane request to an internal state at `X:$2DDE`. Per-state
 code at `X:$2DB9` selects a torque-chain "arm" (codes 0–5). Two dispatcher tables give a ramp
